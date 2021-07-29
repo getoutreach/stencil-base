@@ -1,0 +1,30 @@
+name: stencil-base
+modules: []
+arguments:
+  name:
+    required: true
+    type: string
+    description: Name of the service
+  description:
+    required: true
+    type: string
+    description: The purpose of this service
+  type:
+    required: true
+    type: list
+    values:
+      - grpc
+      - http
+      - temporal
+      - kafka
+    description: Type of service
+  reportingTeam:
+    required: true
+    type: string
+    description: Github team to be used as the CODEOWNER of this repository
+  dependencies.optional:
+    type: list
+    description: Dependencies your service needs but not to run successfully (e.g. E2E tests)
+  dependencies.required:
+    type: list
+    description: Dependencies your service requires to run successfully
