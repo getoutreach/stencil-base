@@ -38,9 +38,9 @@ Make sure you've followed the [Launch Plan](https://outreach-io.atlassian.net/wi
 
 [Set up your development environment](https://github.com/getoutreach/devenv#getting-started), then run:
 
-{{ .fenceBash }}
-devenv deploy-app {{ .appName }}
-{{ .fence }}
+```
+devenv deploy-app {{ GetArg "name" }}
+```
 
 <!--- Block(devenvSetup) -->
 {{- if .devenvSetup }}
