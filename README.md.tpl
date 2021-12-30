@@ -46,7 +46,7 @@ devenv deploy-app {{ $name }}
 {{- end }}
 <!--- EndBlock(devenvSetup) -->
 
-{{- if has (stencil.Arg "type") "grpc" }}
+{{- if has "grpc" (stencil.Arg "type") }}
 ## Interacting with {{ $name }}
 
 [grpcui](https://github.com/fullstorydev/grpcui) can be useful for talking to {{ $name }} locally. To run it:
