@@ -1,17 +1,17 @@
-# {{ GetArg "name" }}
+{{ $name := stencil.GetArg "name" }}
+# {{ $name }}
 
-[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](<REPLACE WITH DOCUMENTATION LINK>{{ GetArg "name" }})
-[![CircleCI](https://circleci.com/gh/getoutreach/{{ GetArg "name" }}.svg?style=shield&circle-token=<YOUR_STATUS_API_TOKEN:READ:https://circleci.com/docs/2.0/status-badges/>)](https://circleci.com/gh/getoutreach/{{ GetArg "name" }})
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/github.com/getoutreach/{{ .repo }})
+[![CircleCI](https://circleci.com/gh/getoutreach/{{ $name }}.svg?style=shield)](https://circleci.com/gh/getoutreach/{{ .repo }})
 [![Generated via Stencil](https://img.shields.io/badge/Outreach-Stencil-%235951ff)](https://github.com/getoutreach/stencil)
 
 <!--- Block(description) -->
-{{ GetArg "description" }}
+{{ stencil.GetArg "description" }}
 <!--- EndBlock(description) -->
 
 ----
 
-[Developing and contributing changes](CONTRIBUTING.md) |
-[Generated Documentation](<REPLACE WITH DOCS LINK>{{ .repo }}/)
+Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on developing and contributing changes.
 
 <!--- Block(custom) -->
 {{- if .custom }}
@@ -25,21 +25,19 @@
 
 ### Dependencies
 
-Make sure you've followed the [Launch Plan](https://outreach-io.atlassian.net/wiki/spaces/EN/pages/695698940/Launch+Plan).
-
 <!--- Block(dependencies) -->
 {{- if .dependencies }}
 {{ .dependencies }}
 {{- end }}
 <!--- EndBlock(dependencies) -->
 
-{{- if not .library }}
+{{- if empty (stencil.GetArg "type") }}
 ### Add to your Development Environment
 
 [Set up your development environment](https://github.com/getoutreach/devenv#getting-started), then run:
 
 ```
-devenv deploy-app {{ GetArg "name" }}
+devenv deploy-app {{ $name }}
 ```
 
 <!--- Block(devenvSetup) -->
@@ -48,10 +46,10 @@ devenv deploy-app {{ GetArg "name" }}
 {{- end }}
 <!--- EndBlock(devenvSetup) -->
 
-{{- if eq "grpc" (GetArg "type") }}
-## Interacting with {{ title (GetArg "name") }}
+{{- if has (stencil.GetArg "type") "grpc" }}
+## Interacting with {{ $name }}
 
-[grpcui](https://github.com/fullstorydev/grpcui) can be useful for talking to {{ GetArg "name" }} locally. To run it:
+[grpcui](https://github.com/fullstorydev/grpcui) can be useful for talking to {{ $name }} locally. To run it:
 
 ```bash
 make grpcui
