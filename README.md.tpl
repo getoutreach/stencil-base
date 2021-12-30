@@ -1,8 +1,8 @@
 {{ $name := stencil.Arg "name" }}
 # {{ $name }}
 
-[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/github.com/getoutreach/{{ .repo }})
-[![CircleCI](https://circleci.com/gh/getoutreach/{{ $name }}.svg?style=shield)](https://circleci.com/gh/getoutreach/{{ .repo }})
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/github.com/getoutreach/{{ $name }})
+[![CircleCI](https://circleci.com/gh/getoutreach/{{ $name }}.svg?style=shield)](https://circleci.com/gh/getoutreach/{{ $name }})
 [![Generated via Stencil](https://img.shields.io/badge/Outreach-Stencil-%235951ff)](https://github.com/getoutreach/stencil)
 
 <!--- Block(description) -->
