@@ -31,7 +31,7 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on de
 {{- end }}
 <!--- EndBlock(dependencies) -->
 
-{{- if empty (stencil.Arg "type") }}
+{{- if not (emtpy (stencil.Arg "type")) }}
 ### Add to your Development Environment
 
 [Set up your development environment](https://github.com/getoutreach/devenv#getting-started), then run:
