@@ -3,7 +3,7 @@
 {{- $grpc := false }}
 {{- $clerk := false }}
 {{- $temporal := false }}
-{{- range stencil.Arg "type" }}
+{{- range (stencil.Arg "type") }}
 {{- if eq . "library" }}
 {{ $library = true }}
 {{- end }}
@@ -47,23 +47,23 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on de
 
 ## Dependencies
 
-{{- if not stencil.Arg "oss" }}
+{{- if not (stencil.Arg "oss") }}
 Make sure you've followed the [Launch Plan](https://outreach-io.atlassian.net/wiki/spaces/EN/pages/695698940/Launch+Plan).
 {{- end }}
 
 ### Dependencies
 
 {{- if not .library }}
-{{- if not (empty stencil.Arg "dependencies.required")}}
+{{- if not (empty (stencil.Arg "dependencies.required"))}}
 #### Required Dependencies
-{{- range stencil.Arg "dependencies.required" }}
+{{- range (stencil.Arg "dependencies.required") }}
 * {{ . }}
 {{- end }}
 {{- end }}
 
-{{- if not (empty stencil.Arg "dependencies.optional")}}
+{{- if not (empty (stencil.Arg "dependencies.optional"))}}
 #### Optional Dependencies
-{{- range stencil.Arg "dependencies.optional" }}
+{{- range (stencil.Arg "dependencies.optional") }}
 * {{ . }}
 {{- end }}
 {{- end }}
@@ -77,7 +77,7 @@ devenv deploy-app {{ stencil.Arg "name" }}
 ```
 
 {{- if or $grpc (or $http (or $clerk $temporal)) }}
-## Interacting with {{ title stencil.Arg "name" }}
+## Interacting with {{ title (stencil.Arg "name") }}
 
 {{- if $grpc }}
 ### via gRPC
