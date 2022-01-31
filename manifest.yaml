@@ -11,11 +11,15 @@ arguments:
   name:
     required: true
     type: string
-    description: Name of the service
+    description: Name of the respository.
   description:
     required: true
     type: string
-    description: The purpose of this service
+    description: The purpose of this repository.
+  oss:
+    required: true
+    type: boolean
+    description: Whether or not this repository is open source.
   type:
     required: true
     type: list
@@ -24,14 +28,19 @@ arguments:
       - http
       - temporal
       - kafka
-    description: Type of service
+      - cli
+      - library
+    description: Type of repository, can be multiple types.
   reportingTeam:
     required: true
     type: string
-    description: Github team to be used as the CODEOWNER of this repository
+    description: Github team to be used as the CODEOWNER of this repository.
   dependencies.optional:
     type: list
-    description: Dependencies your service needs but not to run successfully (e.g. E2E tests)
+    description: Dependencies your repository needs, but not always (e.g. E2E tests).
   dependencies.required:
     type: list
-    description: Dependencies your service requires to run successfully
+    description: Dependencies your repository requires to run successfully no matter what.
+  opslevel.designDocumentLink:
+    type: string
+    description: The link to the repository's design document or PRD.
