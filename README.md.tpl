@@ -3,6 +3,8 @@
 {{- $grpc := false }}
 {{- $clerk := false }}
 {{- $temporal := false }}
+{{- $cli := false }}
+{{- $kafka := false }}
 {{- range (stencil.Arg "type") }}
 {{- if eq . "library" }}
 {{- $library = true }}
@@ -19,6 +21,16 @@
 {{- if eq . "temporal" }}
 {{- $temporal = true }}
 {{- end }}
+{{- if eq . "cli" }}
+{{- $cli = true }}
+{{- end }}
+{{- if eq . "kafka" }}
+{{- $kafka = true }}
+{{- end }}
+{{- end }}
+{{- $service := true }}
+{{- if (and $library (and (not $http) (and (not $grpc) (and (not $clerk) (and (not $temporal) (and (not $kafka) (not $cli))))))) }}
+{{- $service = false }}
 {{- end }}
 # {{ stencil.Arg "name" }}
 
@@ -44,6 +56,7 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on de
 {{- end }}
 <!--- EndBlock(overview) -->
 
+{{- if $service }}
 ## Dependencies
 
 {{- if not (stencil.Arg "oss") }}
