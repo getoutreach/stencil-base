@@ -5,22 +5,21 @@
 {{- $temporal := false }}
 {{- range (stencil.Arg "type") }}
 {{- if eq . "library" }}
-{{ $library = true }}
+{{- $library = true }}
 {{- end }}
 {{- if eq . "http" }}
-{{ $http = true }}
+{{- $http = true }}
 {{- end }}
 {{- if eq . "grpc" }}
-{{ $grpc = true }}
+{{- $grpc = true }}
 {{- end }}
 {{- if eq . "clerk" }}
-{{ $clerk = true }}
+{{- $clerk = true }}
 {{- end }}
 {{- if eq . "temporal" }}
-{{ $temporal = true }}
+{{- $temporal = true }}
 {{- end }}
 {{- end }}
-
 # {{ stencil.Arg "name" }}
 
 {{- if .manifest.OSS }}
@@ -53,20 +52,19 @@ Make sure you've followed the [Launch Plan](https://outreach-io.atlassian.net/wi
 
 ### Dependencies
 
-{{- if not .library }}
-{{- if not (empty (stencil.Arg "dependencies.required"))}}
+{{- if ne 0 (len (stencil.Arg "dependencies.required"))}}
 #### Required Dependencies
 {{- range (stencil.Arg "dependencies.required") }}
 * {{ . }}
 {{- end }}
 {{- end }}
 
-{{- if not (empty (stencil.Arg "dependencies.optional"))}}
+{{- if ne 0 (len (stencil.Arg "dependencies.optional"))}}
 #### Optional Dependencies
 {{- range (stencil.Arg "dependencies.optional") }}
 * {{ . }}
 {{- end }}
-{{- end }}
+{{- end}}
 
 ### Add to your Development Environment
 
