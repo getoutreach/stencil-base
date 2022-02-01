@@ -1,4 +1,4 @@
-# {{ .appName }}
+# {{ stencil.Arg "name" }}
 
 ## Relevant External Documentation
 
