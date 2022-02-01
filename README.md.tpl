@@ -81,7 +81,7 @@ Make sure you've followed the [Launch Plan](https://outreach-io.atlassian.net/wi
 
 ### Add to your Development Environment
 
-[Set up your development environment](https://github.com/getoutreach/dev-environment#getting-started), then run:
+[Set up your development environment](https://github.com/getoutreach/devenv#getting-started), then run:
 
 ```bash
 devenv deploy-app {{ stencil.Arg "name" }}
