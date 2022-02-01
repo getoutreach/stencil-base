@@ -103,7 +103,7 @@ make grpcui
 {{- if $http }}
 ### via HTTP
 
-There are two different HTTP servers running by default on bootstrapped services, a public (external) and a private
+There are two different HTTP servers running by default on stencil services, a public (external) and a private
 (internal) server. By default, the port for the public server is `8080`, and the port for the private server is `8000`.
 These are subject to change, and if they are changed, those changes should be reflected in
 `deployments/{{ stencil.Arg "name" }}/{{ stencil.Arg "name" }}.config.jsonnet`.
