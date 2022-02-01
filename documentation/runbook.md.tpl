@@ -1,4 +1,4 @@
-# {{ .appName }} Runbook
+# {{ stencil.Arg "name" }} Runbook
 
 ## General Debugging
 
