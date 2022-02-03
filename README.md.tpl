@@ -65,14 +65,14 @@ Make sure you've followed the [Launch Plan](https://outreach-io.atlassian.net/wi
 
 ### Dependencies
 
-{{- if not (empty (stencil.Arg "dependencies").required))}}
+{{- if not (empty (stencil.Arg "dependencies").required) }}
 #### Required Dependencies
 {{- range ((stencil.Arg "dependencies").required) }}
 * {{ . }}
 {{- end }}
 {{- end }}
 
-{{- if not (empty ((stencil.Arg "dependencies").optional))}}
+{{- if not (empty (stencil.Arg "dependencies").optional) }}
 #### Optional Dependencies
 {{- range ((stencil.Arg "dependencies").optional) }}
 * {{ . }}
