@@ -1,6 +1,7 @@
 <!-- Space: {{ (stencil.Arg "opslevel").confluenceSpaceKey }} -->
-<!-- Parent: {{ stencil.Arg "name" }} -->
-<!-- Title: Runbook -->
+<!-- Parent: Services (auto-generated) -->
+<!-- Parent: {{ stencil.Arg "name" }} (auto-generated) -->
+<!-- Title: {{ stencil.Arg "name" }} Runbook (auto-generated) -->
 
 # {{ stencil.Arg "name" }} Runbook
 

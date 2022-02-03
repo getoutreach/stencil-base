@@ -1,6 +1,7 @@
 <!-- Space: {{ (stencil.Arg "opslevel").confluenceSpaceKey }} -->
-<!-- Parent: {{ stencil.Arg "name" }} -->
-<!-- Title: Disaster Recovery -->
+<!-- Parent: Services (auto-generated) -->
+<!-- Parent: {{ stencil.Arg "name" }} (auto-generated) -->
+<!-- Title: {{ stencil.Arg "name" }} Disaster Recovery (auto-generated) -->
 
 # Disaster Recovery
 

@@ -1,6 +1,7 @@
 <!-- Space: {{ (stencil.Arg "opslevel").confluenceSpaceKey }} -->
-<!-- Parent: {{ stencil.Arg "name" }} -->
-<!-- Title: Service Level Objectives -->
+<!-- Parent: Services (auto-generated) -->
+<!-- Parent: {{ stencil.Arg "name" }} (auto-generated) -->
+<!-- Title: {{ stencil.Arg "name" }} Service Level Objectives (auto-generated) -->
 
 # Service Level Objectives
 
