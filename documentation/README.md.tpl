@@ -5,7 +5,7 @@
 
 ## Relevant External Documentation
 
-* [Design Document]({{ stencil.Arg "opslevel.designDocumentLink" }})
+* [Design Document]({{ (stencil.Arg "opslevel").designDocumentLink }})
 <!--- Block(documentation) -->
 {{- if .documentation }}
 {{ .documentation }}
