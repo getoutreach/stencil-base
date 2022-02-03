@@ -1,3 +1,7 @@
+<!-- Space: {{ stencil.Arg "confluenceSpaceKey" }} -->
+<!-- Parent: {{ stencil.Arg "name" }} -->
+<!-- Title: Disaster Recovery -->
+
 # Disaster Recovery
 
 ## Recovering from Kubernetes Resource Deletion

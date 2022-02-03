@@ -44,3 +44,6 @@ arguments:
   opslevel.designDocumentLink:
     type: string
     description: The link to the repository's design document or PRD.
+  confluenceSpaceKey:
+    type: string
+    description: The confluence space key for your team (as an example, for developer tooling it is DTSS).
