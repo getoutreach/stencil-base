@@ -1,4 +1,4 @@
-<!-- Space: {{ stencil.Arg "confluenceSpaceKey" }} -->
+<!-- Space: {{ (stencil.Arg "opslevel").confluenceSpaceKey }} -->
 <!-- Parent: {{ stencil.Arg "name" }} -->
 <!-- Title: Runbook -->
 
