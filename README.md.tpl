@@ -64,7 +64,7 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on de
 ## Dependencies
 
 {{- if not (stencil.Arg "oss") }}
-Make sure you've run `orc setup`.
+Make sure you've ran `orc setup`.
 {{- end }}
 
 ### Dependencies
