@@ -64,7 +64,7 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on de
 ## Dependencies
 
 {{- if not (stencil.Arg "oss") }}
-Make sure you've followed the [Launch Plan](https://outreach-io.atlassian.net/wiki/spaces/EN/pages/695698940/Launch+Plan).
+Make sure you've run `orc setup`.
 {{- end }}
 
 ### Dependencies
