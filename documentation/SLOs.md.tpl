@@ -18,9 +18,16 @@
 {{- if .http }}
 ## HTTP P99 Latency
 
-TODO - this information is coming from DDR
+99.9% success rate from the "HTTP Latency High" datadog monitor, which enforces the following:
+
+* P90 <= 2s during times of low traffic.
+* P99 <= 2s during times of high traffic.
+
+Where "low traffic" means during the last 15 minutes less than or equal to 1000 requests have
+been observed.
 
 ## HTTP Success Rate
 
-TODO - this information is coming from DDR
+99.9% success rate on public HTTP requests where success rate is calculated as the count of
+all >= 500 code responses over all responses, multiplied by 100.
 {{- end }}
