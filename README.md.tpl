@@ -50,7 +50,7 @@
 
 ## Contributing
 
-Please read the [CONTRIBUTING.md](.github/CONTRIBUTING.md) document for guidelines on developing and contributing changes.
+Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on developing and contributing changes.
 
 ## High-level Overview
 
