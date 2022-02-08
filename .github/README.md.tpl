@@ -34,19 +34,23 @@
 {{- end }}
 # {{ stencil.Arg "name" }}
 
-{{- if .manifest.OSS }}
-[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/github.com/getoutreach/{{ .repo }})
+{{- if (stencil.Arg "oss") }}
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/github.com/getoutreach/{{ stencil.Arg "name" }})
 {{- else }}
-[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://engdocs.outreach.cloud/github.com/getoutreach/{{ .repo }})
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://engdocs.outreach.cloud/github.com/getoutreach/{{ stencil.Arg "name" }})
 {{- end }}
-[![CircleCI](https://circleci.com/gh/getoutreach/{{ .repo }}.svg?style=shield&circle-token=<YOUR_STATUS_API_TOKEN:READ:https://circleci.com/docs/2.0/status-badges/>)](https://circleci.com/gh/getoutreach/{{ .repo }})
+{{- if ne nil (stencil.Arg "circleAPIKey") }}
+{{- if ne "" (stencil.Arg "circleAPIKey") }}
+[![CircleCI](https://circleci.com/gh/getoutreach/{{ stencil.Arg "name" }}.svg?style=shield&circle-token=<{{ stencil.Arg "circleAPIKey" }}:READ:https://circleci.com/docs/2.0/status-badges/>)](https://circleci.com/gh/getoutreach/{{ stencil.Arg "name" }})
+{{- end }}
+{{- end }}
 [![Generated via Bootstrap](https://img.shields.io/badge/Outreach-Bootstrap-%235951ff)](https://github.com/getoutreach/bootstrap)
 
 {{ stencil.Arg "description" }}
 
-----
+## Contributing
 
-Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on developing and contributing changes.
+Please read the [CONTRIBUTING.md](.github/CONTRIBUTING.md) document for guidelines on developing and contributing changes.
 
 ## High-level Overview
 
@@ -79,10 +83,16 @@ Make sure you've followed the [Launch Plan](https://outreach-io.atlassian.net/wi
 {{- end }}
 {{- end}}
 
-### Add to your Development Environment
+### Adding and Deleting Service in Development Environment
 
-[Set up your development environment](https://github.com/getoutreach/devenv#getting-started), then run:
+First, make sure you [set up your development environment](https://github.com/getoutreach/devenv#getting-started).
 
+To add this service to your developer environment:  
+```bash
+devenv deploy-app {{ stencil.Arg "name" }}
+```
+
+To delete this service from your developer environment:  
 ```bash
 devenv deploy-app {{ stencil.Arg "name" }}
 ```

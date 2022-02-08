@@ -17,7 +17,7 @@ To view all of the kubernetes resources created by {{ stencil.Arg "name" }}, use
 switching into the appropriate context using `orc context`:
 
 ```shell
-kubectl -n {{ .appName }}--<bento> get all
+kubectl -n {{ stencil.Arg "name" }}--<bento> get all
 ```
 
 <!--- Block(generalDebugging) -->
