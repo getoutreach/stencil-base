@@ -39,8 +39,10 @@
 {{- else }}
 [![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://engdocs.outreach.cloud/github.com/getoutreach/{{ stencil.Arg "name" }})
 {{- end }}
-{{- if and (ne "" (stencil.Arg "circleAPIKey")) (ne "<no value>" (stencil.Arg "circleAPIKey")) }}
+{{- if ne nil (stencil.Arg "circleAPIKey") }}
+{{- if ne "" (stencil.Arg "circleAPIKey") }}
 [![CircleCI](https://circleci.com/gh/getoutreach/{{ stencil.Arg "name" }}.svg?style=shield&circle-token=<{{ stencil.Arg "circleAPIKey" }}:READ:https://circleci.com/docs/2.0/status-badges/>)](https://circleci.com/gh/getoutreach/{{ stencil.Arg "name" }})
+{{- end }}
 {{- end }}
 [![Generated via Bootstrap](https://img.shields.io/badge/Outreach-Bootstrap-%235951ff)](https://github.com/getoutreach/bootstrap)
 
