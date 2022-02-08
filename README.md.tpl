@@ -50,7 +50,7 @@
 
 ## Contributing
 
-Please read the [CONTRIBUTING.md](.github/CONTRIBUTING.md) document for guidelines on developing and contributing changes.
+Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on developing and contributing changes.
 
 ## High-level Overview
 
@@ -64,7 +64,7 @@ Please read the [CONTRIBUTING.md](.github/CONTRIBUTING.md) document for guidelin
 ## Dependencies
 
 {{- if not (stencil.Arg "oss") }}
-Make sure you've followed the [Launch Plan](https://outreach-io.atlassian.net/wiki/spaces/EN/pages/695698940/Launch+Plan).
+Make sure you've ran `orc setup`.
 {{- end }}
 
 ### Dependencies
@@ -87,12 +87,12 @@ Make sure you've followed the [Launch Plan](https://outreach-io.atlassian.net/wi
 
 First, make sure you [set up your development environment](https://github.com/getoutreach/devenv#getting-started).
 
-To add this service to your developer environment:  
+To add this service to your developer environment:
 ```bash
 devenv deploy-app {{ stencil.Arg "name" }}
 ```
 
-To delete this service from your developer environment:  
+To delete this service from your developer environment:
 ```bash
 devenv deploy-app {{ stencil.Arg "name" }}
 ```
