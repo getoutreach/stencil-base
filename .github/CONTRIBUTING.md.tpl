@@ -1,3 +1,4 @@
+{{- $types := (stencil.Arg "type") }}
 {{- $isService := (or (has "http" $types) (or (has "grpc" $types) (or (has "kafka" $types) (has "temporal" $types)))) }}
 # {{ stencil.Arg "name" }}
 
@@ -60,7 +61,7 @@ environemt, you can leverage the following script:
 ```
 {{- end }}
 
-{{- if has "library" (stencil.Args "type") }}
+{{- if has "library" $types }}
 ### Replacing a Remote Version of the Library with Local Version
 
 If you want to test the library exposed in this repository in a project that uses it, you can
