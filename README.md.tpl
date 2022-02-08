@@ -87,12 +87,12 @@ Make sure you've followed the [Launch Plan](https://outreach-io.atlassian.net/wi
 
 First, make sure you [set up your development environment](https://github.com/getoutreach/devenv#getting-started).
 
-To add this service to your developer environment:  
+To add this service to your developer environment:
 ```bash
 devenv deploy-app {{ stencil.Arg "name" }}
 ```
 
-To delete this service from your developer environment:  
+To delete this service from your developer environment:
 ```bash
 devenv deploy-app {{ stencil.Arg "name" }}
 ```
