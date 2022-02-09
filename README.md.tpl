@@ -41,7 +41,7 @@
 {{- end }}
 {{- if ne nil (stencil.Arg "circleAPIKey") }}
 {{- if ne "" (stencil.Arg "circleAPIKey") }}
-[![CircleCI](https://circleci.com/gh/getoutreach/{{ stencil.Arg "name" }}.svg?style=shield&circle-token=<{{ stencil.Arg "circleAPIKey" }}:READ:https://circleci.com/docs/2.0/status-badges/>)](https://circleci.com/gh/getoutreach/{{ stencil.Arg "name" }})
+[![CircleCI](https://circleci.com/gh/getoutreach/{{ stencil.Arg "name" }}.svg?style=shield&circle-token={{ stencil.Arg "circleAPIKey" }})](https://circleci.com/gh/getoutreach/{{ stencil.Arg "name" }})
 {{- end }}
 {{- end }}
 [![Generated via Bootstrap](https://img.shields.io/badge/Outreach-Bootstrap-%235951ff)](https://github.com/getoutreach/bootstrap)
