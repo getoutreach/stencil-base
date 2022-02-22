@@ -50,3 +50,6 @@ arguments:
   circleAPIKey:
     type: string
     description: A CircleCI API token generated for your project. If supplied it will render a CircleCI status badge in your README.md.
+  forceRenderMarkdown:
+    type: boolean
+    description: If this is set to true, the markdown documentation will always be generated regardless of the type of service.
