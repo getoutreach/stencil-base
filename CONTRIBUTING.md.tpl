@@ -14,19 +14,19 @@
 Make sure you've ran `orc setup`.
 {{- end }}
 
-<!-- Block(customPrerequisites) -->
+<!--- Block(customPrerequisites) -->
 {{- if .customPrerequisites }}
 {{ .customPrerequisites }}
 {{- end }}
-<!-- EndBlock(customPrerequisites) -->
+<!--- EndBlock(customPrerequisites) -->
 
 ## Building and Testing
 
-<!-- Block(customBuildingAndTesting) -->
+<!--- Block(customBuildingAndTesting) -->
 {{- if .customBuildingAndTesting }}
 {{ .customBuildingAndTesting }}
 {{- end }}
-<!-- EndBlock(customBuildingAndTesting) -->
+<!--- EndBlock(customBuildingAndTesting) -->
 
 {{- if $isService }}
 ### Building and Running
