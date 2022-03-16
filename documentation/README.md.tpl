@@ -14,7 +14,7 @@
 
 * [Design Document]({{ (stencil.Arg "opslevel").designDocumentLink }})
 <!--- Block(documentation) -->
-{{- if .documentation }}
-{{ .documentation }}
+{{- if file.Block "documentation" }}
+{{ file.Block "documentation" }}
 {{- end }}
 <!--- EndBlock(documentation) -->

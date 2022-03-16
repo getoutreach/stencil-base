@@ -12,8 +12,8 @@
 
 
 <!--- Block(jiraPrefix) --->
-{{- if .jiraPrefix }}
-{{ .jiraPrefix }}
+{{- if file.Block "jiraPrefix" }}
+{{ file.Block "jiraPrefix" }}
 {{- else }}
 ## Jira ID
 
@@ -27,7 +27,7 @@
 
 
 <!--- Block(custom) -->
-{{- if .custom }}
-{{ .custom }}
+{{- if file.Block "custom" }}
+{{ file.Block "custom" }}
 {{- end }}
 <!--- EndBlock(custom) -->

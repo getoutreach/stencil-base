@@ -18,7 +18,7 @@ depending on the type of bento(s) it was deployed to. For legacy bentos, simply 
 via Concourse and for next-gen bentos just wait for ArgoCD automatically redeploy it.
 
 <!--- Block(disasterRecovery) -->
-{{- if .disasterRecovery }}
-{{ .disasterRecovery }}
+{{- if file.Block "disasterRecovery" }}
+{{ file.Block "disasterRecovery" }}
 {{- end }}
 <!--- EndBlock(disasterRecovery) -->

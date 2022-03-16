@@ -23,15 +23,15 @@ kubectl -n {{ stencil.Arg "name" }}--<bento> get all
 ```
 
 <!--- Block(generalDebugging) -->
-{{- if .generalDebugging }}
-{{ .generalDebugging }}
+{{- if file.Block "generalDebugging" }}
+{{ file.Block "generalDebugging" }}
 {{- end }}
 <!--- EndBlock(generalDebugging) -->
 
 ## Debugging Specific Alerts
 
 <!--- Block(debuggingSpecificAlerts) -->
-{{- if .debuggingSpecificAlerts }}
-{{ .debuggingSpecificAlerts }}
+{{- if file.Block "debuggingSpecificAlerts" }}
+{{ file.Block "debuggingSpecificAlerts" }}
 {{- end }}
 <!--- EndBlock(debuggingSpecificAlerts) -->

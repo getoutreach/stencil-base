@@ -3,8 +3,8 @@
 # {{ stencil.Arg "name" }}
 
 <!--- Block(customGeneralInformation) -->
-{{- if .customGeneralInformation }}
-{{ .customGeneralInformation }}
+{{- if file.Block "customGeneralInformation" }}
+{{ file.Block "customGeneralInformation" }}
 {{- end }}
 <!--- EndBlock(customGeneralInformation) -->
 
@@ -15,16 +15,16 @@ Make sure you've ran `orc setup`.
 {{- end }}
 
 <!--- Block(customPrerequisites) -->
-{{- if .customPrerequisites }}
-{{ .customPrerequisites }}
+{{- if file.Block "customPrerequisites" }}
+{{ file.Block "customPrerequisites" }}
 {{- end }}
 <!--- EndBlock(customPrerequisites) -->
 
 ## Building and Testing
 
 <!--- Block(customBuildingAndTesting) -->
-{{- if .customBuildingAndTesting }}
-{{ .customBuildingAndTesting }}
+{{- if file.Block "customBuildingAndTesting" }}
+{{ file.Block "customBuildingAndTesting" }}
 {{- end }}
 <!--- EndBlock(customBuildingAndTesting) -->
 
@@ -54,7 +54,7 @@ integrations and dependent services that are tunneled to your local network.
 ### Generating Deployment Manifests Locally
 
 If you want to observe the deployment manifests generated when running the service in the developer
-environemt, you can leverage the following script:
+environment, you can leverage the following script:
 
 ```bash
 ./scripts/shell-wrapper.sh deploy-to-dev.sh show

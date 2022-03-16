@@ -12,8 +12,8 @@
 # Service Level Objectives
 
 <!--- Block(customSLOs) -->
-{{- if .customSLOs }}
-{{ .customSLOs }}
+{{- if file.Block "customSLOs" }}
+{{ file.Block "customSLOs" }}
 {{- end }}
 <!--- EndBlock(customSLOs) -->
 

@@ -1,4 +1,4 @@
-name: stencil-base
+name: github.com/getoutreach/stencil-base
 modules: []
 postRunCommand:
   - name: asdf install

@@ -14,15 +14,15 @@
 ## To Next-Gen Bento
 
 <!--- Block(ngbRollout) -->
-{{- if .ngbRollout }}
-{{ .ngbRollout }}
+{{- if file.Block "ngbRollout" }}
+{{ file.Block "ngbRollout" }}
 {{- end }}
 <!--- EndBlock(ngbRollout) -->
 
 ## To Legacy Bento
 
 <!--- Block(legacyRollout) -->
-{{- if .legacyRollout }}
-{{ .legacyRollout }}
+{{- if file.Block "legacyRollout" }}
+{{ file.Block "legacyRollout" }}
 {{- end }}
 <!--- EndBlock(legacyRollout) -->

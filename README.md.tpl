@@ -55,8 +55,8 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on de
 ## High-level Overview
 
 <!--- Block(overview) -->
-{{- if .overview }}
-{{ .overview }}
+{{- if file.Block "overview" }}
+{{ file.Block "overview" }}
 {{- end }}
 <!--- EndBlock(overview) -->
 
