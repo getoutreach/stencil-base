@@ -17,7 +17,7 @@
 {{- end }}
 <!--- EndBlock(customSLOs) -->
 
-{{- if .http }}
+{{- if stencil.Arg "http" }}
 ## HTTP P99 Latency
 
 99.9% success rate from the "HTTP Latency High" datadog monitor, which enforces the following:
