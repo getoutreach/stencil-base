@@ -6,9 +6,9 @@
 {{- end }}
 <!-- Space: {{ (stencil.Arg "opslevel").confluenceSpaceKey }} -->
 <!-- Parent: Service Documentation 🧊 -->
-<!-- Title: {{ stencil.Arg "name" }} 🧊 -->
+<!-- Title: {{ .Config.Name }} 🧊 -->
 
-# {{ stencil.Arg "name" }}
+# {{ .Config.Name }}
 
 ## Relevant External Documentation
 

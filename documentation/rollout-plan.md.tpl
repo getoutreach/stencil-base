@@ -6,8 +6,8 @@
 {{- end }}
 <!-- Space: {{ (stencil.Arg "opslevel").confluenceSpaceKey }} -->
 <!-- Parent: Service Documentation 🧊 -->
-<!-- Parent: {{ stencil.Arg "name" }} 🧊 -->
-<!-- Title: {{ stencil.Arg "name" }} Rollout Plan 🧊 -->
+<!-- Parent: {{ .Config.Name }} 🧊 -->
+<!-- Title: {{ .Config.Name }} Rollout Plan 🧊 -->
 
 # Rollout Plan
 

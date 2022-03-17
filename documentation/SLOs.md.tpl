@@ -6,8 +6,8 @@
 {{- end }}
 <!-- Space: {{ (stencil.Arg "opslevel").confluenceSpaceKey }} -->
 <!-- Parent: Service Documentation 🧊 -->
-<!-- Parent: {{ stencil.Arg "name" }} 🧊 -->
-<!-- Title: {{ stencil.Arg "name" }} Service Level Objectives 🧊 -->
+<!-- Parent: {{ .Config.Name }} 🧊 -->
+<!-- Title: {{ .Config.Name }} Service Level Objectives 🧊 -->
 
 # Service Level Objectives
 

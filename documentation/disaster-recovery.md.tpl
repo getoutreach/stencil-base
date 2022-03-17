@@ -6,8 +6,8 @@
 {{- end }}
 <!-- Space: {{ (stencil.Arg "opslevel").confluenceSpaceKey }} -->
 <!-- Parent: Service Documentation 🧊 -->
-<!-- Parent: {{ stencil.Arg "name" }} 🧊 -->
-<!-- Title: {{ stencil.Arg "name" }} Disaster Recovery 🧊 -->
+<!-- Parent: {{ .Config.Name }} 🧊 -->
+<!-- Title: {{ .Config.Name }} Disaster Recovery 🧊 -->
 
 # Disaster Recovery
 

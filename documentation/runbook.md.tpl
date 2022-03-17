@@ -6,20 +6,20 @@
 {{- end }}
 <!-- Space: {{ (stencil.Arg "opslevel").confluenceSpaceKey }} -->
 <!-- Parent: Service Documentation 🧊 -->
-<!-- Parent: {{ stencil.Arg "name" }} 🧊 -->
-<!-- Title: {{ stencil.Arg "name" }} Runbook 🧊 -->
+<!-- Parent: {{ .Config.Name }} 🧊 -->
+<!-- Title: {{ .Config.Name }} Runbook 🧊 -->
 
-# {{ stencil.Arg "name" }} Runbook
+# {{ .Config.Name }} Runbook
 
 ## General Debugging
 
 ### Kubernetes Resources
 
-To view all of the kubernetes resources created by {{ stencil.Arg "name" }}, use the following command after
+To view all of the kubernetes resources created by {{ .Config.Name }}, use the following command after
 switching into the appropriate context using `orc context`:
 
 ```shell
-kubectl -n {{ stencil.Arg "name" }}--<bento> get all
+kubectl -n {{ .Config.Name }}--<bento> get all
 ```
 
 <!--- Block(generalDebugging) -->
