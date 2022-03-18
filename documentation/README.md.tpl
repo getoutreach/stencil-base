@@ -1,10 +1,8 @@
-{{- $types := (stencil.Arg "type") }}
-{{- if not (stencil.Arg "forceRenderMarkdown") }}
-{{- if not (or (has "http" $types) (or (has "grpc" $types) (or (has "kafka" $types) (has "temporal" $types)))) }}
+{{- /* Only render markdown if forced, or if we're a service */}}
+{{- if or (not (stencil.Arg "forceRenderMarkdown")) (eq (stencil.ApplyTemplate "isService") "true") }}
 {{- file.Skip "project is not a service" }}
 {{- end }}
-{{- end }}
-<!-- Space: {{ (stencil.Arg "opslevel").confluenceSpaceKey }} -->
+<!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
 <!-- Title: {{ .Config.Name }} 🧊 -->
 
@@ -12,9 +10,7 @@
 
 ## Relevant External Documentation
 
-* [Design Document]({{ (stencil.Arg "opslevel").designDocumentLink }})
+* [Design Document]({{ stencil.Arg "opslevel.designDocumentLink" }})
 <!--- Block(documentation) -->
-{{- if file.Block "documentation" }}
 {{ file.Block "documentation" }}
-{{- end }}
 <!--- EndBlock(documentation) -->

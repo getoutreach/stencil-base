@@ -3,9 +3,7 @@
 # {{ .Config.Name }}
 
 <!--- Block(customGeneralInformation) -->
-{{- if file.Block "customGeneralInformation" }}
 {{ file.Block "customGeneralInformation" }}
-{{- end }}
 <!--- EndBlock(customGeneralInformation) -->
 
 ## Prerequisites
@@ -15,17 +13,13 @@ Make sure you've ran `orc setup`.
 {{- end }}
 
 <!--- Block(customPrerequisites) -->
-{{- if file.Block "customPrerequisites" }}
 {{ file.Block "customPrerequisites" }}
-{{- end }}
 <!--- EndBlock(customPrerequisites) -->
 
 ## Building and Testing
 
 <!--- Block(customBuildingAndTesting) -->
-{{- if file.Block "customBuildingAndTesting" }}
 {{ file.Block "customBuildingAndTesting" }}
-{{- end }}
 <!--- EndBlock(customBuildingAndTesting) -->
 
 {{- if $isService }}

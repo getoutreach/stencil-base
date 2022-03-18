@@ -28,10 +28,7 @@
 {{- $kafka = true }}
 {{- end }}
 {{- end }}
-{{- $service := true }}
-{{- if (and $library (and (not $http) (and (not $grpc) (and (not $clerk) (and (not $temporal) (and (not $kafka) (not $cli))))))) }}
-{{- $service = false }}
-{{- end }}
+{{- $service := eq (stencil.ApplyTemplate "isService") "true" }}
 # {{ .Config.Name }}
 
 {{- if (stencil.Arg "oss") }}
@@ -55,9 +52,7 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on de
 ## High-level Overview
 
 <!--- Block(overview) -->
-{{- if file.Block "overview" }}
 {{ file.Block "overview" }}
-{{- end }}
 <!--- EndBlock(overview) -->
 
 {{- if $service }}
@@ -69,16 +64,16 @@ Make sure you've ran `orc setup`.
 
 ### Dependencies
 
-{{- if not (empty (stencil.Arg "dependencies").required) }}
+{{- if not (empty (stencil.Arg "dependencies.required")) }}
 #### Required Dependencies
-{{- range ((stencil.Arg "dependencies").required) }}
+{{- range (stencil.Arg "dependencies.required") }}
 * {{ . }}
 {{- end }}
 {{- end }}
 
-{{- if not (empty (stencil.Arg "dependencies").optional) }}
+{{- if not (empty (stencil.Arg "dependencies.optional")) }}
 #### Optional Dependencies
-{{- range ((stencil.Arg "dependencies").optional) }}
+{{- range (stencil.Arg "dependencies.optional") }}
 * {{ . }}
 {{- end }}
 {{- end}}

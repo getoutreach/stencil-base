@@ -27,7 +27,5 @@
 
 
 <!--- Block(custom) -->
-{{- if file.Block "custom" }}
 {{ file.Block "custom" }}
-{{- end }}
 <!--- EndBlock(custom) -->

@@ -1,10 +1,8 @@
-{{- $types := (stencil.Arg "type") }}
-{{- if not (stencil.Arg "forceRenderMarkdown") }}
-{{- if not (or (has "http" $types) (or (has "grpc" $types) (or (has "kafka" $types) (has "temporal" $types)))) }}
+{{- /* Only render markdown if forced, or if we're a service */}}
+{{- if or (not (stencil.Arg "forceRenderMarkdown")) (eq (stencil.ApplyTemplate "isService") "true") }}
 {{- file.Skip "project is not a service" }}
 {{- end }}
-{{- end }}
-<!-- Space: {{ (stencil.Arg "opslevel").confluenceSpaceKey }} -->
+<!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
 <!-- Parent: {{ .Config.Name }} 🧊 -->
 <!-- Title: {{ .Config.Name }} Service Level Objectives 🧊 -->
@@ -12,12 +10,10 @@
 # Service Level Objectives
 
 <!--- Block(customSLOs) -->
-{{- if file.Block "customSLOs" }}
 {{ file.Block "customSLOs" }}
-{{- end }}
 <!--- EndBlock(customSLOs) -->
 
-{{- if stencil.Arg "http" }}
+{{- if has "http" (stencil.Arg "type") }}
 ## HTTP P99 Latency
 
 99.9% success rate from the "HTTP Latency High" datadog monitor, which enforces the following:
