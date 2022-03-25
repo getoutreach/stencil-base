@@ -67,7 +67,7 @@ the root cause of gRPC calls resulting in server-level errors.
 
 ### {{ camelcase .Config.Name }} gRPC Latency High
 
-HONEYCOMB SCARY
+Use honeycomb to debug this alert. Better advice on how to do this is coming soon.
 
 <!--- Block(grpcLatencyHigh) -->
 {{- if .grpcLatencyHigh }}
@@ -89,7 +89,7 @@ the root cause of HTTP calls resulting in server-level errors.
 
 ### {{ camelcase .Config.Name }} HTTP Latency High
 
-HONEYCOMB SCARY
+Use honeycomb to debug this alert. Better advice on how to do this is coming soon.
 
 <!--- Block(httpLatencyHigh) -->
 {{- if .httpLatencyHigh }}
