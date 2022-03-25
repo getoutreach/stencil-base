@@ -48,9 +48,7 @@ kubectl -n {{ .Config.Name }}--<bento> describe deployment {{ .Config.Name }}
 ```
 
 <!--- Block(availablePodsLow) -->
-{{- if .availablePodsLow }}
-{{ .availablePodsLow }}
-{{- end }}
+{{ file.Block "availablePodsLow" }}
 <!--- EndBlock(availablePodsLow) -->
 
 ### {{ camelcase .Config.Name }} gRPC Success Rate Low
@@ -60,9 +58,7 @@ where `<bento>` is the bento that this alert fired in. These logs should provide
 the root cause of gRPC calls resulting in server-level errors.
 
 <!--- Block(grpcSuccessRateLow) -->
-{{- if .grpcSuccessRateLow }}
-{{ .grpcSuccessRateLow }}
-{{- end }}
+{{ file.Block "grpcSuccessRateLow" }}
 <!--- EndBlock(grpcSuccessRateLow) -->
 
 ### {{ camelcase .Config.Name }} gRPC Latency High
@@ -70,9 +66,7 @@ the root cause of gRPC calls resulting in server-level errors.
 Use honeycomb to debug this alert. Better advice on how to do this is coming soon.
 
 <!--- Block(grpcLatencyHigh) -->
-{{- if .grpcLatencyHigh }}
-{{ .grpcLatencyHigh }}
-{{- end }}
+{{ file.Block "grpcLatencyHigh" }}
 <!--- EndBlock(grpcLatencyHigh) -->
 
 ### {{ camelcase .Config.Name }} HTTP Success Rate Low
@@ -82,9 +76,7 @@ where `<bento>` is the bento that this alert fired in. These logs should provide
 the root cause of HTTP calls resulting in server-level errors.
 
 <!--- Block(httpSuccessRateLow) -->
-{{- if .httpSuccessRateLow }}
-{{ .httpSuccessRateLow }}
-{{- end }}
+{{ file.Block "httpSuccessRateLow" }}
 <!--- EndBlock(httpSuccessRateLow) -->
 
 ### {{ camelcase .Config.Name }} HTTP Latency High
@@ -92,9 +84,7 @@ the root cause of HTTP calls resulting in server-level errors.
 Use honeycomb to debug this alert. Better advice on how to do this is coming soon.
 
 <!--- Block(httpLatencyHigh) -->
-{{- if .httpLatencyHigh }}
-{{ .httpLatencyHigh }}
-{{- end }}
+{{ file.Block "httpLatencyHigh" }}
 <!--- EndBlock(httpLatencyHigh) -->
 
 ### {{ camelcase .Config.Name }} Pod Restarts > \<threshold\> last 30m
@@ -119,9 +109,7 @@ kubectl -n {{ .Config.Name }}--<bento> describe deployment {{ .Config.Name }}
 ```
 
 <!--- Block(podRestarts) -->
-{{- if .podRestarts }}
-{{ .podRestarts }}
-{{- end }}
+{{ file.Block "podRestarts" }}
 <!--- EndBlock(podRestarts) -->
 
 ### {{ camelcase .Config.Name }} Service panics
@@ -131,9 +119,7 @@ where `<bento>` is the bento that this alert fired in. These logs should provide
 the root cause of the panics.
 
 <!--- Block(servicePanics) -->
-{{- if .servicePanics }}
-{{ .servicePanics }}
-{{- end }}
+{{ file.Block "servicePanics" }}
 <!--- EndBlock(servicePanics) -->
 
 ### {{ camelcase .Config.Name }} Pod CPU > \<threshold\>% of request last \<window\>m
@@ -145,9 +131,7 @@ various sources of traffic like gRPC or HTTP. Looking at logs at the same time f
 `kube_namespace:{{ .Config.Name }}--<bento>` facet.
 
 <!--- Block(podCPUSpike) -->
-{{- if .podCPUSpike }}
-{{ .podCPUSpike }}
-{{- end }}
+{{ file.Block "podCPUSpike" }}
 <!--- EndBlock(podCPUSpike) -->
 
 ### {{ camelcase .Config.Name }} Pod Memory.\<type\> > 80% of limit last 30m
@@ -159,9 +143,7 @@ various sources of traffic like gRPC or HTTP. Looking at logs at the same time f
 `kube_namespace:{{ .Config.Name }}--<bento>` facet.
 
 <!--- Block(podMemorySpike) -->
-{{- if .podMemorySpike }}
-{{ .podMemorySpike }}
-{{- end }}
+{{ file.Block "podMemorySpike" }}
 <!--- EndBlock(podMemorySpike) -->
 
 <!--- Block(debuggingSpecificAlerts) -->
