@@ -62,7 +62,7 @@ plugins:
         - api/clients/node/package.json
         {{- end }}
         {{- if has "ruby" (stencil.Arg "grpcClients") }}
-        - api/clients/ruby/lib/{{ .appName }}_client/version.rb
+        - api/clients/ruby/lib/{{ .Config.Name }}_client/version.rb
         {{- end }}
   {{- end }}
 {{- end }}
