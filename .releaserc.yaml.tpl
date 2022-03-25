@@ -34,9 +34,7 @@ plugins:
 {{- end }}
 
   # This creates fancy release notes in our Github release
-  - - "@semantic-release/exec"
-    - generateNotesCmd: |-
-        ./scripts/shell-wrapper.sh ci/release/release-notes/main.go
+  - "@semantic-release/release-notes-generator"
 
 {{- if has "grpc" (stencil.Arg "type") }}
   {{- if has "node" (stencil.Arg "grpcClients") }}
