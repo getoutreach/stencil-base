@@ -2,7 +2,5 @@
 * @getoutreach/{{ stencil.Arg "reportingTeam" }}
 
 ###Block(customCodeowners)
-{{- if .customCodeowners }}
-{{ .customCodeowners }}
-{{- end }}
+{{ file.Block "customCodeowners" }}
 ###EndBlock(customCodeowners)

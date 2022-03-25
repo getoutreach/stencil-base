@@ -28,20 +28,17 @@
 {{- $kafka = true }}
 {{- end }}
 {{- end }}
-{{- $service := true }}
-{{- if (and $library (and (not $http) (and (not $grpc) (and (not $clerk) (and (not $temporal) (and (not $kafka) (not $cli))))))) }}
-{{- $service = false }}
-{{- end }}
-# {{ stencil.Arg "name" }}
+{{- $service := eq (stencil.ApplyTemplate "isService") "true" }}
+# {{ .Config.Name }}
 
 {{- if (stencil.Arg "oss") }}
-[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/github.com/getoutreach/{{ stencil.Arg "name" }})
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/github.com/getoutreach/{{ .Config.Name }})
 {{- else }}
-[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://engdocs.outreach.cloud/github.com/getoutreach/{{ stencil.Arg "name" }})
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://engdocs.outreach.cloud/github.com/getoutreach/{{ .Config.Name }})
 {{- end }}
 {{- if ne nil (stencil.Arg "circleAPIKey") }}
 {{- if ne "" (stencil.Arg "circleAPIKey") }}
-[![CircleCI](https://circleci.com/gh/getoutreach/{{ stencil.Arg "name" }}.svg?style=shield&circle-token={{ stencil.Arg "circleAPIKey" }})](https://circleci.com/gh/getoutreach/{{ stencil.Arg "name" }})
+[![CircleCI](https://circleci.com/gh/getoutreach/{{ .Config.Name }}.svg?style=shield&circle-token={{ stencil.Arg "circleAPIKey" }})](https://circleci.com/gh/getoutreach/{{ .Config.Name }})
 {{- end }}
 {{- end }}
 [![Generated via Bootstrap](https://img.shields.io/badge/Outreach-Bootstrap-%235951ff)](https://github.com/getoutreach/bootstrap)
@@ -55,9 +52,7 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on de
 ## High-level Overview
 
 <!--- Block(overview) -->
-{{- if .overview }}
-{{ .overview }}
-{{- end }}
+{{ file.Block "overview" }}
 <!--- EndBlock(overview) -->
 
 {{- if $service }}
@@ -69,16 +64,16 @@ Make sure you've ran `orc setup`.
 
 ### Dependencies
 
-{{- if not (empty (stencil.Arg "dependencies").required) }}
+{{- if not (empty (stencil.Arg "dependencies.required")) }}
 #### Required Dependencies
-{{- range ((stencil.Arg "dependencies").required) }}
+{{- range (stencil.Arg "dependencies.required") }}
 * {{ . }}
 {{- end }}
 {{- end }}
 
-{{- if not (empty (stencil.Arg "dependencies").optional) }}
+{{- if not (empty (stencil.Arg "dependencies.optional")) }}
 #### Optional Dependencies
-{{- range ((stencil.Arg "dependencies").optional) }}
+{{- range (stencil.Arg "dependencies.optional") }}
 * {{ . }}
 {{- end }}
 {{- end}}
@@ -89,21 +84,21 @@ First, make sure you [set up your development environment](https://github.com/ge
 
 To add this service to your developer environment:
 ```bash
-devenv deploy-app {{ stencil.Arg "name" }}
+devenv deploy-app {{ .Config.Name }}
 ```
 
 To delete this service from your developer environment:
 ```bash
-devenv deploy-app {{ stencil.Arg "name" }}
+devenv deploy-app {{ .Config.Name }}
 ```
 
 {{- if or $grpc (or $http (or $clerk $temporal)) }}
-## Interacting with {{ title (stencil.Arg "name") }}
+## Interacting with {{ title (.Config.Name) }}
 
 {{- if $grpc }}
 ### via gRPC
 
-[grpcui](https://github.com/fullstorydev/grpcui) can be useful for talking to {{ stencil.Arg "name" }} locally. To run it:
+[grpcui](https://github.com/fullstorydev/grpcui) can be useful for talking to {{ .Config.Name }} locally. To run it:
 
 ```bash
 make grpcui
@@ -116,7 +111,7 @@ make grpcui
 There are two different HTTP servers running by default on stencil services, a public (external) and a private
 (internal) server. By default, the port for the public server is `8080`, and the port for the private server is `8000`.
 These are subject to change, and if they are changed, those changes should be reflected in
-`deployments/{{ stencil.Arg "name" }}/{{ stencil.Arg "name" }}.config.jsonnet`.
+`deployments/{{ .Config.Name }}/{{ .Config.Name }}.config.jsonnet`.
 
 If the service is running locally either through running `make devserver` or running the binary directly, you can
 interact with these servers over `localhost` or `127.0.0.1` using the appropriate port.
@@ -126,7 +121,7 @@ the HTTP servers using cURL (make sure to `apk add curl` in the alpine container
 to them on your local network:
 
 ```bash
-devenv kubectl -n {{ stencil.Arg "name" }}--bento1a port-forward service/{{ stencil.Arg "name" }} <port>
+devenv kubectl -n {{ .Config.Name }}--bento1a port-forward service/{{ .Config.Name }} <port>
 ```
 
 Where port is either the port for the public or private HTTP server.

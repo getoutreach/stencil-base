@@ -1,28 +1,22 @@
-{{- $types := (stencil.Arg "type") }}
-{{- if not (stencil.Arg "forceRenderMarkdown") }}
-{{- if not (or (has "http" $types) (or (has "grpc" $types) (or (has "kafka" $types) (has "temporal" $types)))) }}
+{{- /* Only render markdown if forced, or if we're a service */}}
+{{- if or (not (stencil.Arg "forceRenderMarkdown")) (eq (stencil.ApplyTemplate "isService") "true") }}
 {{- file.Skip "project is not a service" }}
 {{- end }}
-{{- end }}
-<!-- Space: {{ (stencil.Arg "opslevel").confluenceSpaceKey }} -->
+<!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
-<!-- Parent: {{ stencil.Arg "name" }} 🧊 -->
-<!-- Title: {{ stencil.Arg "name" }} Rollout Plan 🧊 -->
+<!-- Parent: {{ .Config.Name }} 🧊 -->
+<!-- Title: {{ .Config.Name }} Rollout Plan 🧊 -->
 
 # Rollout Plan
 
 ## To Next-Gen Bento
 
 <!--- Block(ngbRollout) -->
-{{- if .ngbRollout }}
-{{ .ngbRollout }}
-{{- end }}
+{{ file.Block "ngbRollout" }}
 <!--- EndBlock(ngbRollout) -->
 
 ## To Legacy Bento
 
 <!--- Block(legacyRollout) -->
-{{- if .legacyRollout }}
-{{ .legacyRollout }}
-{{- end }}
+{{ file.Block "legacyRollout" }}
 <!--- EndBlock(legacyRollout) -->

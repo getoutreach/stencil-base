@@ -1,13 +1,11 @@
-{{- $types := (stencil.Arg "type") }}
-{{- if not (stencil.Arg "forceRenderMarkdown") }}
-{{- if not (or (has "http" $types) (or (has "grpc" $types) (or (has "kafka" $types) (has "temporal" $types)))) }}
+{{- /* Only render markdown if forced, or if we're a service */}}
+{{- if or (not (stencil.Arg "forceRenderMarkdown")) (eq (stencil.ApplyTemplate "isService") "true") }}
 {{- file.Skip "project is not a service" }}
 {{- end }}
-{{- end }}
-<!-- Space: {{ (stencil.Arg "opslevel").confluenceSpaceKey }} -->
+<!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
-<!-- Parent: {{ stencil.Arg "name" }} 🧊 -->
-<!-- Title: {{ stencil.Arg "name" }} Disaster Recovery 🧊 -->
+<!-- Parent: {{ .Config.Name }} 🧊 -->
+<!-- Title: {{ .Config.Name }} Disaster Recovery 🧊 -->
 
 # Disaster Recovery
 
@@ -18,7 +16,5 @@ depending on the type of bento(s) it was deployed to. For legacy bentos, simply 
 via Concourse and for next-gen bentos just wait for ArgoCD automatically redeploy it.
 
 <!--- Block(disasterRecovery) -->
-{{- if .disasterRecovery }}
-{{ .disasterRecovery }}
-{{- end }}
+{{ file.Block "disasterRecovery" }}
 <!--- EndBlock(disasterRecovery) -->
