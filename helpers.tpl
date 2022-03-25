@@ -4,8 +4,8 @@
 {{- define "isService" }}
   {{- $types := (stencil.Arg "type") }}
   {{- if not (or (has "http" $types) (or (has "grpc" $types) (or (has "kafka" $types) (has "temporal" $types)))) }}
-    {{- "true" }}
-  {{- else }}
     {{- "false" }}
+  {{- else }}
+    {{- "true" }}
   {{- end }}
 {{- end }}
