@@ -2,7 +2,7 @@ name: github.com/getoutreach/stencil-base
 modules: []
 postRunCommand:
   - name: asdf install
-    command: ./scripts/bootstrap-lib.sh; source .bootstrap/shell/lib/asdf.sh; asdf_install
+    command: ./scripts/devbase.sh; source .bootstrap/shell/lib/asdf.sh; asdf_install
   - name: go mod tidy
     command: go mod tidy -go=1.16 && go mod tidy -go=1.17
   - name: Format Files
