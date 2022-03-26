@@ -2,6 +2,16 @@
 {{- if or (not (stencil.Arg "forceRenderMarkdown")) (eq (stencil.ApplyTemplate "isService") "true") }}
 {{- file.Skip "project is not a service" }}
 {{- end }}
+{{- $http := false }}
+{{- $grpc := false }}
+{{- range (stencil.Arg "type") }}
+{{- if eq . "http" }}
+{{- $http = true }}
+{{- end }}
+{{- if eq . "grpc" }}
+{{- $grpc = true }}
+{{- end }}
+{{- end }}
 <!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
 <!-- Parent: {{ .Config.Name }} 🧊 -->
@@ -51,6 +61,7 @@ kubectl -n {{ .Config.Name }}--<bento> describe deployment {{ .Config.Name }}
 {{ file.Block "availablePodsLow" }}
 <!--- EndBlock(availablePodsLow) -->
 
+{{- if $grpc }}
 ### {{ camelcase .Config.Name }} gRPC Success Rate Low
 
 Navigate to Datadog and use the `kube_namespace:{{ .Config.Name }}--<bento>` and `status:error` facets
@@ -68,7 +79,9 @@ Use honeycomb to debug this alert. Better advice on how to do this is coming soo
 <!--- Block(grpcLatencyHigh) -->
 {{ file.Block "grpcLatencyHigh" }}
 <!--- EndBlock(grpcLatencyHigh) -->
+{{- end }}
 
+{{- if $http }}
 ### {{ camelcase .Config.Name }} HTTP Success Rate Low
 
 Navigate to Datadog and use the `kube_namespace:{{ .Config.Name }}--<bento>` and `status:error` facets
@@ -86,6 +99,7 @@ Use honeycomb to debug this alert. Better advice on how to do this is coming soo
 <!--- Block(httpLatencyHigh) -->
 {{ file.Block "httpLatencyHigh" }}
 <!--- EndBlock(httpLatencyHigh) -->
+{{- end }}
 
 ### {{ camelcase .Config.Name }} Pod Restarts > \<threshold\> last 30m
 
