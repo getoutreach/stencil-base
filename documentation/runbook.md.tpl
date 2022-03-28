@@ -2,16 +2,8 @@
 {{- if (not (or (stencil.Arg "forceRenderMarkdown") (eq (stencil.ApplyTemplate "isService") "true")) }}
 {{- file.Skip "project is not a service" }}
 {{- end }}
-{{- $http := false }}
-{{- $grpc := false }}
-{{- range (stencil.Arg "type") }}
-{{- if eq . "http" }}
-{{- $http = true }}
-{{- end }}
-{{- if eq . "grpc" }}
-{{- $grpc = true }}
-{{- end }}
-{{- end }}
+{{- $http := (has "http" (stencil.Arg "type")) }}
+{{- $grpc := (has "grpc" (stencil.Arg "type")) }}
 <!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
 <!-- Parent: {{ .Config.Name }} 🧊 -->
