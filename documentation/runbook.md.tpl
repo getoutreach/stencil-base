@@ -1,5 +1,5 @@
 {{- /* Only render markdown if forced, or if we're a service */}}
-{{- if (not (or (stencil.Arg "forceRenderMarkdown") (eq (stencil.ApplyTemplate "isService") "true")) }}
+{{- if (not (or (stencil.Arg "forceRenderMarkdown") (eq (stencil.ApplyTemplate "isService") "true"))) }}
 {{- file.Skip "project is not a service" }}
 {{- end }}
 {{- $http := (has "http" (stencil.Arg "type")) }}
