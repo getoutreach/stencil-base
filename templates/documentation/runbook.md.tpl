@@ -143,7 +143,7 @@ should provide an idea as to what could be the root cause of the panics.
 
 ### {{ camelcase .Config.Name }} Pod CPU > \<threshold\>% of request last \<window\>m
 
-[Navigate to the `Terraform: {{ camelcase .Config.Name }}` dashboard]($dashboard) and find the "Total CPU" monitor under
+[Navigate to the `Terraform: {{ camelcase .Config.Name }}` dashboard]({{ $dashboard }}) and find the "Total CPU" monitor under
 the "Deployment" pane. Zero-in on a time frame where CPU spiked, note that time frame, and change the window of
 the dashboard to that time frame. Correlate any other useful monitors to see what could be causing this - look at
 various sources of traffic like gRPC or HTTP. Looking at logs at the same time frame may also be useful using the
@@ -155,7 +155,7 @@ various sources of traffic like gRPC or HTTP. Looking at logs at the same time f
 
 ### {{ camelcase .Config.Name }} Pod Memory.\<type\> > 80% of limit last 30m
 
-[Navigate to the `Terraform: {{ camelcase .Config.Name }}` dashboard]($dashboard) and find the "Total Memory" monitor under
+[Navigate to the `Terraform: {{ camelcase .Config.Name }}` dashboard]({{ $dashboard }}) and find the "Total Memory" monitor under
 the "Deployment" pane. Zero-in on a time frame where memory spiked, note that time frame, and change the window of
 the dashboard to that time frame. Correlate any other useful monitors to see what could be causing this - look at
 various sources of traffic like gRPC or HTTP. Looking at logs at the same time frame may also be useful using the
