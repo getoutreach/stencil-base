@@ -4,7 +4,7 @@
 {{- end }}
 {{- $http := (has "http" (stencil.Arg "type")) }}
 {{- $grpc := (has "grpc" (stencil.Arg "type")) }}
-{{- $dashboard := stencil.Arg "opslevel.datadogDashboards.mainLink" }}
+{{- $dashboard := stencil.Arg "opslevel.mainDatadogDashboardLink" }}
 <!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
 <!-- Parent: {{ .Config.Name }} 🧊 -->
