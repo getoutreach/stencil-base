@@ -4,6 +4,7 @@
 {{- end }}
 {{- $http := (has "http" (stencil.Arg "type")) }}
 {{- $grpc := (has "grpc" (stencil.Arg "type")) }}
+{{- $dashboard := stencil.Arg "opslevel.datadogDashboards.mainLink" }}
 <!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
 <!-- Parent: {{ .Config.Name }} 🧊 -->
@@ -56,9 +57,11 @@ kubectl -n {{ .Config.Name }}--<bento> describe deployment {{ .Config.Name }}
 {{- if $grpc }}
 ### {{ camelcase .Config.Name }} gRPC Success Rate Low
 
-Navigate to Datadog and use the `kube_namespace:{{ .Config.Name }}--<bento>` and `status:error` facets
-where `<bento>` is the bento that this alert fired in. These logs should provide an idea as to what could be
-the root cause of gRPC calls resulting in server-level errors.
+This indicates that there are gRPC requests that are returning unintended server errors.
+
+[Navigate to Datadog](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20status%3Aerror) and
+add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in. These logs
+should provide an idea as to what could be the root cause of gRPC calls resulting in server-level errors.
 
 <!--- Block(grpcSuccessRateLow) -->
 {{ file.Block "grpcSuccessRateLow" }}
@@ -66,7 +69,11 @@ the root cause of gRPC calls resulting in server-level errors.
 
 ### {{ camelcase .Config.Name }} gRPC Latency High
 
-Use honeycomb to debug this alert. Better advice on how to do this is coming soon.
+This indicates that there are gRPC requests that are taking a long time to complete.
+
+[Navigate to Honeycomb](https://ui.honeycomb.io/outreach-a0/datasets/outreach?query=%7B%22time_range%22%3A7200%2C%22granularity%22%3A0%2C%22breakdowns%22%3A%5B%22name%22%5D%2C%22calculations%22%3A%5B%7B%22op%22%3A%22P95%22%2C%22column%22%3A%22duration_ms%22%7D%2C%7B%22op%22%3A%22HEATMAP%22%2C%22column%22%3A%22duration_ms%22%7D%5D%2C%22filters%22%3A%5B%7B%22column%22%3A%22app.name%22%2C%22op%22%3A%22%3D%22%2C%22value%22%3A%22{{ .Config.Name }}%22%7D%5D%2C%22filter_combination%22%3A%22AND%22%2C%22orders%22%3A%5B%7B%22column%22%3A%22duration_ms%22%2C%22op%22%3A%22P95%22%2C%22order%22%3A%22descending%22%7D%5D%2C%22havings%22%3A%5B%5D%2C%22limit%22%3A1000%7D) 
+and add `deployment.namespace = {{ .Config.Name }}--<bento>` to the `WHERE` clause, where `<bento>` is the bento that
+this alert fired in. These traces should provide an idea as to what could be the root cause of the latency.
 
 <!--- Block(grpcLatencyHigh) -->
 {{ file.Block "grpcLatencyHigh" }}
@@ -76,9 +83,11 @@ Use honeycomb to debug this alert. Better advice on how to do this is coming soo
 {{- if $http }}
 ### {{ camelcase .Config.Name }} HTTP Success Rate Low
 
-Navigate to Datadog and use the `kube_namespace:{{ .Config.Name }}--<bento>` and `status:error` facets
-where `<bento>` is the bento that this alert fired in. These logs should provide an idea as to what could be
-the root cause of HTTP calls resulting in server-level errors.
+This indicates that there are HTTP requests that are returning unintended server errors.
+
+[Navigate to Datadog](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20status%3Aerror) and
+add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in. These logs
+should provide an idea as to what could be the root cause of HTTP calls resulting in server-level errors.
 
 <!--- Block(httpSuccessRateLow) -->
 {{ file.Block "httpSuccessRateLow" }}
@@ -86,7 +95,11 @@ the root cause of HTTP calls resulting in server-level errors.
 
 ### {{ camelcase .Config.Name }} HTTP Latency High
 
-Use honeycomb to debug this alert. Better advice on how to do this is coming soon.
+This indicates that there are HTTP requests that are taking a long time to complete.
+
+[Navigate to Honeycomb](https://ui.honeycomb.io/outreach-a0/datasets/outreach?query=%7B%22time_range%22%3A7200%2C%22granularity%22%3A0%2C%22breakdowns%22%3A%5B%22name%22%5D%2C%22calculations%22%3A%5B%7B%22op%22%3A%22P95%22%2C%22column%22%3A%22duration_ms%22%7D%2C%7B%22op%22%3A%22HEATMAP%22%2C%22column%22%3A%22duration_ms%22%7D%5D%2C%22filters%22%3A%5B%7B%22column%22%3A%22app.name%22%2C%22op%22%3A%22%3D%22%2C%22value%22%3A%22{{ .Config.Name }}%22%7D%5D%2C%22filter_combination%22%3A%22AND%22%2C%22orders%22%3A%5B%7B%22column%22%3A%22duration_ms%22%2C%22op%22%3A%22P95%22%2C%22order%22%3A%22descending%22%7D%5D%2C%22havings%22%3A%5B%5D%2C%22limit%22%3A1000%7D) 
+and add `deployment.namespace = {{ .Config.Name }}--<bento>` to the `WHERE` clause, where `<bento>` is the bento that
+this alert fired in. These traces should provide an idea as to what could be the root cause of the latency.
 
 <!--- Block(httpLatencyHigh) -->
 {{ file.Block "httpLatencyHigh" }}
@@ -120,9 +133,9 @@ kubectl -n {{ .Config.Name }}--<bento> describe deployment {{ .Config.Name }}
 
 ### {{ camelcase .Config.Name }} Service panics
 
-Navigate to Datadog and use the `kube_namespace:{{ .Config.Name }}--<bento>` and `status:error` facets
-where `<bento>` is the bento that this alert fired in. These logs should provide an idea as to what could be
-the root cause of the panics.
+[Navigate to Datadog](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20status%3Aerror) and
+add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in. These logs
+should provide an idea as to what could be the root cause of the panics.
 
 <!--- Block(servicePanics) -->
 {{ file.Block "servicePanics" }}
@@ -130,7 +143,7 @@ the root cause of the panics.
 
 ### {{ camelcase .Config.Name }} Pod CPU > \<threshold\>% of request last \<window\>m
 
-Navigate to the `Terraform: {{ camelcase .Config.Name }}` dashboard and find the "Total CPU" monitor under
+[Navigate to the `Terraform: {{ camelcase .Config.Name }}` dashboard]($dashboard) and find the "Total CPU" monitor under
 the "Deployment" pane. Zero-in on a time frame where CPU spiked, note that time frame, and change the window of
 the dashboard to that time frame. Correlate any other useful monitors to see what could be causing this - look at
 various sources of traffic like gRPC or HTTP. Looking at logs at the same time frame may also be useful using the
@@ -142,7 +155,7 @@ various sources of traffic like gRPC or HTTP. Looking at logs at the same time f
 
 ### {{ camelcase .Config.Name }} Pod Memory.\<type\> > 80% of limit last 30m
 
-Navigate to the `Terraform: {{ camelcase .Config.Name }}` dashboard and find the "Total Memory" monitor under
+[Navigate to the `Terraform: {{ camelcase .Config.Name }}` dashboard]($dashboard) and find the "Total Memory" monitor under
 the "Deployment" pane. Zero-in on a time frame where memory spiked, note that time frame, and change the window of
 the dashboard to that time frame. Correlate any other useful monitors to see what could be causing this - look at
 various sources of traffic like gRPC or HTTP. Looking at logs at the same time frame may also be useful using the
