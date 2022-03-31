@@ -84,12 +84,12 @@ First, make sure you [set up your development environment](https://github.com/ge
 
 To add this service to your developer environment:
 ```bash
-devenv deploy-app {{ .Config.Name }}
+devenv apps deploy {{ .Config.Name }}
 ```
 
 To delete this service from your developer environment:
 ```bash
-devenv deploy-app {{ .Config.Name }}
+devenv apps deploy {{ .Config.Name }}
 ```
 
 {{- if or $grpc (or $http (or $clerk $temporal)) }}
