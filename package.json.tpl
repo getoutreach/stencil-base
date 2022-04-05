@@ -1,8 +1,5 @@
 {
   "license": "UNLICENSED",
-  "prettier": {
-    "editorconfig": true
-  },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^9.0.1",
     "@semantic-release/exec": "^6.0.1",
