@@ -8,10 +8,9 @@ postRunCommand:
   - name: Format Files
     command: make gogenerate fmt
 arguments:
-  name:
-    required: true
-    type: string
-    description: Name of the respository.
+  releaseOptions.enablePrereleases:
+    description: Enable prereleases
+    type: boolean
   description:
     required: true
     type: string

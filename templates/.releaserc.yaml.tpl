@@ -1,10 +1,12 @@
+{{- $prereleases := stencil.Arg "releaseOptions.enablePrereleases" }}
 preset: conventionalcommits
 branches:
-  - name: master
-  - name: main
-{{- if (stencil.Arg "releaseOptions.allowPrereleases") }}
+{{- if $prereleases }}
+  - name: {{ .Git.DefaultBranch }}
+    prerelease: 'rc'
   - name: release
-    prerelease: true
+{{- else }}
+  - name: {{ .Git.DefaultBranch }}
 {{- end }}
 plugins:
   - - "@semantic-release/commit-analyzer"
