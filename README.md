@@ -1,20 +1,14 @@
 # stencil-base
 
-This repository contains the base go-templates used to render a service. Currently all that is supported are Go services, which will be improved in the future. This is used to bring in all other template repositories.
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://engdocs.outreach.cloud/github.com/getoutreach/stencil-base)
+[![Generated via Bootstrap](https://img.shields.io/badge/Outreach-Bootstrap-%235951ff)](https://github.com/getoutreach/bootstrap)
 
-## How to use this
+## Contributing
 
-Download [stencil](https://github.com/getoutreach/stencil).
+Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on developing and contributing changes.
 
-Run it in a new directory:
+## High-level Overview
 
-```
-$ mkdir my-new-service && cd my-new-service
-$ stencil
-```
+<!--- Block(overview) -->
 
-🎉 You are now using these templates!
-
-## License
-
-Apache-2.0
+<!--- EndBlock(overview) -->

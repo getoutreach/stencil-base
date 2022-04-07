@@ -1,9 +1,25 @@
-# Contributing to `stencil-base`
+# stencil-base
+
+<!--- Block(customGeneralInformation) -->
+
+<!--- EndBlock(customGeneralInformation) -->
+
+## Prerequisites
+
+<!--- Block(customPrerequisites) -->
+
+<!--- EndBlock(customPrerequisites) -->
 
 ## Building and Testing
 
-### Using the local version of the templates
+<!--- Block(customBuildingAndTesting) -->
 
-To replace the "production" version of the templates with the local version that you're testing,
-see the [Stencil documentation](https://github.com/getoutreach/stencil/blob/main/docs/using-stencil.md#using-local-templates)
-for details on specifying the replacement in a Stencil project.
+<!--- EndBlock(customBuildingAndTesting) -->
+
+### Linting and Unit Testing
+
+You can run the the linters and unit tests with:
+
+```bash
+make test
+```
