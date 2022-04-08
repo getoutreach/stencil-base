@@ -42,6 +42,7 @@
 {{- end }}
 {{- end }}
 [![Generated via Bootstrap](https://img.shields.io/badge/Outreach-Bootstrap-%235951ff)](https://github.com/getoutreach/bootstrap)
+[![Coverage Status](https://coveralls.io/repos/github/{{ .Runtime.Box.Org }}/{{ .Config.Name }}/badge.svg?branch={{ .Git.DefaultBranch }})](https://coveralls.io/github//{{ .Runtime.Box.Org }}/{{ .Config.Name }}?branch={{ .Git.DefaultBranch }})
 
 {{ stencil.Arg "description" }}
 
