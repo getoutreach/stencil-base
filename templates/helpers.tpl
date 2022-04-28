@@ -1,4 +1,4 @@
-{{- file.Skip "Virtual file with functions"}}
+{{- file.Skip "Virtual file with functions" }}
 
 {{- /* isService returns "true" if a service is a service, or "false" if not */}}
 {{- define "isService" }}
