@@ -20,17 +20,12 @@ arguments:
     required: true
     type: boolean
     description: Whether or not this repository is open source.
-  type:
-    required: true
+  service:
+    type: bool
+    description: Whether or not this application is a runnable service. This flag provides the service activity interface and everything necessary for releasing and deploying a service.
+  serviceActivities:
     type: list
-    values:
-      - grpc
-      - http
-      - temporal
-      - kafka
-      - cli
-      - library
-    description: Type of repository, can be multiple types.
+    description: Any valid built-in service activities can be supplied here and they will be provided. The `service` flag must be set to true. Valid values for this are `http`, `grpc`, `temporal`, and `kafka`.
   reportingTeam:
     required: true
     type: string

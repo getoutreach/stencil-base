@@ -27,7 +27,7 @@ plugins:
         ./scripts/shell-wrapper.sh major-release-checker.js ${lastRelease.version} ${nextRelease.version}
   {{- end }}
 
-{{- if gt (len (stencil.Arg "commands")) 0 }}
+{{- if not (empty (stencil.Arg "commands")) }}
   # Build the binaries
   - - "@semantic-release/exec"
     # We use generateNotesCmd instead of a different step because it has access
@@ -38,7 +38,7 @@ plugins:
   # This creates fancy release notes in our Github release
   - "@semantic-release/release-notes-generator"
 
-{{- if has "grpc" (stencil.Arg "type") }}
+{{- if has "grpc" (stencil.Arg "serviceActivities") }}
   {{- if has "node" (stencil.Arg "grpcClients") }}
   # Bump npm package.json version, and release to npm/github packages.
   # See devbase for the Github Packages part.
@@ -67,7 +67,7 @@ plugins:
   {{- end }}
 {{- end }}
 
-{{- if gt (len (stencil.Arg "commands")) 0 }}
+{{- if not (empty (stencil.Arg "commands")) }}
   # Create the Github Release
   - - "@semantic-release/github"
     - assets:
