@@ -1,4 +1,5 @@
 name: github.com/getoutreach/stencil-base
+###Block(keys)
 modules: []
 postRunCommand:
   - name: asdf install
@@ -69,3 +70,4 @@ arguments:
       - node
       - ruby
     description: A list of languages to generate gRPC clients for
+###EndBlock(keys)
