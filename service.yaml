@@ -1,7 +1,11 @@
 name: stencil-base
 arguments:
   reportingTeam: fnd-dtss
+  releaseOptions:
+    enablePrereleases: true
 modules:
   - name: github.com/getoutreach/stencil-template-base
+  - name: github.com/getoutreach/stencil-circleci
+    version: v0.1.4-rc.1
 replacements:
   github.com/getoutreach/stencil-base: ./

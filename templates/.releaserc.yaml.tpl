@@ -76,4 +76,7 @@ plugins:
 {{- else }}
   - "@semantic-release/github"
 {{- end }}
-{{ stencil.GetModuleHook "releaseConfig" | toYaml | indent 2 }}
+{{- $hook := (stencil.GetModuleHook "releaseConfig") }}
+{{- if $hook }}
+{{ toYaml $hook | indent 2 }}
+{{- end }}
