@@ -1,5 +1,5 @@
 {{- /* Only render markdown if forced, or if we're a service */}}
-{{- if or (not (stencil.Arg "forceRenderMarkdown")) (eq (stencil.ApplyTemplate "isService") "true") }}
+{{- if or (not (stencil.Arg "forceRenderMarkdown")) (stencil.Arg "service") }}
 {{- file.Skip "project is not a service" }}
 {{- end }}
 <!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
@@ -13,7 +13,7 @@
 {{ file.Block "customSLOs" }}
 <!--- EndBlock(customSLOs) -->
 
-{{- if has "http" (stencil.Arg "type") }}
+{{- if has "http" (stencil.Arg "serviceActivities") }}
 ## HTTP P99 Latency
 
 99.9% success rate from the "HTTP Latency High" datadog monitor, which enforces the following:
