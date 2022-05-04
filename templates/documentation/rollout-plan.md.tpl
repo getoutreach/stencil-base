@@ -20,3 +20,9 @@
 <!--- Block(legacyRollout) -->
 {{ file.Block "legacyRollout" }}
 <!--- EndBlock(legacyRollout) -->
+
+## To a New Cluster/Region
+
+<!--- Block(newClusterRegion) -->
+{{ file.Block "newClusterRegion" }}
+<!--- EndBlock(newClusterRegion) -->
