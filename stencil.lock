@@ -47,9 +47,6 @@ files:
 - name: documentation/disaster-recovery.md
   template: documentation/disaster-recovery.md.tpl
   module: github.com/getoutreach/stencil-base
-- name: documentation/new-bento.md
-  template: documentation/new-bento.md.tpl
-  module: github.com/getoutreach/stencil-base
 - name: documentation/rollout-plan.md
   template: documentation/rollout-plan.md.tpl
   module: github.com/getoutreach/stencil-base
