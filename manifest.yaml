@@ -42,7 +42,7 @@ arguments:
   opslevel.confluenceSpaceKey:
     type: string
     description: The confluence space key for your team (as an example, for developer tooling it is DTSS).
-  opslevel.datadogDashboards.mainLink:
+  datadogDashboards.mainLink:
     type: string
     description: The link to the primary Datadog dashboard associated with the service.
   circleAPIKey:
