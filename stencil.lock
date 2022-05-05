@@ -1,37 +1,16 @@
-version: v1.9.1
-generated: 2022-04-07T20:05:07.064507Z
+version: v1.11.1
+generated: 2022-04-29T02:45:32.172392Z
 modules:
-- name: github.com/getoutreach/stencil-template-base
-  url: https://github.com/getoutreach/stencil-template-base
-  version: v0.1.1
 - name: github.com/getoutreach/stencil-base
   url: ./
-  version: v0.0.7
+  version: v0.2.0
+- name: github.com/getoutreach/stencil-circleci
+  url: https://github.com/getoutreach/stencil-circleci
+  version: v0.1.4-rc.1
+- name: github.com/getoutreach/stencil-template-base
+  url: https://github.com/getoutreach/stencil-template-base
+  version: v0.2.0
 files:
-- name: .circleci/config.yml
-  template: .circleci/config.yml.tpl
-  module: github.com/getoutreach/stencil-template-base
-- name: .tool-versions
-  template: .tool-versions.tpl
-  module: github.com/getoutreach/stencil-template-base
-- name: LICENSE.txt
-  template: LICENSE.txt.tpl
-  module: github.com/getoutreach/stencil-template-base
-- name: Makefile
-  template: Makefile.tpl
-  module: github.com/getoutreach/stencil-template-base
-- name: bootstrap.lock
-  template: bootstrap.lock.tpl
-  module: github.com/getoutreach/stencil-template-base
-- name: go.mod
-  template: go.mod.tpl
-  module: github.com/getoutreach/stencil-template-base
-- name: main_test.go
-  template: main_test.go.tpl
-  module: github.com/getoutreach/stencil-template-base
-- name: scripts/golangci.yml
-  template: scripts/golangci.yml.tpl
-  module: github.com/getoutreach/stencil-template-base
 - name: .editorconfig
   template: .editorconfig.tpl
   module: github.com/getoutreach/stencil-base
@@ -46,6 +25,9 @@ files:
   module: github.com/getoutreach/stencil-base
 - name: .releaserc.yaml
   template: .releaserc.yaml.tpl
+  module: github.com/getoutreach/stencil-base
+- name: .tool-versions
+  template: .tool-versions.tpl
   module: github.com/getoutreach/stencil-base
 - name: CONTRIBUTING.md
   template: CONTRIBUTING.md.tpl
@@ -86,3 +68,33 @@ files:
 - name: scripts/shell-wrapper.sh
   template: scripts/shell-wrapper.sh.tpl
   module: github.com/getoutreach/stencil-base
+- name: .circleci/config.yml
+  template: .circleci/config.yml.tpl
+  module: github.com/getoutreach/stencil-circleci
+- name: _helpers
+  template: _helpers.tpl
+  module: github.com/getoutreach/stencil-circleci
+- name: .tool-versions
+  template: .tool-versions.tpl
+  module: github.com/getoutreach/stencil-template-base
+- name: LICENSE.txt
+  template: LICENSE.txt.tpl
+  module: github.com/getoutreach/stencil-template-base
+- name: Makefile
+  template: Makefile.tpl
+  module: github.com/getoutreach/stencil-template-base
+- name: bootstrap.lock
+  template: bootstrap.lock.tpl
+  module: github.com/getoutreach/stencil-template-base
+- name: go.mod
+  template: go.mod.tpl
+  module: github.com/getoutreach/stencil-template-base
+- name: manifest.yaml
+  template: manifest.yaml.tpl
+  module: github.com/getoutreach/stencil-template-base
+- name: scripts/golangci.yml
+  template: scripts/golangci.yml.tpl
+  module: github.com/getoutreach/stencil-template-base
+- name: templates/main_test.go
+  template: templates/main_test.go.tpl
+  module: github.com/getoutreach/stencil-template-base

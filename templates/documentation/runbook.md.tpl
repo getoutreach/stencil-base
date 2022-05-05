@@ -1,9 +1,9 @@
 {{- /* Only render markdown if forced, or if we're a service */}}
-{{- if (not (or (stencil.Arg "forceRenderMarkdown") (eq (stencil.ApplyTemplate "isService") "true"))) }}
+{{- if or (not (stencil.Arg "forceRenderMarkdown")) (stencil.Arg "service") }}
 {{- file.Skip "project is not a service" }}
 {{- end }}
-{{- $http := (has "http" (stencil.Arg "type")) }}
-{{- $grpc := (has "grpc" (stencil.Arg "type")) }}
+{{- $http := (has "http" (stencil.Arg "serviceActivities")) }}
+{{- $grpc := (has "grpc" (stencil.Arg "serviceActivities")) }}
 {{- $dashboard := stencil.Arg "opslevel.datadogDashboards.mainLink" }}
 <!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->

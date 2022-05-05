@@ -1,34 +1,3 @@
-{{- $library := false }}
-{{- $http := false }}
-{{- $grpc := false }}
-{{- $clerk := false }}
-{{- $temporal := false }}
-{{- $cli := false }}
-{{- $kafka := false }}
-{{- range (stencil.Arg "type") }}
-{{- if eq . "library" }}
-{{- $library = true }}
-{{- end }}
-{{- if eq . "http" }}
-{{- $http = true }}
-{{- end }}
-{{- if eq . "grpc" }}
-{{- $grpc = true }}
-{{- end }}
-{{- if eq . "clerk" }}
-{{- $clerk = true }}
-{{- end }}
-{{- if eq . "temporal" }}
-{{- $temporal = true }}
-{{- end }}
-{{- if eq . "cli" }}
-{{- $cli = true }}
-{{- end }}
-{{- if eq . "kafka" }}
-{{- $kafka = true }}
-{{- end }}
-{{- end }}
-{{- $service := eq (stencil.ApplyTemplate "isService") "true" }}
 # {{ .Config.Name }}
 
 {{- if (stencil.Arg "oss") }}
@@ -56,7 +25,7 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on de
 {{ file.Block "overview" }}
 <!--- EndBlock(overview) -->
 
-{{- if $service }}
+{{- if (stencil.Arg "service") }}
 ## Dependencies
 
 {{- if not (stencil.Arg "oss") }}
@@ -93,10 +62,10 @@ To delete this service from your developer environment:
 devenv apps deploy {{ .Config.Name }}
 ```
 
-{{- if or $grpc (or $http (or $clerk $temporal)) }}
+{{- if (stencil.Arg "service") }}
 ## Interacting with {{ title (.Config.Name) }}
 
-{{- if $grpc }}
+{{- if has "grpc" (stencil.Arg "serviceActivities") }}
 ### via gRPC
 
 [grpcui](https://github.com/fullstorydev/grpcui) can be useful for talking to {{ .Config.Name }} locally. To run it:
@@ -106,7 +75,7 @@ make grpcui
 ```
 {{- end }}
 
-{{- if $http }}
+{{- if has "http" (stencil.Arg "serviceActivities") }}
 ### via HTTP
 
 There are two different HTTP servers running by default on stencil services, a public (external) and a private
@@ -128,7 +97,7 @@ devenv kubectl -n {{ .Config.Name }}--bento1a port-forward service/{{ .Config.Na
 Where port is either the port for the public or private HTTP server.
 {{- end }}
 
-{{- if $clerk }}
+{{- if has "clerk" (stencil.Arg "serviceActivities") }}
 ### via Clerk
 
 The clerk field in service.yaml generates stubs to communicate with clerk. Using this a service can produce and consume
@@ -136,7 +105,7 @@ clerk messages to and from kafka. For more details on how this works, please cli
 [here](https://outreach-io.atlassian.net/wiki/spaces/DP/pages/2290876556/clerk+bootstrap+integration).
 {{- end }}
 
-{{- if $temporal }}
+{{- if has "temporal" (stencil.Arg "serviceActivities") }}
 ### via Temporal
 
 Coming soon.
