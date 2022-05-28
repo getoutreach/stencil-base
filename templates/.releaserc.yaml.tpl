@@ -80,3 +80,7 @@ plugins:
 {{- if $hook }}
 {{ toYaml $hook | indent 2 }}
 {{- end }}
+
+  ### Block(customReleasePlugins)
+{{ file.Block "customReleasePlugins" }}
+  ### EndBlock(customReleasePlugins) -->
