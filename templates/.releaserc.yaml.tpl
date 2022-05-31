@@ -83,4 +83,4 @@ plugins:
 
   ### Block(customReleasePlugins)
 {{ file.Block "customReleasePlugins" }}
-  ### EndBlock(customReleasePlugins) -->
+  ### EndBlock(customReleasePlugins)
