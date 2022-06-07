@@ -12,12 +12,14 @@ arguments:
   releaseOptions.enablePrereleases:
     description: Enable prereleases
     type: boolean
+  releaseOptions.allowMajorVersions:
+    type: boolean
+    description: If set to true, the release configuration is updated to allow major version bumps via CI
   description:
     required: true
     type: string
     description: The purpose of this repository.
   oss:
-    required: true
     type: boolean
     description: Whether or not this repository is open source.
   service:
@@ -54,9 +56,6 @@ arguments:
   releaseOptions.allowPrereleases:
     type: boolean
     description: If set to true, the release configuration is updated to support prereleases
-  releaseOptions.allowMajorVersions:
-    type: boolean
-    description: If set to true, the release configuration is updated to allow major version bumps via CI
 
   # TODO(jaredallard): Move this into a separate Go module
   commands:
