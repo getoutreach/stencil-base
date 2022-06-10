@@ -26,6 +26,9 @@
 * [gRPC Latency High](./runbooks/grpc-latency-high.md)
 * [gRPC Success Rate Low](./runbooks/grpc-success-rate-low.md)
 {{- end }}
+<!--- Block(additionalRunbookLinks) -->
+{{ file.Block "additionalRunbookLinks" }}
+<!--- EndBlock(additionalRunbookLinks) -->
 
 ## General Debugging
 
