@@ -1,6 +1,7 @@
 {{- if not (stencil.Arg "service") }}
 {{- file.Skip "project is not a service" }}
 {{- end }}
+{{- $dashboard := stencil.Arg "datadogDashboards.mainLink" }}
 <!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
 <!-- Parent: {{ .Config.Name }} 🧊 -->
