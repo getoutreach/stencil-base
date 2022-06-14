@@ -12,7 +12,7 @@
 
 ## Index of Runbooks
 
-* [Avaliable Pods Low](./runbooks/available-pods-low.md)
+* [Available Pods Low](./runbooks/available-pods-low.md)
 * [Pod CPU > \<threshold\>% of request last \<window\>m](./runbooks/pod-cpu.md)
 * [Pod Memory.\<type\> > 80% of limit last 30m](./runbooks/pod-memory.md)
 * [Pod Restarts > \<threshold\> last 30m](./runbooks/pod-restarts.md)
