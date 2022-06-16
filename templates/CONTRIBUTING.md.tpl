@@ -71,7 +71,7 @@ that postfixed path.
 
 ### Linting and Unit Testing
 
-You can run the the linters and unit tests with:
+You can run the linters and unit tests with:
 
 ```bash
 make test
