@@ -4,8 +4,8 @@
 <!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
 <!-- Parent: {{ .Config.Name }} 🧊 -->
-<!-- Parent: Runbooks 🧊 -->
-<!-- Title: Available Pods Low 🧊 -->
+<!-- Parent: {{ .Config.Name }} Runbooks 🧊 -->
+<!-- Title: {{ .Config.Name }} Available Pods Low 🧊 -->
 
 # {{ camelcase .Config.Name }} Available Pods Low
 

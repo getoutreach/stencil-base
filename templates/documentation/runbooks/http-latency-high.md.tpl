@@ -5,8 +5,8 @@
 <!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
 <!-- Parent: {{ .Config.Name }} 🧊 -->
-<!-- Parent: Runbooks 🧊 -->
-<!-- Title: HTTP Latency High 🧊 -->
+<!-- Parent: {{ .Config.Name }} Runbooks 🧊 -->
+<!-- Title: {{ .Config.Name }} HTTP Latency High 🧊 -->
 
 # {{ camelcase .Config.Name }} HTTP Latency High
 

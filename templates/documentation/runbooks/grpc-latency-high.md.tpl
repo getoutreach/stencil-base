@@ -5,8 +5,8 @@
 <!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
 <!-- Parent: {{ .Config.Name }} 🧊 -->
-<!-- Parent: Runbooks 🧊 -->
-<!-- Title: gRPC Latency High 🧊 -->
+<!-- Parent: {{ .Config.Name }} Runbooks 🧊 -->
+<!-- Title: {{ .Config.Name }} gRPC Latency High 🧊 -->
 
 # {{ camelcase .Config.Name }} gRPC Latency High
 

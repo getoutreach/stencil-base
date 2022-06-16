@@ -4,8 +4,8 @@
 <!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
 <!-- Parent: {{ .Config.Name }} 🧊 -->
-<!-- Parent: Runbooks 🧊 -->
-<!-- Title: Pod Restarts 🧊 -->
+<!-- Parent: {{ .Config.Name }} Runbooks 🧊 -->
+<!-- Title: {{ .Config.Name }} Pod Restarts 🧊 -->
 
 # {{ camelcase .Config.Name }} Pod Restarts > \<threshold\> last 30m
 

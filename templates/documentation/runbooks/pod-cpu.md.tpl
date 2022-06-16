@@ -5,8 +5,8 @@
 <!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
 <!-- Parent: {{ .Config.Name }} 🧊 -->
-<!-- Parent: Runbooks 🧊 -->
-<!-- Title: Pod CPU 🧊 -->
+<!-- Parent: {{ .Config.Name }} Runbooks 🧊 -->
+<!-- Title: {{ .Config.Name }} Pod CPU 🧊 -->
 
 # {{ camelcase .Config.Name }} Pod CPU > \<threshold\>% of request last \<window\>m
 
