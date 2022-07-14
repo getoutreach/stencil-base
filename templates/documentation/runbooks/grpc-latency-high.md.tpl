@@ -2,6 +2,7 @@
 {{- if or (not (stencil.Arg "service")) (not $grpc) }}
 {{- file.Skip "project is not a service with grpc service activity" }}
 {{- end }}
+{{- $dashboard := stencil.Arg "datadogDashboards.mainLink" }}
 <!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
 <!-- Parent: {{ .Config.Name }} 🧊 -->

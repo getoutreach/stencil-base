@@ -2,6 +2,7 @@
 {{- if or (not (stencil.Arg "service")) (not $http) }}
 {{- file.Skip "project is not a service with http service activity" }}
 {{- end }}
+{{- $dashboard := stencil.Arg "datadogDashboards.mainLink" }}
 <!-- Space: {{ stencil.Arg "opslevel.confluenceSpaceKey" }} -->
 <!-- Parent: Service Documentation 🧊 -->
 <!-- Parent: {{ .Config.Name }} 🧊 -->
