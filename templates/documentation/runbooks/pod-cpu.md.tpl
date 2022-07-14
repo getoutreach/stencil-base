@@ -10,7 +10,7 @@
 
 # {{ camelcase .Config.Name }} Pod CPU > \<threshold\>% of request last \<window\>m
 
-CPU high alerts will occur if the CPU rate is too high over x amount of time. The net impact is that customers might start seeing failures in {{ camelcase .Config.Name }} requests. On the other hand, none of the above might actually happen and the CPU usage might drop down on it’s own. If the High CPU usage keeps repeating for the same host, there might be something wrong with the host itself and it might need recycling - all of this is described in much more detail below.
+CPU high alerts will occur if the CPU rate is too high over x amount of time. The net impact is that customers might start seeing failures in {{ camelcase .Config.Name }} requests. On the other hand, none of the above might actually happen and the CPU usage might drop down on its own. If the High CPU usage keeps repeating for the same host, there might be something wrong with the host itself and it might need recycling - all of this is described in much more detail below.
 
 <!--- Block(podCPUSpikeOverview) -->
 {{ file.Block "podCPUSpikeOverview" }}
@@ -50,13 +50,17 @@ You can use the following as a starter Honeycomb query to begin looking for trac
 
 You can get a real time view of current CPU utilization in the cluster by running the following command:
 
-`kubectl --context <context> -n {{ .Config.Name }}--<bento> top pod`
+```shell
+kubectl --context <context> -n {{ .Config.Name }}--<bento> top pod
+```
 
 Substitute the appropriate values for `<context>` and `<bento>` based on the environment and bento you want to modify. Refer to [Deployments](/documentation/deployments.md) for a mapping from bento to context.
 
 The output of the top command will show the current CPU and memory usage for all of the pods running in the cluster. Look for pods with abnormally high values. You can view the logs for specific pods with the following command:
 
-`kubectl --context <context> -n {{ .Config.Name }}--<bento> log <pod_name>`
+```shell
+kubectl --context <context> -n {{ .Config.Name }}--<bento> log <pod_name>
+```
 
 where `<pod_name>` is the name of the pod exhibiting abnormal CPU usage.
 

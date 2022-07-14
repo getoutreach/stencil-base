@@ -10,7 +10,7 @@
 
 # {{ camelcase .Config.Name }} Pod Memory.\<type\> > 80% of limit last 30m
 
-Memory high alerts will occur if the memory rate is too high over x amount of time. The net impact is that customers might start seeing failures in {{ camelcase .Config.Name }} requests. On the other hand, none of the above might actually happen and the memory usage might drop down on it’s own. If the High Memory usage keeps repeating for the same host, there might be something wrong with the host itself and it might need recycling - all of this is described in much more detail below.
+Memory high alerts will occur if the memory rate is too high over x amount of time. The net impact is that customers might start seeing failures in {{ camelcase .Config.Name }} requests. On the other hand, none of the above might actually happen and the memory usage might drop down on its own. If the High Memory usage keeps repeating for the same host, there might be something wrong with the host itself and it might need recycling - all of this is described in much more detail below.
 
 ## Investigation
 
@@ -50,13 +50,17 @@ Once you determine what the errors are, they fall usually fall into one of sever
 
 2. Hardware error: The solution is to restart the pod. The simplest way to due this is by triggering a new deployment with:
 
-`kubectl --context <context> -n {{ .Config.Name }}--<bento> patch deployment {{ .Config.Name }} -p "{\"spec\": {\"template\": {\"metadata\": { \"labels\": { \"redeploy\": \"$(date +%s)\"}}}}}"`
+```shell
+kubectl --context <context> -n {{ .Config.Name }}--<bento> patch deployment {{ .Config.Name }} -p "{\"spec\": {\"template\": {\"metadata\": { \"labels\": { \"redeploy\": \"$(date +%s)\"}}}}}"
+```
 
 Substitute the appropriate values for `<context>` and `<bento>` based on the environment and bento you want to modify. Refer to [Deployments](/documentation/deployments.md) for a mapping from bento to context.
 
 Verify the pods are cycling by executing:
 
-`kubectl --context <context> -n {{ .Config.Name }}--<bento> get pods`
+```shell
+kubectl --context <context> -n {{ .Config.Name }}--<bento> get pods
+```
 
 and verifying the pods are restarting, or recently restarted.
 

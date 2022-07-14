@@ -55,9 +55,9 @@ Once you determine what the errors are, they usually fall into one of several ca
 
 1. Errors that should not generate a gRPC error. If this is the case, create a Jira ticket and optionally fix the log entries so that they won’t be counted when generating alerts. Until the log entries are fixed, success rate low errors will continue to be triggered.
 
-2. Error that are genuinely server errors. These errors occur for various reasons:
+2. Errors that are genuinely server errors. These occur for various reasons:
 
-   - Code that is generating gRPC errors because of an unexpected case (example: nil pointer exceptio. If it's code, create a Jira and optionally fix the code.
+   - Code that is generating gRPC errors because of an unexpected case (example: nil pointer exception). If it's code, create a Jira and optionally fix the code.
 
    - Service errors because of lack of resources, etc. Follow the instructions in the [Pod Restarts](/documentation/runbooks/pod_restarts.md) runbook if you suspect memory issues need investigation.
 
