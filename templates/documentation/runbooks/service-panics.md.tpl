@@ -64,7 +64,7 @@ Often times the historical state and logs are not easily accessible from within 
 
 Start by navigating to the {{ camelcase .Config.Name }} [service list in Komodor](https://app.komodor.com/main/services?textFilter={{ .Config.Name }}&filters=%7B%7D&tabType=service)
 
-From the main service list page select the bento that is alerting and view the pod status. You will likely want to inspect the pod details and logs:
+From the main service list page select the bento that is alerting and view the pod status. If the list of bentos is long you can filter the bentos by namespace to shorten the list of bentos and make it easier to identify the relevant bento deployment. As a reminder, Kubernetes namespaces, by convention, are formatted like `{{ .Config.Name }}--<bento>`, where `<bento>` is the bento name.
 
 Once in the pod details page look for events or logs (both current and previous) that may provide clues to the root cause of the low number of running pods:
 

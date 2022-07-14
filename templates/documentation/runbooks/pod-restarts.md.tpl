@@ -56,16 +56,16 @@ The {{ .Config.Name }} service has a [Datadog dashboard]({{ $dashboard }}).
 
 Look for any anomalies in the dashboard.
 
-To look for signs of issues or abnormal behavior in the logs, [navigate to Datadog](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20status%3Aerror) and
-add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in.
-
-Look at the {{ camelcase .Config.Name }} logs for a log line like the following:
+Look in the [logs](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20%22Pod%20Restarts%22) to see if the pod restarts generated error logs that looks similar to:
 
 ```
 [Triggered on {kube_namespace:{ .Config.Name }}--<bento>}] { .Config.Name }} Pod Restarts > 0 last 30m
 ```
 
-Modify the `<bento>` value to match the bento the issue is alerting from. Once you find that line, then look at the few minutes before that for logs that give any indication of unpredictable behavior from the service itself.
+Add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in. Use these logs to start correlating error and alert timing and identifying service activity around the time the pod restarts occurred. Once you find the pod restart logs look at the few minutes before that for logs that give any indication of the behavior from the service itself.
+
+To look for other signs of issues or abnormal behavior in the logs, [navigate to Datadog](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20status%3Aerror) and
+add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in.
 
 <!--- Block(podRestartsDatadog) -->
 {{ file.Block "podRestartsDatadog" }}
@@ -77,7 +77,7 @@ Often times the historical state and logs are not easily accessible from within 
 
 Start by navigating to the {{ camelcase .Config.Name }} [service list in Komodor](https://app.komodor.com/main/services?textFilter={{ .Config.Name }}&filters=%7B%7D&tabType=service)
 
-From the main service list page select the bento that is alerting and view the pod status. You will likely want to inspect the pod details and logs:
+From the main service list page select the bento that is alerting and view the pod status. If the list of bentos is long you can filter the bentos by namespace to shorten the list of bentos and make it easier to identify the relevant bento deployment. As a reminder, Kubernetes namespaces, by convention, are formatted like `{{ .Config.Name }}--<bento>`, where `<bento>` is the bento name.
 
 Once in the pod details page look for events or logs (both current and previous) that may provide clues to the root cause of the low number of running pods:
 
