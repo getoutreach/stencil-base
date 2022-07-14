@@ -13,7 +13,7 @@
 
 ### Datadog Dashboard and Logs
 
-The {{ .Config.Name }} service has a dashboard in Datadog: https://app.datadoghq.com/dashboard/i6z-jcn-azh/terraform-{{ .Config.Name }}
+The {{ .Config.Name }} service has a [Datadog dashboard]({{ $dashboard }}). 
 
 Look for any anomalies in the dashboard.
 
@@ -62,7 +62,7 @@ where `<pod name>` is the name of the pod that just recently started up after th
 
 Often times the historical state and logs are not easily accessible from within the running cluster. If the logs from the crashed pod are not readily retrievable they may be archived in Komodor.
 
-Start by navigating to the {{ camelcase .Config.Name }} service list in Komodor: https://app.komodor.com/main/services?textFilter={{ .Config.Name }}&filters=%7B%7D&tabType=service
+Start by navigating to the {{ camelcase .Config.Name }} [service list in Komodor](https://app.komodor.com/main/services?textFilter={{ .Config.Name }}&filters=%7B%7D&tabType=service)
 
 From the main service list page select the bento that is alerting and view the pod status. You will likely want to inspect the pod details and logs:
 

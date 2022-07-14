@@ -52,11 +52,12 @@ where `<pod name>` is the name of the pod that just recently started up after th
 
 ### Datadog Dashboard and Logs
 
-The {{ .Config.Name }} service has a dashboard in Datadog: https://app.datadoghq.com/dashboard/i6z-jcn-azh/terraform-{{ .Config.Name }}
+The {{ .Config.Name }} service has a [Datadog dashboard]({{ $dashboard }}). 
 
 Look for any anomalies in the dashboard.
 
-{{ camelcase .Config.Name }} logs are available via a search: https://app.datadoghq.com/logs/livetail?query=service%3A{{ .Config.Name }}%20environment%3Aproduction%20status%3Aerror&index=main&from_ts=1652033594145&to_ts=1652206394145&live=true. Modify the search parameters to match the bento and environment the alert was generated from.
+To look for signs of issues or abnormal behavior in the logs, [navigate to Datadog](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20status%3Aerror) and
+add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in.
 
 Look at the {{ camelcase .Config.Name }} logs for a log line like the following:
 
@@ -74,7 +75,7 @@ Modify the `<bento>` value to match the bento the issue is alerting from. Once y
 
 Often times the historical state and logs are not easily accessible from within the running cluster. If the logs from the crashed pod are not readily retrievable they may be archived in Komodor.
 
-Start by navigating to the {{ camelcase .Config.Name }} service list in Komodor: https://app.komodor.com/main/services?textFilter={{ .Config.Name }}&filters=%7B%7D&tabType=service
+Start by navigating to the {{ camelcase .Config.Name }} [service list in Komodor](https://app.komodor.com/main/services?textFilter={{ .Config.Name }}&filters=%7B%7D&tabType=service)
 
 From the main service list page select the bento that is alerting and view the pod status. You will likely want to inspect the pod details and logs:
 

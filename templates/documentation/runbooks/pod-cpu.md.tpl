@@ -28,9 +28,8 @@ various sources of traffic like gRPC or HTTP. Looking at logs at the same time f
 
 Look for any anomalies in the dashboard.
 
-{{ camelcase .Config.Name }} logs are available via a search: https://app.datadoghq.com/logs/livetail?query=service%3A{{ .Config.Name }}%20environment%3Aproduction%20status%3Aerror&index=main&from_ts=1652033594145&to_ts=1652206394145&live=true. Modify the search parameters to match the bento and environment the alert was generated from.
-
-Look for signs of issues or abnormal behavior.
+To look for signs of issues or abnormal behavior in the logs, [navigate to Datadog](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20status%3Aerror) and
+add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in.
 
 <!--- Block(podCPUSpikeDatadog) -->
 {{ file.Block "podCPUSpikeDatadog" }}
@@ -38,7 +37,7 @@ Look for signs of issues or abnormal behavior.
 
 ### Honeycomb
 
-If there are a large volume of requests with triggering the issue some information on the details of the requests may be available in Honeycomb. Note that honeycomb samples requests (usually with a low sampling rate of 1%) so for low frequency issues the odds of finding something in Honeycomb are low.
+If there are a large volume of requests that trigger the issue some information on the details of the requests may be available in Honeycomb. Note that Honeycomb samples requests (usually with a low sampling rate of 1%) so for low frequency issues the odds of finding something specific in Honeycomb are low.
 
 You can use the following as a starter Honeycomb query to begin looking for traces that exhibit the performance problems you are investigating.
 

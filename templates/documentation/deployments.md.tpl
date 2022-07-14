@@ -11,7 +11,7 @@
 
 ## Environments
 
-The {{ camelcase .Config.Name }} service is deployed to all bentos. In order to inspect the deployments and pods associated with the {{ camelcase .Config.Name }} service you will first need to ensure the correct kubernetes context is set for the environment you intend to inspect.
+In order to inspect the deployments and pods associated with the {{ camelcase .Config.Name }} service you will first need to ensure the correct kubernetes context is set for the environment you intend to inspect.
 
 You can set the appropriate Kubernetes context for the bento using `orc`:
 
