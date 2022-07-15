@@ -12,7 +12,7 @@
 
 This alert triggers when most of the {{ camelcase .Config.Name }} pods have crashed or were otherwise terminated. During normal operation and with deployments, it is expected that the pods will cycle regularly, however the the Kubernetes disruption budget should ensure that there is always a pool of pods available to service requests. When this alert triggers, it is a sign that there are no longer enough pods running to ensure consistent service and if any more go down, an outage may occur.
 
-If this alert is accompanied by [Pod Restarts](/documentation/runbooks/pod_restarts.md) alerts, it is possible that there is a critical issue causing the {{ camelcase .Config.Name }} service to repeatedly crash and immediate attention is required.
+If this alert is accompanied by [Pod Restarts](/documentation/runbooks/pod-restarts.md) alerts, it is possible that there is a critical issue causing the {{ camelcase .Config.Name }} service to repeatedly crash and immediate attention is required.
 
 <!--- Block(availablePodsLowOverview) -->
 {{ file.Block "availablePodsLowOverview" }}
