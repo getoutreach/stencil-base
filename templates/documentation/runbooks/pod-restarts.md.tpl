@@ -12,9 +12,9 @@
 
 If a service’s pod is being restarted, it means the resource usage is not configured or the service itself is behaving in an unpredictable manner.
 
-Often times the service will be restarted sporadically and no error is logged. As long as pods are spun up rapidly and this alert is not followed by a [Available Pods Low](/documentation/runbooks/available_pods_low.md) alert then it is likely that the event is not an emergency and does not need urgent attention. If the pod restarts are sustained and accompanied by a pods low alert then it is likely that there is an issue with {{ camelcase .Config.Name }} that will seriously degrade or bring down the service and urgent attention is required.
+Often times the service will be restarted sporadically and no error is logged. As long as pods are spun up rapidly and this alert is not followed by a [Available Pods Low](/documentation/runbooks/available-pods-low.md) alert then it is likely that the event is not an emergency and does not need urgent attention. If the pod restarts are sustained and accompanied by a pods low alert then it is likely that there is an issue with {{ camelcase .Config.Name }} that will seriously degrade or bring down the service and urgent attention is required.
 
-Note that this alert is often correlated with the [Available Pods Low](/documentation/runbooks/available_pods_low.md) alert.
+Note that this alert is often correlated with the [Available Pods Low](/documentation/runbooks/available-pods-low.md) alert.
 
 ## Investigation
 
