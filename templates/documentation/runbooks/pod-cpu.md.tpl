@@ -41,7 +41,7 @@ If there are a large volume of requests that trigger the issue some information 
 
 You can use the following as a starter Honeycomb query to begin looking for traces that exhibit the performance problems you are investigating.
 
-<!--- Block(ggrpcSuccessRateLowHoneycomb)) -->
+<!--- Block(grpcSuccessRateLowHoneycomb)) -->
 {{ file.Block "grpcSuccessRateLowHoneycomb)" }}
 <!--- EndBlock(grpcSuccessRateLowHoneycomb)) -->
 
