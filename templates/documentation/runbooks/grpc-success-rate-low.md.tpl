@@ -59,7 +59,7 @@ Once you determine what the errors are, they usually fall into one of several ca
 
    - Code that is generating gRPC errors because of an unexpected case (example: nil pointer exception). If it's code, create a Jira and optionally fix the code.
 
-   - Service errors because of lack of resources, etc. Follow the instructions in the [Pod Restarts](/documentation/runbooks/pod_restarts.md) runbook if you suspect memory issues need investigation.
+   - Service errors because of lack of resources, etc. Follow the instructions in the [Pod Memory](/documentation/runbooks/pod-memory.md) runbook if you suspect memory issues need investigation.
 
 <!--- Block(grpcSuccessRateLowResolution) -->
 {{ file.Block "grpcSuccessRateLowResolution" }}
