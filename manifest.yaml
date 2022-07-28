@@ -11,60 +11,92 @@ postRunCommand:
 arguments:
   releaseOptions.enablePrereleases:
     description: Enable prereleases
-    type: boolean
+    schema:
+      type: boolean
   releaseOptions.allowMajorVersions:
-    type: boolean
+    schema:
+      type: boolean
     description: If set to true, the release configuration is updated to allow major version bumps via CI
   description:
     required: true
-    type: string
+    schema:
+      type: string
     description: The purpose of this repository.
   oss:
-    type: boolean
+    schema:
+      type: boolean
     description: Whether or not this repository is open source.
   service:
-    type: bool
+    schema:
+      type: boolean
     description: Whether or not this application is a runnable service. This flag provides the service activity interface and everything necessary for releasing and deploying a service.
   serviceActivities:
-    type: list
+    schema:
+      type: array
+      items:
+        type: string
+        enum:
+          - http
+          - grpc
+          - temporal
+          - kafka
     description: Any valid built-in service activities can be supplied here and they will be provided. The `service` flag must be set to true. Valid values for this are `http`, `grpc`, `temporal`, and `kafka`.
   reportingTeam:
     required: true
-    type: string
+    schema:
+      type: string
     description: Github team to be used as the CODEOWNER of this repository.
   dependencies.optional:
-    type: list
+    schema:
+      type: array
+      items:
+        type: string
     description: Dependencies your repository needs, but not always (e.g. E2E tests).
   dependencies.required:
-    type: list
+    schema:
+      type: array
+      items:
+        type: string
     description: Dependencies your repository requires to run successfully no matter what.
   opslevel.designDocumentLink:
-    type: string
+    schema:
+      type: string
     description: The link to the repository's design document or PRD.
   opslevel.confluenceSpaceKey:
-    type: string
+    schema:
+      type: string
     description: The confluence space key for your team (as an example, for developer tooling it is DTSS).
   datadogDashboards.mainLink:
-    type: string
+    schema:
+      type: string
     description: The link to the primary Datadog dashboard associated with the service.
   circleAPIKey:
-    type: string
+    schema:
+      type: string
     description: A CircleCI API token generated for your project. If supplied it will render a CircleCI status badge in your README.md.
   forceRenderMarkdown:
-    type: boolean
+    schema:
+      type: boolean
     description: If this is set to true, the markdown documentation will always be generated regardless of the type of service.
   releaseOptions.allowPrereleases:
-    type: boolean
+    schema:
+      type: boolean
     description: If set to true, the release configuration is updated to support prereleases
 
   # TODO(jaredallard): Move this into a separate Go module
   commands:
-    type: list
+    schema:
+      type: array
+      items:
+        type: string
     description: A list of CLIs for this service
   grpcClients:
-    type: list
-    values:
-      - node
-      - ruby
+    schema:
+      type: array
+      items:
+        type: string
+        enum:
+          - node
+          - ruby
     description: A list of languages to generate gRPC clients for
 ###EndBlock(keys)
