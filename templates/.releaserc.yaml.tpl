@@ -67,7 +67,7 @@ plugins:
   {{- end }}
 {{- end }}
 
-{{- if not (empty (stencil.Arg "commands")) }}
+{{- if not (empty (stencil.Arg "commands")) (stencil.Arg "releaseOptions.force") }}
   # Create the Github Release
   - - "@semantic-release/github"
     - assets:
