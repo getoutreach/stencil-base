@@ -27,7 +27,7 @@ plugins:
         ./scripts/shell-wrapper.sh major-release-checker.js ${lastRelease.version} ${nextRelease.version}
   {{- end }}
 
-{{- if not (empty (stencil.Arg "commands")) }}
+{{- if or (not (empty (stencil.Arg "commands"))) (stencil.Arg "releaseOptions.force") }}
   # Build the binaries
   - - "@semantic-release/exec"
     # We use generateNotesCmd instead of a different step because it has access
@@ -67,7 +67,7 @@ plugins:
   {{- end }}
 {{- end }}
 
-{{- if not (empty (stencil.Arg "commands")) }}
+{{- if or (not (empty (stencil.Arg "commands"))) (stencil.Arg "releaseOptions.force") }}
   # Create the Github Release
   - - "@semantic-release/github"
     - assets:
