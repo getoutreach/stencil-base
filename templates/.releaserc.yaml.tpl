@@ -2,7 +2,7 @@
 preset: conventionalcommits
 branches:
 {{- if $prereleases }}
-  - name: {{ .Git.DefaultBranch }}
+  - name: {{ or (stencil.Arg "releaseOptions.prereleasesBranch") .Git.DefaultBranch }}
     prerelease: 'rc'
   - name: release
 {{- else }}

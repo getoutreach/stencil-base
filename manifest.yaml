@@ -13,6 +13,10 @@ arguments:
     description: Enable prereleases
     schema:
       type: boolean
+  releaseOptions.prereleasesBranch:
+    description: The branch to watch for prereleases
+    schema:
+      type: string
   releaseOptions.allowMajorVersions:
     schema:
       type: boolean
