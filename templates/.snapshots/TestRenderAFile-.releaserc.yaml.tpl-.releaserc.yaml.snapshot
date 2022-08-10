@@ -1,15 +1,14 @@
+(*codegen.File)(
 preset: conventionalcommits
 branches:
-  - name: rc
-    prerelease: "rc"
-  - name: release
+  - name: 
 plugins:
   - - "@semantic-release/commit-analyzer"
     - releaseRules:
-        - type: revert
-          release: patch
-        - type: perf
-          release: patch
+      - type: revert
+        release: patch
+      - type: perf
+        release: patch
   # Block major version upgrades due to us not supporting them that well. This can
   # be disabled by setting releaseOptions.allowMajorVersions, but be warned this
   # is not well supported for services.
@@ -26,3 +25,4 @@ plugins:
   ### Block(customReleasePlugins)
 
   ### EndBlock(customReleasePlugins)
+)

@@ -1,15 +1,15 @@
-version: v1.22.0
-generated: 2022-08-03T21:50:22.923403Z
+version: v1.22.1
+generated: 2022-08-10T15:15:16.984319Z
 modules:
     - name: github.com/getoutreach/stencil-base
       url: file://./
       version: local
     - name: github.com/getoutreach/stencil-circleci
       url: https://github.com/getoutreach/stencil-circleci
-      version: v1.2.1
+      version: v1.2.2-rc.1
     - name: github.com/getoutreach/stencil-template-base
       url: https://github.com/getoutreach/stencil-template-base
-      version: v0.3.2
+      version: v0.3.3
 files:
     - name: .circleci/config.yml
       template: .circleci/config.yml.tpl
