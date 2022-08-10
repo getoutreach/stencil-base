@@ -8,9 +8,7 @@ import (
 
 // Replace this with your own tests.
 func TestRenderAFile(t *testing.T) {
-	st := stenciltest.New(t, "your_file.ext.tpl", "helpers.tpl")
-	st.Args(map[string]interface{}{
-		"argument": true,
-	})
+	st := stenciltest.New(t, ".releaserc.yaml.tpl", "_helpers.tpl")
+	st.Args(map[string]interface{}{})
 	st.Run(false)
 }
