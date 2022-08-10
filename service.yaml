@@ -4,6 +4,7 @@ arguments:
   reportingTeam: fnd-dt
   releaseOptions:
     enablePrereleases: true
+    prereleasesBranch: rc
 modules:
   - name: github.com/getoutreach/stencil-template-base
   - name: github.com/getoutreach/stencil-circleci
