@@ -4,6 +4,10 @@
 [![Generated via Bootstrap](https://img.shields.io/badge/Outreach-Bootstrap-%235951ff)](https://github.com/getoutreach/bootstrap)
 [![Coverage Status](https://coveralls.io/repos/github/getoutreach/stencil-base/badge.svg?branch=main)](https://coveralls.io/github//getoutreach/stencil-base?branch=main)
 
+<!--- Block(extraBadges) -->
+
+<!--- EndBlock(extraBadges) -->
+
 Base templates for a stencil backed service
 
 ## Contributing
