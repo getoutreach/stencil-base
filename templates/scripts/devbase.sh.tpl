@@ -37,5 +37,5 @@ if [[ ! -e $libDir ]] || [[ $existingVersion != "$version" ]] || [[ ! -e "$libDi
   echo -n "$version" >"$libDir/.version"
 
   # Don't let devbase be confused by the existence of one there :(
-  rm "$libDir/service.yaml"
+  rm "$libDir/service.yaml" || true # ignore errors
 fi
