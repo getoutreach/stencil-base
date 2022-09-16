@@ -47,9 +47,9 @@ kubectl -n {{ .Config.Name }}--<bento> logs --previous <pod name>
 
 where `<pod name>` is the name of the pod that just recently started up after the crash
 
-<!--- Block(podRestartsPodState) -->
+<!-- <<Stencil::Block(podRestartsPodState)>> -->
 {{ file.Block "podRestartsPodState" }}
-<!--- EndBlock(podRestartsPodState) -->
+<!-- <</Stencil::Block>> -->
 
 ### Datadog Dashboard and Logs
 
@@ -68,9 +68,9 @@ Add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that thi
 To look for other signs of issues or abnormal behavior in the logs, [navigate to Datadog](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20status%3Aerror) and
 add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in.
 
-<!--- Block(podRestartsDatadog) -->
+<!-- <<Stencil::Block(podRestartsDatadog)>> -->
 {{ file.Block "podRestartsDatadog" }}
-<!--- EndBlock(podRestartsDatadog) -->
+<!-- <</Stencil::Block>> -->
 
 ### Check Komodor for Pod State and Logs
 
@@ -82,21 +82,21 @@ From the main service list page select the bento that is alerting and view the p
 
 Once in the pod details page look for events or logs (both current and previous) that may provide clues to the root cause of the low number of running pods:
 
-<!--- Block(podRestartsKomodor) -->
+<!-- <<Stencil::Block(podRestartsKomodor)>> -->
 {{ file.Block "podRestartsKomodor" }}
-<!--- EndBlock(podRestartsKomodor) -->
+<!-- <</Stencil::Block>> -->
 
-<!--- Block(podRestartsInvestigation) -->
+<!-- <<Stencil::Block(podRestartsInvestigation)>> -->
 {{ file.Block "podRestartsInvestigation" }}
-<!--- EndBlock(podRestartsInvestigation) -->
+<!-- <</Stencil::Block>> -->
 
 ## Resolution
 
-<!--- Block(podRestartsResolution) -->
+<!-- <<Stencil::Block(podRestartsResolution)>> -->
 {{ file.Block "podRestartsResolution" }}
-<!--- EndBlock(podRestartsResolution) -->
+<!-- <</Stencil::Block>> -->
 
 
-<!--- Block(podRestarts) -->
+<!-- <<Stencil::Block(podRestarts)>> -->
 {{ file.Block "podRestarts" }}
-<!--- EndBlock(podRestarts) -->
+<!-- <</Stencil::Block>> -->

@@ -12,9 +12,9 @@
 
 CPU high alerts will occur if the CPU rate is too high over x amount of time. The net impact is that customers might start seeing failures in {{ camelcase .Config.Name }} requests. On the other hand, none of the above might actually happen and the CPU usage might drop down on its own. If the High CPU usage keeps repeating for the same host, there might be something wrong with the host itself and it might need recycling - all of this is described in much more detail below.
 
-<!--- Block(podCPUSpikeOverview) -->
+<!-- <<Stencil::Block(podCPUSpikeOverview)>> -->
 {{ file.Block "podCPUSpikeOverview" }}
-<!--- EndBlock(podCPUSpikeOverview) -->
+<!-- <</Stencil::Block>> -->
 
 ## Investigation
 
@@ -31,9 +31,9 @@ Look for any anomalies in the dashboard.
 To look for signs of issues or abnormal behavior in the logs, [navigate to Datadog](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20status%3Aerror) and
 add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in.
 
-<!--- Block(podCPUSpikeDatadog) -->
+<!-- <<Stencil::Block(podCPUSpikeDatadog)>> -->
 {{ file.Block "podCPUSpikeDatadog" }}
-<!--- EndBlock(podCPUSpikeDatadog) -->
+<!-- <</Stencil::Block>> -->
 
 ### Honeycomb
 
@@ -41,7 +41,7 @@ If there are a large volume of requests that trigger the issue some information 
 
 You can use the following as a starter Honeycomb query to begin looking for traces that exhibit the performance problems you are investigating.
 
-<!--- Block(grpcSuccessRateLowHoneycomb)) -->
+
 {{ file.Block "grpcSuccessRateLowHoneycomb)" }}
 <!--- EndBlock(grpcSuccessRateLowHoneycomb)) -->
 
@@ -63,16 +63,16 @@ kubectl --context <context> -n {{ .Config.Name }}--<bento> log <pod_name>
 
 where `<pod_name>` is the name of the pod exhibiting abnormal CPU usage.
 
-<!--- Block(podCPUSpikeDirect) -->
+<!-- <<Stencil::Block(podCPUSpikeDirect)>> -->
 {{ file.Block "podCPUSpikeDirect" }}
-<!--- EndBlock(podCPUSpikeDirect) -->
+<!-- <</Stencil::Block>> -->
 
 ## Resolution
 
-<!--- Block(podCPUSpikeResolution) -->
+<!-- <<Stencil::Block(podCPUSpikeResolution)>> -->
 {{ file.Block "podCPUSpikeResolution" }}
-<!--- EndBlock(podCPUSpikeResolution) -->
+<!-- <</Stencil::Block>> -->
 
-<!--- Block(podCPUSpike) -->
+<!-- <<Stencil::Block(podCPUSpike)>> -->
 {{ file.Block "podCPUSpike" }}
-<!--- EndBlock(podCPUSpike) -->
+<!-- <</Stencil::Block>> -->

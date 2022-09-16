@@ -1,8 +1,8 @@
 # {{ .Config.Name }}
 
-<!--- Block(customGeneralInformation) -->
+<!-- <<Stencil::Block(customGeneralInformation)>> -->
 {{ file.Block "customGeneralInformation" }}
-<!--- EndBlock(customGeneralInformation) -->
+<!-- <</Stencil::Block>> -->
 
 ## Prerequisites
 
@@ -10,15 +10,15 @@
 Make sure you've ran `orc setup`.
 {{- end }}
 
-<!--- Block(customPrerequisites) -->
+<!-- <<Stencil::Block(customPrerequisites)>> -->
 {{ file.Block "customPrerequisites" }}
-<!--- EndBlock(customPrerequisites) -->
+<!-- <</Stencil::Block>> -->
 
 ## Building and Testing
 
-<!--- Block(customBuildingAndTesting) -->
+<!-- <<Stencil::Block(customBuildingAndTesting)>> -->
 {{ file.Block "customBuildingAndTesting" }}
-<!--- EndBlock(customBuildingAndTesting) -->
+<!-- <</Stencil::Block>> -->
 
 {{- if (stencil.Arg "service") }}
 ### Building and Running

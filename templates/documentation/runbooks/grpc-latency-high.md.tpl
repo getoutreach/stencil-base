@@ -13,9 +13,9 @@
 
 This indicates that there are gRPC requests that are taking a long time to complete.
 
-<!--- Block(grpcLatencyHighOverview) -->
+<!-- <<Stencil::Block(grpcLatencyHighOverview)>> -->
 {{ file.Block "grpcLatencyHighOverview" }}
-<!--- EndBlock(grpcLatencyHighOverview) -->
+<!-- <</Stencil::Block>> -->
 
 ## Investigation
 
@@ -40,9 +40,9 @@ Look for any anomalies in the dashboard.
 To look for signs of issues or abnormal behavior in the logs, [navigate to Datadog](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20status%3Aerror) and
 add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in.
 
-<!--- Block(grpcLatencyHighDatadog) -->
+<!-- <<Stencil::Block(grpcLatencyHighDatadog)>> -->
 {{ file.Block "grpcLatencyHighDatadog" }}
-<!--- EndBlock(grpcLatencyHighDatadog) -->
+<!-- <</Stencil::Block>> -->
 
 
 <!--- Block(grpcLatencyHighInvestigation)) -->
@@ -51,9 +51,9 @@ add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that thi
 
 ## Resolution
 
-<!--- Block(grpcLatencyHighResolution) -->
+<!-- <<Stencil::Block(grpcLatencyHighResolution)>> -->
 {{ file.Block "grpcLatencyHighResolution" }}
-<!--- EndBlock(grpcLatencyHighResolution) -->
+<!-- <</Stencil::Block>> -->
 
 <!--- Block(grpcLatencyHighExtra)) -->
 {{ file.Block "grpcLatencyHighExtra)" }}

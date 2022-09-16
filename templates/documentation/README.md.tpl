@@ -11,6 +11,6 @@
 ## Relevant External Documentation
 
 * [Design Document]({{ stencil.Arg "opslevel.designDocumentLink" }})
-<!--- Block(documentation) -->
+<!-- <<Stencil::Block(documentation)>> -->
 {{ file.Block "documentation" }}
-<!--- EndBlock(documentation) -->
+<!-- <</Stencil::Block>> -->

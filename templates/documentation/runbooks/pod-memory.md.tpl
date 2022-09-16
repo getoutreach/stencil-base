@@ -27,9 +27,9 @@ Also look at the trending memory widget in the dashboard to look for patterns or
 To look for signs of issues or abnormal behavior in the logs, [navigate to Datadog](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20status%3Aerror) and
 add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in.
 
-<!--- Block(podMemorySpikeDatadog) -->
+<!-- <<Stencil::Block(podMemorySpikeDatadog)>> -->
 {{ file.Block "podMemorySpikeDatadog" }}
-<!--- EndBlock(podMemorySpikeDatadog) -->
+<!-- <</Stencil::Block>> -->
 
 ### Honeycomb
 
@@ -39,9 +39,9 @@ If there are a large volume of requests that trigger the issue some information 
 and add `deployment.namespace = {{ .Config.Name }}--<bento>` to the `WHERE` clause, where `<bento>` is the bento that
 this alert fired in. These traces may provide an idea as to what could be the root cause of the errors.
 
-<!--- Block(podMemorySpikeHoneycomb) -->
+<!-- <<Stencil::Block(podMemorySpikeHoneycomb)>> -->
 {{ file.Block "podMemorySpikeHoneycomb" }}
-<!--- EndBlock(podMemorySpikeHoneycomb) -->
+<!-- <</Stencil::Block>> -->
 
 ## Resolution
 
@@ -65,10 +65,10 @@ kubectl --context <context> -n {{ .Config.Name }}--<bento> get pods
 
 and verifying the pods are restarting, or recently restarted.
 
-<!--- Block(podMemorySpikeResolution) -->
+<!-- <<Stencil::Block(podMemorySpikeResolution)>> -->
 {{ file.Block "podMemorySpikeResolution" }}
-<!--- EndBlock(podMemorySpikeResolution) -->
+<!-- <</Stencil::Block>> -->
 
-<!--- Block(podMemorySpike) -->
+<!-- <<Stencil::Block(podMemorySpike)>> -->
 {{ file.Block "podMemorySpike" }}
-<!--- EndBlock(podMemorySpike) -->
+<!-- <</Stencil::Block>> -->
