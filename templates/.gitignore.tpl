@@ -60,6 +60,6 @@ Pulumi.*.yaml
 # Documentation output
 /apidocs
 
-###Block(extras)
+## <<Stencil::Block(extras)>>
 {{ file.Block "extras" }}
-###EndBlock(extras)
+## <</Stencil::Block>>

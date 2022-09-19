@@ -21,10 +21,10 @@ orc context <bento>
 
 where `<bento>` is the bento name.
 
-<!--- Block(deploymentsEnvironments) -->
+<!-- <<Stencil::Block(deploymentsEnvironments)>> -->
 {{ file.Block "deploymentsEnvironments" }}
-<!--- EndBlock(deploymentsEnvironments) -->
+<!-- <</Stencil::Block>> -->
 
-<!--- Block(deployments) -->
+<!-- <<Stencil::Block(deployments)>> -->
 {{ file.Block "deployments" }}
-<!--- EndBlock(deployments) -->
+<!-- <</Stencil::Block>> -->

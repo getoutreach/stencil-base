@@ -25,9 +25,9 @@
 * [gRPC Latency High](./runbooks/grpc-latency-high.md)
 * [gRPC Success Rate Low](./runbooks/grpc-success-rate-low.md)
 {{- end }}
-<!--- Block(additionalRunbookLinks) -->
+<!-- <<Stencil::Block(additionalRunbookLinks)>> -->
 {{ file.Block "additionalRunbookLinks" }}
-<!--- EndBlock(additionalRunbookLinks) -->
+<!-- <</Stencil::Block>> -->
 
 ## General Debugging
 
@@ -40,6 +40,6 @@ switching into the appropriate context using `orc context`:
 kubectl -n {{ .Config.Name }}--<bento> get all
 ```
 
-<!--- Block(generalDebugging) -->
+<!-- <<Stencil::Block(generalDebugging)>> -->
 {{ file.Block "generalDebugging" }}
-<!--- EndBlock(generalDebugging) -->
+<!-- <</Stencil::Block>> -->

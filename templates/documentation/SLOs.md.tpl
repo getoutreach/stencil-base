@@ -9,9 +9,9 @@
 
 # Service Level Objectives
 
-<!--- Block(customSLOs) -->
+<!-- <<Stencil::Block(customSLOs)>> -->
 {{ file.Block "customSLOs" }}
-<!--- EndBlock(customSLOs) -->
+<!-- <</Stencil::Block>> -->
 
 {{- if has "http" (stencil.Arg "serviceActivities") }}
 ## HTTP P99 Latency

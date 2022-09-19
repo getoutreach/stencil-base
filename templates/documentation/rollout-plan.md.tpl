@@ -11,18 +11,18 @@
 
 ## To Next-Gen Bento
 
-<!--- Block(ngbRollout) -->
+<!-- <<Stencil::Block(ngbRollout)>> -->
 {{ file.Block "ngbRollout" }}
-<!--- EndBlock(ngbRollout) -->
+<!-- <</Stencil::Block>> -->
 
 ## To Legacy Bento
 
-<!--- Block(legacyRollout) -->
+<!-- <<Stencil::Block(legacyRollout)>> -->
 {{ file.Block "legacyRollout" }}
-<!--- EndBlock(legacyRollout) -->
+<!-- <</Stencil::Block>> -->
 
 ## To a New Cluster/Region
 
-<!--- Block(newClusterRegion) -->
+<!-- <<Stencil::Block(newClusterRegion)>> -->
 {{ file.Block "newClusterRegion" }}
-<!--- EndBlock(newClusterRegion) -->
+<!-- <</Stencil::Block>> -->

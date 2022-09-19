@@ -24,9 +24,9 @@ Look for any anomalies in the dashboard.
 To look for signs of issues or abnormal behavior in the logs, [navigate to Datadog](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20status%3Aerror) and
 add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in.
 
-<!--- Block(httpLatencyHighDatadog) -->
+<!-- <<Stencil::Block(httpLatencyHighDatadog)>> -->
 {{ file.Block "httpLatencyHighDatadog" }}
-<!--- EndBlock(httpLatencyHighDatadog) -->
+<!-- <</Stencil::Block>> -->
 
 ### Honeycomb
 
@@ -47,10 +47,10 @@ this alert fired in. These traces should provide an idea as to what could be the
 
 ## Resolution
 
-<!--- Block(httpLatencyHighResolution) -->
+<!-- <<Stencil::Block(httpLatencyHighResolution)>> -->
 {{ file.Block "httpLatencyHighResolution" }}
-<!--- EndBlock(httpLatencyHighResolution) -->
+<!-- <</Stencil::Block>> -->
 
-<!--- Block(httpLatencyHigh) -->
+<!-- <<Stencil::Block(httpLatencyHigh)>> -->
 {{ file.Block "httpLatencyHigh" }}
-<!--- EndBlock(httpLatencyHigh) -->
+<!-- <</Stencil::Block>> -->

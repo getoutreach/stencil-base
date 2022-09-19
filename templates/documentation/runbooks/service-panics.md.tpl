@@ -22,9 +22,9 @@ Look for any anomalies in the dashboard.
 add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in. These logs
 should provide an idea as to what could be the root cause of the panics.
 
-<!--- Block(servicePanicsDatadog) -->
+<!-- <<Stencil::Block(servicePanicsDatadog)>> -->
 {{ file.Block "servicePanicsDatadog" }}
-<!--- EndBlock(servicePanicsDatadog) -->
+<!-- <</Stencil::Block>> -->
 
 ### Kubernetes Pod State
 
@@ -55,9 +55,9 @@ kubectl -n {{ .Config.Name }}--<bento> logs --previous <pod name>
 
 where `<pod name>` is the name of the pod that just recently started up after the crash
 
-<!--- Block(servicePanicsPodState) -->
+<!-- <<Stencil::Block(servicePanicsPodState)>> -->
 {{ file.Block "servicePanicsPodState" }}
-<!--- EndBlock(servicePanicsPodState) -->
+<!-- <</Stencil::Block>> -->
 
 ### Check Komodor for Pod State and Logs
 
@@ -69,20 +69,20 @@ From the main service list page select the bento that is alerting and view the p
 
 Once in the pod details page look for events or logs (both current and previous) that may provide clues to the root cause of the low number of running pods:
 
-<!--- Block(servicePanicsKomodor) -->
+<!-- <<Stencil::Block(servicePanicsKomodor)>> -->
 {{ file.Block "servicePanicsKomodor" }}
-<!--- EndBlock(servicePanicsKomodor) -->
+<!-- <</Stencil::Block>> -->
 
-<!--- Block(servicePanicsInvestigation) -->
+<!-- <<Stencil::Block(servicePanicsInvestigation)>> -->
 {{ file.Block "servicePanicsInvestigation" }}
-<!--- EndBlock(servicePanicsInvestigation) -->
+<!-- <</Stencil::Block>> -->
 
 # Resolution
 
-<!--- Block(servicePanicsResolution) -->
+<!-- <<Stencil::Block(servicePanicsResolution)>> -->
 {{ file.Block "servicePanicsResolution" }}
-<!--- EndBlock(servicePanicsResolution) -->
+<!-- <</Stencil::Block>> -->
 
-<!--- Block(servicePanics) -->
+<!-- <<Stencil::Block(servicePanics)>> -->
 {{ file.Block "servicePanics" }}
-<!--- EndBlock(servicePanics) -->
+<!-- <</Stencil::Block>> -->

@@ -12,9 +12,9 @@
 {{- end }}
 [![Generated via Bootstrap](https://img.shields.io/badge/Outreach-Bootstrap-%235951ff)](https://github.com/getoutreach/bootstrap)
 [![Coverage Status](https://coveralls.io/repos/github/{{ .Runtime.Box.Org }}/{{ .Config.Name }}/badge.svg?branch={{ .Git.DefaultBranch }})](https://coveralls.io/github//{{ .Runtime.Box.Org }}/{{ .Config.Name }}?branch={{ .Git.DefaultBranch }})
-<!--- Block(extraBadges) -->
+<!-- <<Stencil::Block(extraBadges)>> -->
 {{ file.Block "extraBadges" }}
-<!--- EndBlock(extraBadges) -->
+<!-- <</Stencil::Block>> -->
 
 {{ stencil.Arg "description" }}
 
@@ -24,9 +24,9 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on de
 
 ## High-level Overview
 
-<!--- Block(overview) -->
+<!-- <<Stencil::Block(overview)>> -->
 {{ file.Block "overview" }}
-<!--- EndBlock(overview) -->
+<!-- <</Stencil::Block>> -->
 
 {{- if (stencil.Arg "service") }}
 ## Dependencies

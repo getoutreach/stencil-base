@@ -13,9 +13,9 @@
 
 This indicates that there are gRPC requests that are returning unintended server errors.
 
-<!--- Block(grpcSuccessRateLowOverview) -->
+<!-- <<Stencil::Block(grpcSuccessRateLowOverview)>> -->
 {{ file.Block "grpcSuccessRateLowOverview" }}
-<!--- EndBlock(grpcSuccessRateLowOverview) -->
+<!-- <</Stencil::Block>> -->
 
 ## Investigation
 
@@ -40,9 +40,9 @@ Look for any anomalies in the dashboard.
 To look for signs of issues or abnormal behavior in the logs, [navigate to Datadog](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20status%3Aerror) and
 add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in.
 
-<!--- Block(grpcSuccessRateLowDatadog) -->
+<!-- <<Stencil::Block(grpcSuccessRateLowDatadog)>> -->
 {{ file.Block "grpcSuccessRateLowDatadog" }}
-<!--- EndBlock(grpcSuccessRateLowDatadog) -->
+<!-- <</Stencil::Block>> -->
 
 
 <!--- Block(grpcSuccessRateLowInvestigation)) -->
@@ -61,10 +61,10 @@ Once you determine what the errors are, they usually fall into one of several ca
 
    - Service errors because of lack of resources, etc. Follow the instructions in the [Pod Memory](/documentation/runbooks/pod-memory.md) runbook if you suspect memory issues need investigation.
 
-<!--- Block(grpcSuccessRateLowResolution) -->
+<!-- <<Stencil::Block(grpcSuccessRateLowResolution)>> -->
 {{ file.Block "grpcSuccessRateLowResolution" }}
-<!--- EndBlock(grpcSuccessRateLowResolution) -->
+<!-- <</Stencil::Block>> -->
 
-<!--- Block(grpcSuccessRateLowExtra) -->
+<!-- <<Stencil::Block(grpcSuccessRateLowExtra)>> -->
 {{ file.Block "grpcSuccessRateLowExtra" }}
-<!--- EndBlock(grpcSuccessRateLowExtra) -->
+<!-- <</Stencil::Block>> -->

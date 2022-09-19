@@ -14,9 +14,9 @@ This alert triggers when most of the {{ camelcase .Config.Name }} pods have cras
 
 If this alert is accompanied by [Pod Restarts](/documentation/runbooks/pod-restarts.md) alerts, it is possible that there is a critical issue causing the {{ camelcase .Config.Name }} service to repeatedly crash and immediate attention is required.
 
-<!--- Block(availablePodsLowOverview) -->
+<!-- <<Stencil::Block(availablePodsLowOverview)>> -->
 {{ file.Block "availablePodsLowOverview" }}
-<!--- EndBlock(availablePodsLowOverview) -->
+<!-- <</Stencil::Block>> -->
 
 ## Investigation
 
@@ -43,9 +43,9 @@ correct direction of the source of the problem. It may also be a useful exercise
 kubectl -n {{ .Config.Name }}--<bento> describe deployment {{ .Config.Name }}
 ```
 
-<!--- Block(availablePodsLowPodState) -->
+<!-- <<Stencil::Block(availablePodsLowPodState)>> -->
 {{ file.Block "availablePodsLowPodState" }}
-<!--- EndBlock(availablePodsLowPodState) -->
+<!-- <</Stencil::Block>> -->
 
 ### Datadog Dashboard and Logs
 
@@ -56,9 +56,9 @@ Look for any anomalies in the dashboard.
 To look for signs of issues or abnormal behavior in the logs, [navigate to Datadog](https://app.datadoghq.com/logs?query=service%3A{{ .Config.Name }}%20status%3Aerror) and
 add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in.
 
-<!--- Block(availablePodsLowDatadog) -->
+<!-- <<Stencil::Block(availablePodsLowDatadog)>> -->
 {{ file.Block "availablePodsLowDatadog" }}
-<!--- EndBlock(availablePodsLowDatadog) -->
+<!-- <</Stencil::Block>> -->
 
 ### Check Komodor for Pod State and Logs
 
@@ -72,20 +72,20 @@ You will likely want to inspect the pod details and logs:
 
 Once in the pod details page look for events or logs (both current and previous) that may provide clues to the root cause of the low number of running pods.
 
-<!--- Block(availablePodsLowKomodor) -->
+<!-- <<Stencil::Block(availablePodsLowKomodor)>> -->
 {{ file.Block "availablePodsLowKomodor" }}
-<!--- EndBlock(availablePodsLowKomodor) -->
+<!-- <</Stencil::Block>> -->
 
-<!--- Block(availablePodsInvestigation) -->
+<!-- <<Stencil::Block(availablePodsInvestigation)>> -->
 {{ file.Block "availablePodsInvestigation" }}
-<!--- EndBlock(availablePodsInvestigation) -->
+<!-- <</Stencil::Block>> -->
 
 ## Resolution
 
-<!--- Block(availablePodsLowResolution) -->
+<!-- <<Stencil::Block(availablePodsLowResolution)>> -->
 {{ file.Block "availablePodsLowResolution" }}
-<!--- EndBlock(availablePodsLowResolution) -->
+<!-- <</Stencil::Block>> -->
 
-<!--- Block(availablePodsLowExtra) -->
+<!-- <<Stencil::Block(availablePodsLowExtra)>> -->
 {{ file.Block "availablePodsLowExtra" }}
-<!--- EndBlock(availablePodsLowExtra) -->
+<!-- <</Stencil::Block>> -->

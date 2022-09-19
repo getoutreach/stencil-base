@@ -81,6 +81,6 @@ plugins:
 {{ toYaml $hook | indent 2 }}
 {{- end }}
 
-  ### Block(customReleasePlugins)
+  ## <<Stencil::Block(customReleasePlugins)>>
 {{ file.Block "customReleasePlugins" }}
-  ### EndBlock(customReleasePlugins)
+  ## <</Stencil::Block>>

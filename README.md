@@ -4,9 +4,9 @@
 [![Generated via Bootstrap](https://img.shields.io/badge/Outreach-Bootstrap-%235951ff)](https://github.com/getoutreach/bootstrap)
 [![Coverage Status](https://coveralls.io/repos/github/getoutreach/stencil-base/badge.svg?branch=main)](https://coveralls.io/github//getoutreach/stencil-base?branch=main)
 
-<!--- Block(extraBadges) -->
+<!-- <<Stencil::Block(extraBadges)>> -->
 
-<!--- EndBlock(extraBadges) -->
+<!-- <</Stencil::Block>> -->
 
 Base templates for a stencil backed service
 
@@ -16,6 +16,6 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on de
 
 ## High-level Overview
 
-<!--- Block(overview) -->
+<!-- <<Stencil::Block(overview)>> -->
 
-<!--- EndBlock(overview) -->
+<!-- <</Stencil::Block>> -->

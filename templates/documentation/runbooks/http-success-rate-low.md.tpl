@@ -25,9 +25,9 @@ Look for any anomalies in the dashboard.
 add the `@deployment.bento:<bento>` facet, where `<bento>` is the bento that this alert fired in. These logs
 should provide an idea as to what could be the root cause of HTTP calls resulting in server-level errors.
 
-<!--- Block(httpSuccessRateLowDatadog) -->
+<!-- <<Stencil::Block(httpSuccessRateLowDatadog)>> -->
 {{ file.Block "httpSuccessRateLowDatadog" }}
-<!--- EndBlock(httpSuccessRateLowDatadog) -->
+<!-- <</Stencil::Block>> -->
 
 ### Honeycomb
 
@@ -41,16 +41,16 @@ this alert fired in. These traces should provide an idea as to what could be the
 {{ file.Block "httpSuccessRateLowHoneycomb)" }}
 <!--- EndBlock(httpSuccessRateLowHoneycomb)) -->
 
-<!--- Block(httpSuccessRateLowInvestigation) -->
+<!-- <<Stencil::Block(httpSuccessRateLowInvestigation)>> -->
 {{ file.Block "httpSuccessRateLowInvestigation" }}
-<!--- EndBlock(httpSuccessRateLowInvestigation) -->
+<!-- <</Stencil::Block>> -->
 
 ## Resolution
 
-<!--- Block(httpSuccessRateLowResolution) -->
+<!-- <<Stencil::Block(httpSuccessRateLowResolution)>> -->
 {{ file.Block "httpSuccessRateLowResolution" }}
-<!--- EndBlock(httpSuccessRateLowResolution) -->
+<!-- <</Stencil::Block>> -->
 
-<!--- Block(httpSuccessRateLow) -->
+<!-- <<Stencil::Block(httpSuccessRateLow)>> -->
 {{ file.Block "httpSuccessRateLow" }}
-<!--- EndBlock(httpSuccessRateLow) -->
+<!-- <</Stencil::Block>> -->
