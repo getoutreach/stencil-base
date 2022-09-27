@@ -62,7 +62,7 @@ devenv apps deploy {{ .Config.Name }}
 
 To delete this service from your developer environment:
 ```bash
-devenv apps deploy {{ .Config.Name }}
+devenv apps delete {{ .Config.Name }}
 ```
 
 {{- if (stencil.Arg "service") }}
