@@ -27,7 +27,8 @@ existingVersion=$(cat "$libDir/.version" 2>/dev/null || true)
 if [[ ! -e $libDir ]] || [[ $existingVersion != "$version" ]] || [[ ! -e "$libDir/.version" ]]; then
   rm -rf "$libDir" || true
 
-  git clone -q --single-branch --branch "$version" git@github.com:getoutreach/devbase "$libDir" >/dev/null
+  git clone -q --single-branch --branch "$version" git@github.com:getoutreach/stencil-circleci \
+    "$libDir" >/dev/null
 
   # Move devbase from sub-directory into $libDir
   mv "$libDir/devbase" "$DIR/../.devbase"
