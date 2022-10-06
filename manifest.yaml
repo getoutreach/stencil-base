@@ -1,6 +1,7 @@
 name: github.com/getoutreach/stencil-base
 ###Block(keys)
-modules: []
+modules:
+  - name: github.com/getoutreach/devbase
 postRunCommand:
   - name: asdf install
     command: ./scripts/devbase.sh; source .bootstrap/shell/lib/asdf.sh; asdf_install
