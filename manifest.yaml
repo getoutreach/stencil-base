@@ -70,26 +70,10 @@ arguments:
       items:
         type: string
     description: Dependencies your repository requires to run successfully no matter what.
-  opslevel.designDocumentLink:
-    schema:
-      type: string
-    description: The link to the repository's design document or PRD.
-  opslevel.confluenceSpaceKey:
-    schema:
-      type: string
-    description: The confluence space key for your team (as an example, for developer tooling it is DTSS).
-  datadogDashboards.mainLink:
-    schema:
-      type: string
-    description: The link to the primary Datadog dashboard associated with the service.
   circleAPIKey:
     schema:
       type: string
     description: A CircleCI API token generated for your project. If supplied it will render a CircleCI status badge in your README.md.
-  forceRenderMarkdown:
-    schema:
-      type: boolean
-    description: If this is set to true, the markdown documentation will always be generated regardless of the type of service.
   releaseOptions.allowPrereleases:
     schema:
       type: boolean
