@@ -16,6 +16,8 @@ postRunCommand:
     command: go mod tidy -go=1.16 && go mod tidy -go=1.17
   - name: Format Files
     command: make gogenerate fmt
+  - name: go mod tidy
+    command: go mod tidy -go=1.16 && go mod tidy -go=1.17
 arguments:
   releaseOptions.enablePrereleases:
     description: Enable prereleases
