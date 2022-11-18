@@ -1,5 +1,5 @@
 name: github.com/getoutreach/stencil-base
-###Block(keys)
+## <<Stencil::Block(keys)>>
 modules:
   - name: github.com/getoutreach/devbase
     version: ">=v2.6.0-rc.2"
@@ -101,4 +101,4 @@ arguments:
           - node
           - ruby
     description: A list of languages to generate gRPC clients for
-###EndBlock(keys)
+## <</Stencil::Block>>
