@@ -8,6 +8,5 @@ arguments:
 modules:
   - name: github.com/getoutreach/stencil-template-base
   - name: github.com/getoutreach/stencil-circleci
-    channel: rc
 replacements:
   github.com/getoutreach/stencil-base: ./
