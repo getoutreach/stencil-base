@@ -111,7 +111,21 @@ clerk messages to and from kafka. For more details on how this works, please cli
 {{- if has "temporal" (stencil.Arg "serviceActivities") }}
 ### via Temporal
 
-Coming soon.
+#### To access temporal via `tctl`
+```
+orc port-forward --bento bento1a temporal-frontend {{ .Config.Name }}
+```
+After which commands using `tctl` will function. Remember to pass the namespace when interacting:
+```
+tctl --ns {{ .Config.Name }} ...
+```
+
+### To access the UI
+{{- if semverCompare ">=1.16.x" (stencil.Arg "temporal.version") }}
+orc port-forward --bento bento1a temporal-ui {{ .Config.Name }}
+{{- else }}
+orc port-forward --bento bento1a temporal-web {{ .Config.Name }}
+{{- end }}
 {{- end }}
 {{- end }}
 {{- end }}
