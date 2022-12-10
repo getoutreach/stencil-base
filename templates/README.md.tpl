@@ -122,9 +122,15 @@ tctl --ns {{ .Config.Name }} ...
 
 #### To access the Temporal UI
 {{- if semverCompare ">=1.16.x" (stencil.Arg "temporal.version") }}
+```
 orc port-forward --bento bento1a temporal-ui {{ .Config.Name }}
+```
+Navigate to `http://localhost:8080` in your browser
 {{- else }}
+```
 orc port-forward --bento bento1a temporal-web {{ .Config.Name }}
+```
+Navigate to `http://localhost:8088` in your browser
 {{- end }}
 {{- end }}
 {{- end }}
