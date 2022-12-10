@@ -78,6 +78,10 @@ arguments:
     schema:
       type: boolean
     description: If this is set to true the `make release` step and assets declaration in .releaserc.yaml will render regardless of other arguments.
+  temporal.version:
+    schema:
+      type: string
+    description: Temporal Server version to use
 
   # TODO(jaredallard): Move this into a separate Go module
   commands:

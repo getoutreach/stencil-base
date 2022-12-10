@@ -120,7 +120,7 @@ After which commands using `tctl` will function. Remember to pass the namespace 
 tctl --ns {{ .Config.Name }} ...
 ```
 
-### To access the UI
+#### To access the Temporal UI
 {{- if semverCompare ">=1.16.x" (stencil.Arg "temporal.version") }}
 orc port-forward --bento bento1a temporal-ui {{ .Config.Name }}
 {{- else }}
