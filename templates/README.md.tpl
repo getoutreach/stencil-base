@@ -111,7 +111,8 @@ clerk messages to and from kafka. For more details on how this works, please cli
 {{- if has "temporal" (stencil.Arg "serviceActivities") }}
 ### via Temporal
 
-Coming soon.
+See the [temporal documentation](./documentation/temporal.md) for info on managing and interacting with temporal.
+
 {{- end }}
 {{- end }}
 {{- end }}
