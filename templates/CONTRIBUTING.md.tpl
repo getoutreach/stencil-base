@@ -16,6 +16,8 @@ Make sure you've ran `orc setup`.
 
 ## Building and Testing
 
+This project uses devbase, which exposes the following build tooling: <TODO LINK TO DOC IN DEVBASE>
+
 <!-- <<Stencil::Block(customBuildingAndTesting)>> -->
 {{ file.Block "customBuildingAndTesting" }}
 <!-- <</Stencil::Block>> -->
