@@ -16,7 +16,7 @@ Make sure you've ran `orc setup`.
 
 ## Building and Testing
 
-This project uses devbase, which exposes the following build tooling: <TODO LINK TO DOC IN DEVBASE>
+This project uses devbase, which exposes the following build tooling: [devbase/docs/makefile.md](https://github.com/getoutreach/devbase/blob/main/docs/makefile.md)
 
 <!-- <<Stencil::Block(customBuildingAndTesting)>> -->
 {{ file.Block "customBuildingAndTesting" }}
