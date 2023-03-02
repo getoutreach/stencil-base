@@ -8,8 +8,12 @@ postRunCommand:
     command: ./scripts/devbase.sh; source .bootstrap/shell/lib/asdf.sh; asdf_install
   - name: go mod tidy
     command: go mod tidy -compat=1.17
-  - name: Format Files
-    command: make gogenerate fmt
+  - name: Format Files (step 1)
+    command: make fmt
+  - name: Generate Files
+    command: make gogenerate
+  - name: Format Files (step 2)
+    command: make fmt
   - name: go mod tidy
     command: go mod tidy -compat=1.17
 arguments:
