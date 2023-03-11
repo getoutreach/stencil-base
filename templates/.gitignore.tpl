@@ -61,6 +61,13 @@ Pulumi.*.yaml
 # Documentation output
 /apidocs
 
+### Start ignores inserted by other modules
+{{- $extraHook := (stencil.GetModuleHook "extraIgnores") }}
+{{- range $extraHook }}
+{{- .}}
+{{- end }}
+### End ignores inserted by other modules
+
 ## <<Stencil::Block(extras)>>
 {{ file.Block "extras" }}
 ## <</Stencil::Block>>
