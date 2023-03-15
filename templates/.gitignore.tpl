@@ -62,7 +62,7 @@ Pulumi.*.yaml
 /apidocs
 
 ### Start ignores inserted by other modules
-{{- $extraHook := (stencil.GetModuleHook "extraIgnores") }}
+{{- $extraHook := (stencil.GetModuleHook "gitIgnore/extraIgnores") }}
 {{- range $extraHook }}
 {{- .}}
 {{- end }}
