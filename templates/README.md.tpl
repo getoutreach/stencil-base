@@ -57,7 +57,11 @@ First, make sure you [set up your development environment](https://github.com/ge
 
 To add this service to your developer environment:
 ```bash
+{{- if has "python" (stencil.Arg "serviceActivities") }}
+scripts/build-deploy-python-service.sh
+{{- else }}
 devenv apps deploy {{ .Config.Name }}
+{{- end }}
 ```
 
 To delete this service from your developer environment:
