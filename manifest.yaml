@@ -88,7 +88,9 @@ arguments:
     schema:
       type: array
       items:
-        type: string
+        anyOf:
+          - type: string
+          - type: object
     description: A list of CLIs for this service
   grpcClients:
     schema:
