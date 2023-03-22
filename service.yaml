@@ -11,6 +11,7 @@ arguments:
 modules:
   - name: github.com/getoutreach/stencil-template-base
   - name: github.com/getoutreach/stencil-circleci
+  - name: github.com/getoutreach/stencil-outreach
   - name: github.com/getoutreach/devbase
   - name: github.com/getoutreach/stencil-golang
 replacements:
