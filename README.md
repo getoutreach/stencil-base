@@ -15,5 +15,6 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on de
 ## High-level Overview
 
 <!-- <<Stencil::Block(overview)>> -->
-
+`stencil-base` is a **[Stencil Module](https://engineering.outreach.io/stencil/reference/modules/)**
+which is a part of [stencil](https://github.com/getoutreach/stencil) system that contains stencil base templates
 <!-- <</Stencil::Block>> -->
