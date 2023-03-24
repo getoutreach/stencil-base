@@ -8,6 +8,13 @@ arguments:
   releaseOptions:
     enablePrereleases: true
     prereleasesBranch: rc
+  opslevel:
+    confluenceSpaceKey: DT
+    tier: 2
+    lifecycle: public_ga
+  lintroller: platinum
+  notifications:
+    slackChannel: "#dt-notifications"
 modules:
   - name: github.com/getoutreach/stencil-template-base
   - name: github.com/getoutreach/stencil-circleci
