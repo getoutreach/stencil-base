@@ -1,8 +1,5 @@
 name: github.com/getoutreach/stencil-base
 ## <<Stencil::Block(keys)>>
-modules:
-  - name: github.com/getoutreach/devbase
-    version: ">=v2.9.0-rc.12"
 postRunCommand:
   - name: asdf install
     command: ./scripts/devbase.sh; source .bootstrap/shell/lib/asdf.sh; asdf_install
@@ -47,12 +44,10 @@ arguments:
       type: array
       items:
         type: string
-        enum:
-          - http
-          - grpc
-          - temporal
-          - kafka
-    description: Any valid built-in service activities can be supplied here and they will be provided. The `service` flag must be set to true. Valid values for this are `http`, `grpc`, `temporal`, and `kafka`.
+    description: |-
+      Any valid built-in service activities can be supplied here and they will be provided. 
+      The `service` flag must be set to true. See 'stencil-golang' for valid values, this will eventually be removed
+      from `stencil-base` as it's not meant to be used here.
   reportingTeam:
     required: true
     schema:
