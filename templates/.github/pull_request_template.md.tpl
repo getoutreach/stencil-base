@@ -24,6 +24,10 @@
 <!-- Notes that may be helpful for anyone reviewing this PR -->
 ## Notes for your reviewers
 
+{{- $extraNotes := (stencil.GetModuleHook "reviewerExtraNotes") }}
+{{- range $extraNotes }}
+{{- .}}
+{{- end }}
 
 
 <!-- <<Stencil::Block(custom)>> -->
