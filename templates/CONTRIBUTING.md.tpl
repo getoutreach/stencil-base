@@ -91,3 +91,9 @@ make e2e
 This leverages the developer environment to interact with dependent integrations and services. If
 an already provisioned environment exists it will use that, else it will create one.
 {{- end }}
+
+### Additional Warnings
+{{- $warningNotes := (stencil.GetModuleHook "contributeAdditionalWarnings") }}
+{{- range $warningNotes }}
+{{- .}}
+{{- end }}

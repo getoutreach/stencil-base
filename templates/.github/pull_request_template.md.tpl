@@ -24,11 +24,7 @@
 <!-- Notes that may be helpful for anyone reviewing this PR -->
 ## Notes for your reviewers
 
-{{- $extraNotes := (stencil.GetModuleHook "reviewerExtraNotes") }}
-{{- range $extraNotes }}
-{{- .}}
-{{- end }}
-
+Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for any additional warnings
 
 <!-- <<Stencil::Block(custom)>> -->
 {{ file.Block "custom" }}
