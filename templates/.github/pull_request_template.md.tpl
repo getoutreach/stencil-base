@@ -5,7 +5,7 @@
   https://outreach-io.atlassian.net/wiki/spaces/EN/pages/1902444645/Conventional+Commits
 -->
 
-Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for any additional warnings
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for additional information on contributing to this repository!
 
 <!-- A short description of what your PR does and what it solves. -->
 ## What this PR does / why we need it

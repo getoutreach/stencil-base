@@ -92,10 +92,10 @@ This leverages the developer environment to interact with dependent integrations
 an already provisioned environment exists it will use that, else it will create one.
 {{- end }}
 
-{{- $warningNotes := stencil.GetModuleHook "contributeAdditionalWarnings" }}
-{{- if $warningNotes }}
-### Additional Warnings
-{{- range $warningNotes }}
+{{- $info := stencil.GetModuleHook "contributeAdditionalInformation" }}
+{{- if $info }}
+### Additional Information
+{{- range $info }}
 {{- .}}
 {{- end }}
 {{- end }}
