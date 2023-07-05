@@ -1,3 +1,4 @@
+{{- $_ := file.Static -}}
 # {{ .Config.Name }}
 
 {{- if (stencil.Arg "oss") }}
@@ -12,9 +13,6 @@
 {{- end }}
 [![Generated via Bootstrap](https://img.shields.io/badge/Outreach-Bootstrap-%235951ff)](https://github.com/getoutreach/bootstrap)
 [![Coverage Status](https://coveralls.io/repos/github/{{ .Runtime.Box.Org }}/{{ .Config.Name }}/badge.svg?branch={{ .Git.DefaultBranch }})](https://coveralls.io/github//{{ .Runtime.Box.Org }}/{{ .Config.Name }}?branch={{ .Git.DefaultBranch }})
-<!-- <<Stencil::Block(extraBadges)>> -->
-{{ file.Block "extraBadges" }}
-<!-- <</Stencil::Block>> -->
 
 {{ stencil.Arg "description" }}
 
@@ -24,9 +22,7 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) document for guidelines on de
 
 ## High-level Overview
 
-<!-- <<Stencil::Block(overview)>> -->
-{{ file.Block "overview" }}
-<!-- <</Stencil::Block>> -->
+[TODO]
 
 {{- if (stencil.Arg "service") }}
 ## Dependencies
