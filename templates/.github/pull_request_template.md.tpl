@@ -1,8 +1,9 @@
 <!--
   !!!! README !!!! Please fill this out.
 
-  Please follow the PR naming conventions: 
-  https://outreach-io.atlassian.net/wiki/spaces/EN/pages/1902444645/Conventional+Commits
+  Please follow conventional commit naming conventions:
+
+  https://www.conventionalcommits.org/en/v1.0.0/#summary
 -->
 
 
