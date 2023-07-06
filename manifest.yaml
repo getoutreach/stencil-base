@@ -4,7 +4,7 @@ modules:
   - name: github.com/getoutreach/devbase
 postRunCommand:
   - name: asdf install
-    command: ./scripts/devbase.sh; source .bootstrap/shell/lib/asdf.sh; asdf_install
+    command: ./scripts/devbase.sh; source .bootstrap/shell/lib/asdf.sh; asdf_devbase_ensure
   - name: go mod tidy
     command: go mod tidy -compat=1.17
   - name: Format Files (step 1)
