@@ -1,7 +1,7 @@
 <!--
   !!!! README !!!! Please fill this out.
 
-  Please follow the PR naming conventions: 
+  Please follow the PR naming conventions:
   https://outreach-io.atlassian.net/wiki/spaces/EN/pages/1902444645/Conventional+Commits
 -->
 
