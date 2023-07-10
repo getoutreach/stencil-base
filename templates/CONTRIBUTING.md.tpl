@@ -1,8 +1,5 @@
+{{- $_ := file.Static -}}
 # {{ .Config.Name }}
-
-<!-- <<Stencil::Block(customGeneralInformation)>> -->
-{{ file.Block "customGeneralInformation" }}
-<!-- <</Stencil::Block>> -->
 
 ## Prerequisites
 
@@ -10,17 +7,9 @@
 Make sure you've ran `orc setup`.
 {{- end }}
 
-<!-- <<Stencil::Block(customPrerequisites)>> -->
-{{ file.Block "customPrerequisites" }}
-<!-- <</Stencil::Block>> -->
-
 ## Building and Testing
 
 This project uses devbase, which exposes the following build tooling: [devbase/docs/makefile.md](https://github.com/getoutreach/devbase/blob/main/docs/makefile.md)
-
-<!-- <<Stencil::Block(customBuildingAndTesting)>> -->
-{{ file.Block "customBuildingAndTesting" }}
-<!-- <</Stencil::Block>> -->
 
 {{- if (stencil.Arg "service") }}
 ### Building and Running
@@ -90,4 +79,12 @@ make e2e
 
 This leverages the developer environment to interact with dependent integrations and services. If
 an already provisioned environment exists it will use that, else it will create one.
+{{- end }}
+
+{{- $info := stencil.GetModuleHook "contributeAdditionalInformation" }}
+{{- if $info }}
+### Additional Information
+{{- range $info }}
+{{- .}}
+{{- end }}
 {{- end }}
