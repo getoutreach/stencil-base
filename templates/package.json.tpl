@@ -11,6 +11,9 @@
 {{- if has "node" (stencil.Arg "grpcClients") }}
     "hjson": "^3.2.2",
 {{- end }}
+{{- range stencil.GetModuleHook "nodejs_dependencies" }}
+    "{{ .name }}": "{{ .version }}",
+{{- end }}
     "prettier": "^2.8.8",
     "semantic-release": "^21.0.5",
     "semver": "^7.5.2"
