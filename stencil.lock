@@ -2,7 +2,7 @@ version: v1.37.0
 modules:
     - name: github.com/getoutreach/devbase
       url: https://github.com/getoutreach/devbase
-      version: v2.21.1-rc.1
+      version: v2.21.1
     - name: github.com/getoutreach/stencil-base
       url: file://./
       version: local
@@ -73,6 +73,9 @@ files:
     - name: .vscode/settings.json
       template: .vscode/settings.json.tpl
       module: github.com/getoutreach/stencil-golang
+    - name: .yarnrc.yml
+      template: .yarnrc.yml.tpl
+      module: github.com/getoutreach/stencil-base
     - name: Makefile
       template: Makefile.tpl
       module: github.com/getoutreach/stencil-golang

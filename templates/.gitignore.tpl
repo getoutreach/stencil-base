@@ -32,6 +32,7 @@ dist/
 # Don't. Commit. Vendor. Or other package manager dep directories
 node_modules
 vendor
+.yarn
 
 # Fetched by make
 concourse/jsonnet-libs
