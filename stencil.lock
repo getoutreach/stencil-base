@@ -1,23 +1,23 @@
-version: v1.36.0
+version: v1.37.0
 modules:
     - name: github.com/getoutreach/devbase
       url: https://github.com/getoutreach/devbase
-      version: v2.17.0
+      version: v2.21.1-rc.1
     - name: github.com/getoutreach/stencil-base
       url: file://./
       version: local
     - name: github.com/getoutreach/stencil-circleci
       url: https://github.com/getoutreach/stencil-circleci
-      version: v1.10.0
+      version: v1.11.1
     - name: github.com/getoutreach/stencil-discovery
       url: https://github.com/getoutreach/stencil-discovery
-      version: v1.8.0
+      version: v1.8.1
     - name: github.com/getoutreach/stencil-golang
       url: https://github.com/getoutreach/stencil-golang
-      version: v1.13.2
+      version: v1.16.1
     - name: github.com/getoutreach/stencil-outreach
       url: https://github.com/getoutreach/stencil-outreach
-      version: v0.12.2
+      version: v0.17.0
     - name: github.com/getoutreach/stencil-pipeline
       url: https://github.com/getoutreach/stencil-pipeline
       version: v1.1.0
@@ -85,9 +85,6 @@ files:
     - name: manifest.yaml
       template: manifest.yaml.tpl
       module: github.com/getoutreach/stencil-template-base
-    - name: opslevel.yml
-      template: opslevel.yml.tpl
-      module: github.com/getoutreach/stencil-outreach
     - name: package.json
       template: package.json.tpl
       module: github.com/getoutreach/stencil-base
