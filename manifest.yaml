@@ -47,7 +47,7 @@ arguments:
       items:
         type: string
     description: |-
-      Any valid built-in service activities can be supplied here and they will be provided. 
+      Any valid built-in service activities can be supplied here and they will be provided.
       The `service` flag must be set to true. See 'stencil-golang' for valid values, this will eventually be removed
       from `stencil-base` as it's not meant to be used here.
   reportingTeam:
@@ -55,6 +55,12 @@ arguments:
     schema:
       type: string
     description: Github team to be used as the CODEOWNER of this repository.
+  additionalRepoOwners:
+    schema:
+      type: array
+      items:
+        type: string
+    description: A list of GitHub teams who co-own the repository.
   dependencies.optional:
     schema:
       type: array

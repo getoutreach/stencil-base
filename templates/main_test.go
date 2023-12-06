@@ -26,3 +26,23 @@ func TestRenderPullRequestTemplateFile(t *testing.T) {
 	st.Args(map[string]interface{}{})
 	st.Run(false)
 }
+
+func TestRenderCodeownersFile(t *testing.T) {
+	st := stenciltest.New(t, ".github/CODEOWNERS.tpl", "_helpers.tpl")
+	st.Args(map[string]interface{}{
+		"reportingTeam": "foo-bar",
+	})
+	st.Run(false)
+}
+
+func TestRenderCodeownersWithExtraOwnersFile(t *testing.T) {
+	st := stenciltest.New(t, ".github/CODEOWNERS.tpl", "_helpers.tpl")
+	st.Args(map[string]interface{}{
+		"reportingTeam": "foo-bar",
+		"additionalRepoOwners": []interface{}{
+			"bar-baz",
+			"baz-quux",
+		},
+	})
+	st.Run(false)
+}
