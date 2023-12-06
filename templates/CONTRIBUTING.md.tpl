@@ -15,7 +15,7 @@ This project uses devbase, which exposes the following build tooling: [devbase/d
 ### Building and Running
 
 If you want to add this to your developer environment, please check out the section in the
-README.md about [adding to this developer environment](https://github.com/getoutreach/{{ .Config.Name }}#add-to-your-development-environment).
+README.md about [adding to this developer environment](https://github.com/{{ .Runtime.Box.Org }}/{{ .Config.Name }}#add-to-your-development-environment).
 
 If you want to run this locally, you can do the following:
 
@@ -52,7 +52,7 @@ If you want to test a package exposed in this repository in a project that uses 
 add the following `replace` directive to that project's `go.mod` file:
 
 ```
-replace github.com/getoutreach/{{ .Config.Name }} => /path/to/local/version/{{ .Config.Name }}
+replace github.com/{{ .Runtime.Box.Org }}/{{ .Config.Name }} => /path/to/local/version/{{ .Config.Name }}
 ```
 
 **_Note_**: This repository may have postfixed it's module path with a version, go check the first

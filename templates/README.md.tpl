@@ -2,13 +2,13 @@
 # {{ .Config.Name }}
 
 {{- if (stencil.Arg "oss") }}
-[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/github.com/getoutreach/{{ .Config.Name }})
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/github.com/{{ .Runtime.Box.Org }}/{{ .Config.Name }})
 {{- else }}
-[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://engdocs.outreach.cloud/github.com/getoutreach/{{ .Config.Name }})
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://engdocs.outreach.cloud/github.com/{{ .Runtime.Box.Org }}/{{ .Config.Name }})
 {{- end }}
 {{- if ne nil (stencil.Arg "circleAPIKey") }}
 {{- if ne "" (stencil.Arg "circleAPIKey") }}
-[![CircleCI](https://circleci.com/gh/getoutreach/{{ .Config.Name }}.svg?style=shield&circle-token={{ stencil.Arg "circleAPIKey" }})](https://circleci.com/gh/getoutreach/{{ .Config.Name }})
+[![CircleCI](https://circleci.com/gh/{{ .Runtime.Box.Org }}/{{ .Config.Name }}.svg?style=shield&circle-token={{ stencil.Arg "circleAPIKey" }})](https://circleci.com/gh/{{ .Runtime.Box.Org }}/{{ .Config.Name }})
 {{- end }}
 {{- end }}
 [![Generated via Bootstrap](https://img.shields.io/badge/Outreach-Bootstrap-%235951ff)](https://github.com/getoutreach/bootstrap)
