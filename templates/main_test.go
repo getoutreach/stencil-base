@@ -13,6 +13,14 @@ func TestRenderAFile(t *testing.T) {
 	st.Run(false)
 }
 
+func TestRenderReadmeFile(t *testing.T) {
+	st := stenciltest.New(t, "README.md.tpl", "_helpers.tpl")
+	st.Args(map[string]interface{}{
+		"description": "My service",
+	})
+	st.Run(false)
+}
+
 func TestRenderPullRequestTemplateFile(t *testing.T) {
 	st := stenciltest.New(t, ".github/pull_request_template.md.tpl", "_helpers.tpl")
 	st.Args(map[string]interface{}{})
