@@ -1,0 +1,7 @@
+(*codegen.File)(# See https://help.github.com/articles/about-codeowners/
+* @getoutreach/foo-bar @getoutreach/bar-baz @getoutreach/baz-quux
+
+## <<Stencil::Block(customCodeowners)>>
+
+## <</Stencil::Block>>
+)
