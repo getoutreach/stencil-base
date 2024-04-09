@@ -13,6 +13,45 @@ func TestRenderAFile(t *testing.T) {
 	st.Run(stenciltest.RegenerateSnapshots())
 }
 
+func TestReleaseRCWithNodeJSGRPCClient(t *testing.T) {
+	st := stenciltest.New(t, ".releaserc.yaml.tpl", "_helpers.tpl")
+	st.Args(map[string]interface{}{
+		"service": true,
+		"serviceActivities": []interface{}{
+			"grpc",
+		},
+		"grpcClients": []interface{}{
+			"node",
+		},
+	})
+	st.Run(stenciltest.RegenerateSnapshots())
+}
+
+func TestReleaseRCWithRubyGRPCClient(t *testing.T) {
+	st := stenciltest.New(t, ".releaserc.yaml.tpl", "_helpers.tpl")
+	st.Args(map[string]interface{}{
+		"service": true,
+		"serviceActivities": []interface{}{
+			"grpc",
+		},
+		"grpcClients": []interface{}{
+			"ruby",
+		},
+	})
+	st.Run(stenciltest.RegenerateSnapshots())
+}
+
+func TestReleaseRCForLibrary(t *testing.T) {
+	st := stenciltest.New(t, ".releaserc.yaml.tpl", "_helpers.tpl")
+	st.Args(map[string]interface{}{
+		"service": false,
+		"grpcClients": []interface{}{
+			"ruby",
+		},
+	})
+	st.Run(stenciltest.RegenerateSnapshots())
+}
+
 func TestRenderReadmeFile(t *testing.T) {
 	st := stenciltest.New(t, "README.md.tpl", "_helpers.tpl")
 	st.Args(map[string]interface{}{
