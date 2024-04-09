@@ -38,7 +38,7 @@ plugins:
   # This creates fancy release notes in our Github release
   - "@semantic-release/release-notes-generator"
 
-{{- if has "grpc" (stencil.Arg "serviceActivities") }}
+{{- if or (not (stencil.Arg "service")) (has "grpc" (stencil.Arg "serviceActivities")) }}
   {{- if has "node" (stencil.Arg "grpcClients") }}
   # Bump npm package.json version, and release to npm/github packages.
   # See devbase for the Github Packages part.
