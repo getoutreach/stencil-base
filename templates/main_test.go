@@ -10,7 +10,7 @@ import (
 func TestRenderAFile(t *testing.T) {
 	st := stenciltest.New(t, ".releaserc.yaml.tpl", "_helpers.tpl")
 	st.Args(map[string]interface{}{})
-	st.Run(false)
+	st.Run(stenciltest.RegenerateSnapshots())
 }
 
 func TestRenderReadmeFile(t *testing.T) {
@@ -18,13 +18,13 @@ func TestRenderReadmeFile(t *testing.T) {
 	st.Args(map[string]interface{}{
 		"description": "My service",
 	})
-	st.Run(false)
+	st.Run(stenciltest.RegenerateSnapshots())
 }
 
 func TestRenderPullRequestTemplateFile(t *testing.T) {
 	st := stenciltest.New(t, ".github/pull_request_template.md.tpl", "_helpers.tpl")
 	st.Args(map[string]interface{}{})
-	st.Run(false)
+	st.Run(stenciltest.RegenerateSnapshots())
 }
 
 func TestRenderCodeownersFile(t *testing.T) {
@@ -32,7 +32,7 @@ func TestRenderCodeownersFile(t *testing.T) {
 	st.Args(map[string]interface{}{
 		"reportingTeam": "foo-bar",
 	})
-	st.Run(false)
+	st.Run(stenciltest.RegenerateSnapshots())
 }
 
 func TestRenderCodeownersWithExtraOwnersFile(t *testing.T) {
@@ -44,5 +44,5 @@ func TestRenderCodeownersWithExtraOwnersFile(t *testing.T) {
 			"baz-quux",
 		},
 	})
-	st.Run(false)
+	st.Run(stenciltest.RegenerateSnapshots())
 }
