@@ -26,7 +26,7 @@ require (
 	github.com/alessio/shellescape v1.4.1 // indirect
 	github.com/blang/semver/v4 v4.0.0 // indirect
 	github.com/bradleyjkemp/cupaloy v2.3.0+incompatible // indirect
-	github.com/cloudflare/circl v1.3.3 // indirect
+	github.com/cloudflare/circl v1.3.7 // indirect
 	github.com/danieljoos/wincred v1.2.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
