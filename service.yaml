@@ -7,7 +7,6 @@ arguments:
   reportingTeam: fnd-dt
   releaseOptions:
     enablePrereleases: true
-    allowMajorVersions: true
     autoPrereleases: true
     prereleasesBranch: main
   opslevel:
