@@ -7,7 +7,9 @@ arguments:
   reportingTeam: fnd-dt
   releaseOptions:
     enablePrereleases: true
-    prereleasesBranch: rc
+    allowMajorVersions: true
+    autoPrereleases: true
+    prereleasesBranch: main
   opslevel:
     confluenceSpaceKey: DT
     tier: 2
@@ -18,8 +20,10 @@ arguments:
 modules:
   - name: github.com/getoutreach/stencil-template-base
   - name: github.com/getoutreach/stencil-circleci
+    channel: rc
   - name: github.com/getoutreach/stencil-outreach
   - name: github.com/getoutreach/devbase
+    channel: rc
   - name: github.com/getoutreach/stencil-golang
 replacements:
   github.com/getoutreach/stencil-base: ./
