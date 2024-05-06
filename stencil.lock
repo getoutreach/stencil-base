@@ -2,13 +2,13 @@ version: v1.38.0
 modules:
     - name: github.com/getoutreach/devbase
       url: https://github.com/getoutreach/devbase
-      version: v2.26.2
+      version: v2.27.0-rc.2
     - name: github.com/getoutreach/stencil-base
       url: file://./
       version: local
     - name: github.com/getoutreach/stencil-circleci
       url: https://github.com/getoutreach/stencil-circleci
-      version: v1.12.1
+      version: v1.13.0-rc.2
     - name: github.com/getoutreach/stencil-discovery
       url: https://github.com/getoutreach/stencil-discovery
       version: v1.8.2
