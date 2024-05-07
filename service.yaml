@@ -1,29 +1,4 @@
 name: stencil-base
-modules:
-  - name: github.com/getoutreach/stencil-template-base
-    prerelease: false
-    channel: rc
-  - name: github.com/getoutreach/stencil-circleci
-    prerelease: false
-    channel: rc
-  - name: github.com/getoutreach/stencil-outreach
-    prerelease: false
-    channel: rc
-  - name: github.com/getoutreach/devbase
-    prerelease: false
-    channel: rc
-  - name: github.com/getoutreach/stencil-golang
-    prerelease: false
-    channel: rc
-  - name: github.com/getoutreach/stencil-base
-    prerelease: false
-    channel: rc
-  - name: github.com/getoutreach/stencil-discovery
-    prerelease: false
-    channel: rc
-  - name: github.com/getoutreach/stencil-pipeline
-    prerelease: false
-    channel: rc
 arguments:
   ciOptions:
     skipDocker: true
@@ -41,5 +16,22 @@ arguments:
     enablePrereleases: true
     prereleasesBranch: main
   reportingTeam: fnd-dt
+modules:
+  - name: github.com/getoutreach/stencil-template-base
+    channel: rc
+  - name: github.com/getoutreach/stencil-circleci
+    channel: rc
+  - name: github.com/getoutreach/stencil-outreach
+    channel: rc
+  - name: github.com/getoutreach/devbase
+    channel: rc
+  - name: github.com/getoutreach/stencil-golang
+    channel: rc
+  - name: github.com/getoutreach/stencil-base
+    channel: rc
+  - name: github.com/getoutreach/stencil-discovery
+    channel: rc
+  - name: github.com/getoutreach/stencil-pipeline
+    channel: rc
 replacements:
   github.com/getoutreach/stencil-base: ./
