@@ -2,7 +2,7 @@
 
 module github.com/getoutreach/stencil-base
 
-go 1.19
+go 1.21
 
 require github.com/getoutreach/stencil v1.38.0
 

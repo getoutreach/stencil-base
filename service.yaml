@@ -1,28 +1,45 @@
 name: stencil-base
+modules:
+  - name: github.com/getoutreach/stencil-template-base
+    prerelease: false
+    channel: rc
+  - name: github.com/getoutreach/stencil-circleci
+    prerelease: false
+    channel: rc
+  - name: github.com/getoutreach/stencil-outreach
+    prerelease: false
+    channel: rc
+  - name: github.com/getoutreach/devbase
+    prerelease: false
+    channel: rc
+  - name: github.com/getoutreach/stencil-golang
+    prerelease: false
+    channel: rc
+  - name: github.com/getoutreach/stencil-base
+    prerelease: false
+    channel: rc
+  - name: github.com/getoutreach/stencil-discovery
+    prerelease: false
+    channel: rc
+  - name: github.com/getoutreach/stencil-pipeline
+    prerelease: false
+    channel: rc
 arguments:
   ciOptions:
     skipDocker: true
     skipE2e: true
   description: Base templates for a stencil backed service
-  reportingTeam: fnd-dt
-  releaseOptions:
-    enablePrereleases: true
-    autoPrereleases: true
-    prereleasesBranch: main
-  opslevel:
-    confluenceSpaceKey: DT
-    tier: 2
-    lifecycle: public_ga
   lintroller: platinum
   notifications:
     slackChannel: "#dt-notifications"
-modules:
-  - name: github.com/getoutreach/stencil-template-base
-  - name: github.com/getoutreach/stencil-circleci
-    channel: rc
-  - name: github.com/getoutreach/stencil-outreach
-  - name: github.com/getoutreach/devbase
-    channel: rc
-  - name: github.com/getoutreach/stencil-golang
+  opslevel:
+    confluenceSpaceKey: DT
+    lifecycle: public_ga
+    tier: 2
+  releaseOptions:
+    autoPrereleases: true
+    enablePrereleases: true
+    prereleasesBranch: main
+  reportingTeam: fnd-dt
 replacements:
   github.com/getoutreach/stencil-base: ./
