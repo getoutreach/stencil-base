@@ -15,8 +15,8 @@ postRunCommand:
     command: make fmt
   - name: go mod tidy
     command: go mod tidy -compat=1.17
-  - name: yarn
-    command: yarn
+  - name: yarn upgrade
+    command: yarn upgrade
 arguments:
   releaseOptions.enablePrereleases:
     description: Enable prereleases
