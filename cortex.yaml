@@ -46,7 +46,7 @@ info:
     tier: tier_2
     framework: stencil
     language: Golang
-    stencil_version: v1.38.1
+    stencil_version: v1.39.0-rc.1
     golang_version: 1.22.0
     cli: false
     service: false
@@ -57,9 +57,9 @@ info:
     reporting_team: fnd-dt
     lintroller: platinum
   x-cortex-groups:
-    - lifecycle: public_ga
-    - tier: tier_2
-    - product: Outreach
-    - language: Golang
-    - framework: stencil
-    - engOrg: fnd
+    - lifecycle:public_ga
+    - tier:tier_2
+    - product:Outreach
+    - language:Golang
+    - framework:stencil
+    - engOrg:fnd
