@@ -15,8 +15,8 @@ postRunCommand:
     command: make fmt
   - name: go mod tidy
     command: go mod tidy -compat=1.17
-  - name: yarn upgrade
-    command: yarn upgrade
+  - name: Install or upgrade release-related Node.js packages
+    command: if test -f yarn.lock; then yarn upgrade; else yarn; fi
 arguments:
   releaseOptions.enablePrereleases:
     description: Enable prereleases
