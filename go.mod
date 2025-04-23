@@ -6,7 +6,7 @@ go 1.23.0
 
 toolchain go1.23.4
 
-require github.com/getoutreach/stencil v1.42.0-rc.1.0.20250422215820-23302649a56d
+require github.com/getoutreach/stencil v1.42.0-rc.1.0.20250423180555-857a5c50d89d
 
 require (
 	dario.cat/mergo v1.0.1 // indirect
@@ -33,7 +33,7 @@ require (
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
 	github.com/fatih/color v1.17.0 // indirect
-	github.com/getoutreach/gobox v1.104.2-0.20250422213824-23a932f4c77f // indirect
+	github.com/getoutreach/gobox v1.105.0 // indirect
 	github.com/go-git/gcfg v1.5.1-0.20230307220236-3a3c6141e376 // indirect
 	github.com/go-git/go-billy/v5 v5.6.2 // indirect
 	github.com/go-git/go-git/v5 v5.16.0 // indirect
