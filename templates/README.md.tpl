@@ -4,7 +4,7 @@
 {{- if (stencil.Arg "oss") }}
 [![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/github.com/{{ .Runtime.Box.Org }}/{{ .Config.Name }})
 {{- else }}
-[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://engdocs.outreach.cloud/github.com/{{ .Runtime.Box.Org }}/{{ .Config.Name }})
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)]({{ .Runtime.Box.Engdocs.URL }}/github.com/{{ .Runtime.Box.Org }}/{{ .Config.Name }})
 {{- end }}
 {{- if ne nil (stencil.Arg "circleAPIKey") }}
 {{- if ne "" (stencil.Arg "circleAPIKey") }}
