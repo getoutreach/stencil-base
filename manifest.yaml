@@ -3,6 +3,8 @@ name: github.com/getoutreach/stencil-base
 modules:
   - name: github.com/getoutreach/devbase
 postRunCommand:
+  - name: Install tools from mise
+    command: mise install --yes
   - name: asdf install
     command: ./scripts/devbase.sh; source .bootstrap/shell/lib/asdf.sh; asdf_devbase_ensure
   - name: go mod tidy
