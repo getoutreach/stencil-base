@@ -42,7 +42,7 @@ test: &test
   ### Start parameters inserted by other modules
   ### End parameters inserted by other modules
   ## <<Stencil::Block(circleTestExtra)>>
-
+  docker_tag: latest
   ## <</Stencil::Block>>
 
 # Branches used for releasing code, pre-release or not
@@ -131,7 +131,7 @@ workflows:
           context: *contexts
           release_failure_slack_channel: "#dt-notifications"
           ## <<Stencil::Block(circleReleaseExtra)>>
-
+          docker_tag: latest
           ## <</Stencil::Block>>
           requires:
             ## <<Stencil::Block(circleReleaseRequires)>>
@@ -146,7 +146,7 @@ workflows:
           context: *contexts
           release_failure_slack_channel: "#dt-notifications"
           ## <<Stencil::Block(circlePreReleaseExtra)>>
-
+          docker_tag: latest
           ## <</Stencil::Block>>
           requires:
             ## <<Stencil::Block(circlePreReleaseRequires)>>
@@ -162,7 +162,7 @@ workflows:
           dryrun: true
           context: *contexts
           ## <<Stencil::Block(circlePreReleaseDryRunExtra)>>
-
+          docker_tag: latest
           ## <</Stencil::Block>>
           requires:
             ## <<Stencil::Block(circlePreReleaseDryRunRequires)>>
