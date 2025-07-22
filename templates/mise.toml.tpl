@@ -1,12 +1,11 @@
 [task_config]
 includes = [".bootstrap/.mise/tasks"]
 
-{{ $miseEnvironments := stencil.GetModuleHook "miseEnvironment" }}
-
+{{- $miseEnvironments := stencil.GetModuleHook "miseEnvironment" }}
 {{- if gt ($miseEnvironments | len) 0 }}
 [env]
 {{- range $miseEnvironments }}
-{{ . | toTOML }}
+{{ . | toToml }}
 {{- end }}
 {{- end }}
 
@@ -19,7 +18,7 @@ includes = [".bootstrap/.mise/tasks"]
 
 {{- range $_, $toolMap := stencil.GetModuleHook "miseTools" }}
 {{- range $name, $tool := $toolMap }}
-{{ $name | quote }} = {{ $tool | toTOML }}
+{{ $name | quote }} = {{ $tool | toToml }}
 {{- end }}
 {{- end }}
 
