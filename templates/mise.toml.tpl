@@ -16,10 +16,8 @@ includes = [".bootstrap/.mise/tasks"]
 [tools]
 "npm:prettier" = "2"
 
-{{- range $_, $toolMap := stencil.GetModuleHook "miseTools" }}
-{{- range $name, $tool := $toolMap }}
-{{ $name | quote }} = {{ $tool | toToml }}
-{{- end }}
+{{- range stencil.GetModuleHook "miseTools" }}
+{{ . | toToml }}
 {{- end }}
 
 ## <<Stencil::Block(customMiseTools)>>

@@ -85,3 +85,9 @@ func TestRenderCodeownersWithExtraOwnersFile(t *testing.T) {
 	})
 	st.Run(stenciltest.RegenerateSnapshots())
 }
+
+func TestRenderMiseTOML(t *testing.T) {
+	st := stenciltest.New(t, "mise.toml.tpl", "_helpers.tpl")
+	st.Args(map[string]interface{}{})
+	st.Run(stenciltest.RegenerateSnapshots())
+}
