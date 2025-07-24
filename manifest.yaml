@@ -2,7 +2,11 @@ name: github.com/getoutreach/stencil-base
 ## <<Stencil::Block(keys)>>
 modules:
   - name: github.com/getoutreach/devbase
+    version: ">=2.33.0-rc.7"
+stencilVersion: "^v1.43.0-rc.5"
 postRunCommand:
+  - name: Install tools from mise
+    command: mise install --yes
   - name: asdf install
     command: ./scripts/devbase.sh; source .bootstrap/shell/lib/asdf.sh; asdf_devbase_ensure
   - name: go mod tidy

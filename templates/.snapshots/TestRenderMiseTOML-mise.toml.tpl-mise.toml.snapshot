@@ -1,0 +1,18 @@
+(*codegen.File)([task_config]
+includes = [".bootstrap/.mise/tasks"]
+
+## <<Stencil::Block(customMiseEnvironment)>>
+
+## <</Stencil::Block>>
+
+[tools]
+"npm:prettier" = "2"
+
+## <<Stencil::Block(customMiseTools)>>
+
+## <</Stencil::Block>>
+
+## <<Stencil::Block(extraMise)>>
+
+## <</Stencil::Block>>
+)

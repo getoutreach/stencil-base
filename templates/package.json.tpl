@@ -11,7 +11,6 @@
 {{- range stencil.GetModuleHook "nodejs_dependencies" }}
     "{{ .name }}": "{{ .version }}",
 {{- end }}
-    "prettier": "^2.8.8",
     "semantic-release": "^23.0.8",
     "semver": "^7.6.0"
   }
