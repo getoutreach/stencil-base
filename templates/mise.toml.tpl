@@ -1,12 +1,9 @@
 [task_config]
 includes = [".bootstrap/.mise/tasks"]
 
-{{- $miseEnvironments := stencil.GetModuleHook "miseEnvironment" }}
-{{- if gt ($miseEnvironments | len) 0 }}
 [env]
-{{- range $miseEnvironments }}
+{{- range (stencil.GetModuleHook "miseEnvironment") }}
 {{ . | toToml }}
-{{- end }}
 {{- end }}
 
 ## <<Stencil::Block(customMiseEnvironment)>>
