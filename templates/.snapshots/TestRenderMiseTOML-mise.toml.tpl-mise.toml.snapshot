@@ -1,6 +1,8 @@
 (*codegen.File)([task_config]
 includes = [".bootstrap/.mise/tasks"]
 
+[env]
+
 ## <<Stencil::Block(customMiseEnvironment)>>
 
 ## <</Stencil::Block>>
