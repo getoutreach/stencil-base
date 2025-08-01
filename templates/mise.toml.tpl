@@ -1,5 +1,8 @@
 [task_config]
-includes = [".bootstrap/.mise/tasks"]
+includes = [
+  ".bootstrap/.mise/tasks",
+  ".mise/tasks",
+]
 
 [env]
 {{- range (stencil.GetModuleHook "miseEnvironment") }}
