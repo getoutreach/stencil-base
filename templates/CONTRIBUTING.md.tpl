@@ -55,7 +55,7 @@ add the following `replace` directive to that project's `go.mod` file:
 replace github.com/{{ .Runtime.Box.Org }}/{{ .Config.Name }} => /path/to/local/version/{{ .Config.Name }}
 ```
 
-**_Note_**: This repository may have postfixed it's module path with a version, go check the first
+**_Note_**: This repository may have postfixed its module path with a version, go check the first
 line of the `go.mod` file in this repository to see if that is the case. If that is the case,
 you will need to modify the first part of the replace directive (the part before the `=>`) with
 that postfixed path.
