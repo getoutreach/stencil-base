@@ -20,7 +20,7 @@ postRunCommand:
   - name: go mod tidy
     command: go mod tidy -compat=1.17
   - name: Install or upgrade release-related Node.js packages
-    command: if test -f yarn.lock; then yarn upgrade; else yarn; fi
+    command: yarn; if test -f yarn.lock; then yarn upgrade; fi
 arguments:
   releaseOptions.enablePrereleases:
     description: Enable prereleases
