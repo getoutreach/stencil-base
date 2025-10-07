@@ -2,7 +2,7 @@ name: github.com/getoutreach/stencil-base
 ## <<Stencil::Block(keys)>>
 modules:
   - name: github.com/getoutreach/devbase
-    version: ">=2.33.0-rc.7"
+    version: ">=2.33.0"
 stencilVersion: "^v1.43.0-rc.5"
 postRunCommand:
   - name: Install tools from mise
@@ -20,7 +20,7 @@ postRunCommand:
   - name: go mod tidy
     command: go mod tidy -compat=1.17
   - name: Install or upgrade release-related Node.js packages
-    command: yarn; if test -f yarn.lock; then yarn upgrade; fi
+    command: yarn; yarn upgrade
 arguments:
   releaseOptions.enablePrereleases:
     description: Enable prereleases
