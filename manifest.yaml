@@ -5,6 +5,8 @@ modules:
     version: ">=2.33.0"
 stencilVersion: "^v1.43.0-rc.5"
 postRunCommand:
+  - name: Trust mise config
+    command: mise trust
   - name: Install tools from mise
     command: mise install --yes
   - name: asdf install
