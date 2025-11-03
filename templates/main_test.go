@@ -86,6 +86,21 @@ func TestRenderCodeownersWithExtraOwnersFile(t *testing.T) {
 	st.Run(stenciltest.RegenerateSnapshots())
 }
 
+func TestRenderPackageJSON(t *testing.T) {
+	st := stenciltest.New(t, "package.json.tpl", "_helpers.tpl")
+	st.Run(stenciltest.RegenerateSnapshots())
+}
+
+func TestRenderPackageJSONWithoutReleases(t *testing.T) {
+	st := stenciltest.New(t, "package.json.tpl", "_helpers.tpl")
+	st.Args(map[string]any{
+		"releaseOptions": map[string]any{
+			"enabled": false,
+		},
+	})
+	st.Run(stenciltest.RegenerateSnapshots())
+}
+
 func TestRenderMiseTOML(t *testing.T) {
 	st := stenciltest.New(t, "mise.toml.tpl", "_helpers.tpl")
 	st.Args(map[string]any{})
