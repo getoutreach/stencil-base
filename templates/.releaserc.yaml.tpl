@@ -1,3 +1,6 @@
+{{- if not (stencil.Arg "releaseOptions.enabled") }}
+{{- file.Skip "project does not make releases" }}
+{{- end }}
 {{- $prereleases := stencil.Arg "releaseOptions.enablePrereleases" }}
 preset: conventionalcommits
 branches:
