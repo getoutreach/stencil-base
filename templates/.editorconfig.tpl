@@ -12,6 +12,17 @@ indent_style = tab
 indent_style = space
 indent_size  = 2
 
+[*.py]
+indent_style = space
+indent_size = 4
+
+[*.{json,toml}]
+indent_style = space
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
 ## <<Stencil::Block(editorconfig)>>
 {{ file.Block "editorconfig" }}
 ## <</Stencil::Block>>
