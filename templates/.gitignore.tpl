@@ -6,8 +6,7 @@
 *.dylib
 
 # Editor files
-*.swp
-*.swo
+[._]*.sw[a-p]
 *~
 \#*\#
 .idea/*
@@ -45,9 +44,6 @@ Pulumi.*.yaml
 
 # macOS
 .DS_Store
-
-# Windows
-Thumbs.db
 
 # Ruby gRPC client
 *.gem
