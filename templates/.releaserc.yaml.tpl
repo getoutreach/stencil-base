@@ -54,6 +54,15 @@ plugins:
       publishCmd: |-
         DRYRUN=${options.dryrun} ./scripts/shell-wrapper.sh ruby/publish.sh ${nextRelease.version}
   {{- end }}
+  {{- if has "python" (stencil.Arg "grpcClients") }}
+  # Release python packages
+  - - "@semantic-release/exec"
+    # We use generateNotesCmd because prepareCmd is not ran on dry-run
+    - generateNotesCmd: |-
+        ./scripts/shell-wrapper.sh python/build.sh ${nextRelease.version} 1>&2
+      publishCmd: |-
+        DRYRUN=${options.dryrun} ./scripts/shell-wrapper.sh python/publish.sh ${nextRelease.version}
+  {{- end }}
   {{- if not (empty (stencil.Arg "grpcClients")) }}
   # Store the package.json updates in Git
   - - "@semantic-release/git"
@@ -63,6 +72,9 @@ plugins:
         {{- end }}
         {{- if has "ruby" (stencil.Arg "grpcClients") }}
         - api/clients/ruby/lib/{{ .Config.Name }}_client/version.rb
+        {{- end }}
+        {{- if has "python" (stencil.Arg "grpcClients") }}
+        - api/clients/python/pyproject.toml
         {{- end }}
   {{- end }}
 {{- end }}
