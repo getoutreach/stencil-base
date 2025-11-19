@@ -116,5 +116,6 @@ arguments:
         enum:
           - node
           - ruby
+          - python
     description: A list of languages to generate gRPC clients for
 ## <</Stencil::Block>>
