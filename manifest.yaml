@@ -108,13 +108,4 @@ arguments:
           - type: string
           - type: object
     description: A list of CLIs for this service
-  grpcClients:
-    schema:
-      type: array
-      items:
-        type: string
-        enum:
-          - node
-          - ruby
-    description: A list of languages to generate gRPC clients for
 ## <</Stencil::Block>>
