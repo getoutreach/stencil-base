@@ -43,7 +43,9 @@ plugins:
 
 {{- $preGHReleaseHook := (stencil.GetModuleHook "preGHReleaseConfig") }}
 {{- if $preGHReleaseHook }}
-{{ toYaml $preGHReleaseHook | indent 2 }}
+{{- range $preGHReleaseHook }}
+{{ . }}
+{{- end }}
 {{- end }}
 
 {{- if or (not (empty (stencil.Arg "commands"))) (stencil.Arg "releaseOptions.force") }}
