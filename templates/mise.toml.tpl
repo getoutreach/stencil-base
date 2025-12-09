@@ -1,5 +1,8 @@
 [task_config]
 includes = [
+{{- range (stencil.GetModuleHook "miseTaskIncludes") }}
+{{ . | quote | indent 2 }},
+{{- end }}
   ".bootstrap/.mise/tasks",
   ".mise/tasks",
 ]
