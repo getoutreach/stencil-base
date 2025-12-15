@@ -98,6 +98,11 @@ arguments:
     schema:
       type: boolean
     description: If this is set to true the `make release` step and assets declaration in .releaserc.yaml will render regardless of other arguments.
+  versions.prettier:
+    schema:
+      type: string
+    description: Version of Prettier to use for formatting various file types. Note that minor versions may change behavior (patch versions may also change behavior, but usually only either unintentionally or to fix regressions). Valid values include full versions, major versions (3), or minor versions (3.7).
+    default: "2"
 
   # TODO(jaredallard): Move this into a separate Go module
   commands:
