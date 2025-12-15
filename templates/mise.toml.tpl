@@ -17,7 +17,7 @@ includes = [
 ## <</Stencil::Block>>
 
 [tools]
-"npm:prettier" = "2"
+"npm:prettier" = {{ stencil.Arg "versions.prettier" | quote }}
 
 {{- range stencil.GetModuleHook "miseTools" }}
 {{ . | toToml }}
