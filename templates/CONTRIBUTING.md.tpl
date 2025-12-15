@@ -59,8 +59,8 @@ replace github.com/{{ .Runtime.Box.Org }}/{{ .Config.Name }} => /path/to/local/v
 > [!NOTE]
 > This repository may have postfixed its module path with a version, go check the first
 line of the `go.mod` file in this repository to see if that is the case. If that is the case,
-you will need to modify the first part of the replace directive (the part before the `=>`) with
-that postfixed path.
+> you will need to modify the first part of the replace directive (the part before the `=>`) with
+> that postfixed path.
 
 ### Linting and Unit Testing
 
