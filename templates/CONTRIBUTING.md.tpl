@@ -4,12 +4,12 @@
 ## Prerequisites
 
 {{- if and (stencil.Arg "service") (not (stencil.Arg "oss")) }}
-Make sure you've ran `orc setup`.
+Make sure you've run `orc setup`.
 {{- end }}
 
 ## Building and Testing
 
-This project uses devbase, which exposes the following build tooling: [devbase/docs/makefile.md](https://github.com/getoutreach/devbase/blob/main/docs/makefile.md)
+This project uses `devbase`, which exposes the following build tooling: [`devbase/docs/makefile.md`](https://github.com/getoutreach/devbase/blob/main/docs/makefile.md)
 
 {{- if (stencil.Arg "service") }}
 ### Building and Running
@@ -80,7 +80,7 @@ make e2e
 ```
 
 This leverages the developer environment to interact with dependent integrations and services. If
-an already provisioned environment exists it will use that, else it will create one.
+an already provisioned environment exists it will use that, otherwise it will create one.
 {{- end }}
 
 {{- $info := stencil.GetModuleHook "contributeAdditionalInformation" }}
