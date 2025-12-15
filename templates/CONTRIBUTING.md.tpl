@@ -44,18 +44,20 @@ environment, you can leverage the following script:
 ```
 {{- end }}
 
-### Replacing a Remote Version of the a Package with Local Version
+### Replacing a Remote Version of a Package with a Local Version
 
-_This is only applicable if this repository exposes a public package_.
+> [!NOTE]
+> This is only applicable if this repository exposes a public package.
 
 If you want to test a package exposed in this repository in a project that uses it, you can
 add the following `replace` directive to that project's `go.mod` file:
 
-```
+```gomod
 replace github.com/{{ .Runtime.Box.Org }}/{{ .Config.Name }} => /path/to/local/version/{{ .Config.Name }}
 ```
 
-**_Note_**: This repository may have postfixed its module path with a version, go check the first
+> [!NOTE]
+> This repository may have postfixed its module path with a version, go check the first
 line of the `go.mod` file in this repository to see if that is the case. If that is the case,
 you will need to modify the first part of the replace directive (the part before the `=>`) with
 that postfixed path.
