@@ -100,7 +100,7 @@ arguments:
     description: If this is set to true the `make release` step and assets declaration in .releaserc.yaml will render regardless of other arguments.
   versions.nodejs:
     description: Nodejs version to use for build tooling (e.g., semantic-release)
-    default: "20.16.0"
+    default: "22.22.0"
     schema:
       type: string
   versions.prettier:
