@@ -16,6 +16,15 @@ includes = [
 {{ file.Block "customMiseEnvironment" }}
 ## <</Stencil::Block>>
 
+[hooks]
+enter = [
+  "$MISE_PROJECT_ROOT/scripts/devbase.sh",
+]
+
+## <<Stencil::Block(customMiseHooks)>>
+{{ file.Block "customMiseHooks" }}
+## <</Stencil::Block>>
+
 [tools]
 "npm:prettier" = {{ stencil.Arg "versions.prettier" | quote }}
 
