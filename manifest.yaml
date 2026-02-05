@@ -23,6 +23,8 @@ postRunCommand:
     command: if test -f go.mod; then go mod tidy -compat=1.17; fi
   - name: Install or upgrade release-related Node.js packages
     command: yarn; yarn upgrade
+  - name: Upgrade mise tooling & lockfile
+    command: ./scripts/shell-wrapper.sh mise.sh upgrade --before 7d; ./scripts/shell-wrapper.sh mise.sh lock
 arguments:
   releaseOptions.enabled:
     description: Whether the repository makes releases.
