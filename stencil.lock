@@ -34,6 +34,9 @@ files:
     - name: .gitattributes
       template: .gitattributes.tpl
       module: github.com/getoutreach/stencil-golang
+    - name: .gitattributes
+      template: .gitattributes.tpl
+      module: github.com/getoutreach/stencil-base
     - name: .github/CODEOWNERS
       template: .github/CODEOWNERS.tpl
       module: github.com/getoutreach/stencil-base
