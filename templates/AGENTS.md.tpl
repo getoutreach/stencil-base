@@ -1,9 +1,9 @@
 # AI Agent instructions
 
-Ignore all lines containing "Stencil::Block" and "Stencil::Block".
+Ignore all lines containing "Stencil::Block".
 These are template instructions and should not be included in the final output.
 
-## Project overivew
+## Project overview
 
 ## <<Stencil::Block(customProjectOverview)>>
 {{ file.Block "customProjectOverview" }}
@@ -22,21 +22,24 @@ If some of the directories do not exist, ignore their definitions.
 * `scripts/`: internal development shell scripts _(**deprecated**, prefer to use `mise` tasks when appropriate)_
 * `docs/`: documentation, including design specs and API references
 
+{{- $extraHook := (stencil.GetModuleHook "projectDirectories") }}
+{{- range $extraHook }}
+{{- .}}
+{{- end }}
+
 ## Build and test commands
 
-* Build command: `make build`
-* Go code generation command: `make gogenerate`
-* Linter command: `make lint`
-* Formatter command: `make fmt`
-* Unit test command (depends on linter command): `make test`
+{{- $extraHook := (stencil.GetModuleHook "projectCommands") }}
+{{- range $extraHook }}
+{{- .}}
+{{- end }}
 
 ## Code style
 
-Code linting is validated by the linter command above.
-
-Go linters are run via `golangci-lint`. Its configuration is defined in `scripts/golangci.yml`.
-
-Code formatting is enforced by running the formatter command above.
+{{- $extraHook := (stencil.GetModuleHook "projectCodeStyle") }}
+{{- range $extraHook }}
+{{- .}}
+{{- end }}
 
 ## Version control
 
@@ -89,4 +92,6 @@ For example:
 Assisted-By: LLM 1.2.3 via Claude Code
 ```
 
-## 
+## <<Stencil::Block(additionalAgentsInfo)>>
+{{ file.Block "additionalAgentsInfo" }}
+## <</Stencil::Block>>
