@@ -11,12 +11,13 @@ These are template instructions and should not be included in the final output.
 
 ## Project organization
 
-If some of the directories do not exist, ignore their definitions.
-
 {{- $extraHook := (stencil.GetModuleHook "projectDirectories") }}
 {{- range $extraHook }}
 {{- .}}
 {{- end }}
+
+If some of the directories do not exist, ignore their definitions.
+If no directories are defined, find information in `docs/README.md` in section "Structure".
 
 ## Build and test commands
 
