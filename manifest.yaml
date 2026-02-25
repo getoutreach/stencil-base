@@ -11,16 +11,12 @@ postRunCommand:
     command: mise install --yes
   - name: asdf install
     command: ./scripts/devbase.sh; source .bootstrap/shell/lib/asdf.sh; asdf_devbase_ensure
-  - name: go mod tidy
-    command: if test -f go.mod; then go mod tidy -compat=1.17; fi
   - name: Format Files (step 1)
     command: make fmt
   - name: Generate Files
     command: if test -f Makefile -a -f go.mod; then make gogenerate; fi
   - name: Format Files (step 2)
     command: make fmt
-  - name: go mod tidy
-    command: if test -f go.mod; then go mod tidy -compat=1.17; fi
   - name: Install or upgrade release-related Node.js packages
     command: yarn; yarn upgrade
   - name: Upgrade mise tooling & lockfile
