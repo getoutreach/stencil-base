@@ -17,7 +17,7 @@ These are template instructions and should not be included in the final output.
 {{- end }}
 
 If some of the directories do not exist, ignore their definitions.
-If no directories are defined, find information in `docs/README.md` in section "Structure".
+If no directories are defined, find more information in `docs/` directory.
 
 ## Build and test commands
 
