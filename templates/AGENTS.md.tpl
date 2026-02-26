@@ -5,9 +5,9 @@ These are template instructions and should not be included in the final output.
 
 ## Project overview
 
-## <<Stencil::Block(customProjectOverview)>>
+<!-- <<Stencil::Block(customProjectOverview)>> -->
 {{ file.Block "customProjectOverview" }}
-## <</Stencil::Block>>
+<!-- <</Stencil::Block>> -->
 
 ## Project organization
 
@@ -84,6 +84,6 @@ For example:
 Assisted-By: LLM 1.2.3 via Claude Code
 ```
 
-## <<Stencil::Block(additionalAgentsInfo)>>
+<!-- <<Stencil::Block(additionalAgentsInfo)>> -->
 {{ file.Block "additionalAgentsInfo" }}
-## <</Stencil::Block>>
+<!-- ## <</Stencil::Block>> -->
