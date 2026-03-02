@@ -3,6 +3,95 @@
 Ignore all lines containing "Stencil::Block".
 These are template instructions and should not be included in the final output.
 
+# AI Agent guidance
+
+Ignore lines containing "Stencil::Block"; they are templates.
+
+Purpose: concise rules and actionable workflows for AI-assisted contributors (lint/test/CI/security/perf).
+
+**Quick Start (3 commands)**
+
+1. Format modified files and imports:
+
+```bash
+gofmt -w ./... && goimports -w ./...
+```
+
+2. Run linters (local):
+
+```bash
+PATH="$BASH5_PATH:$PATH" make lint
+```
+
+3. Run tests:
+
+```bash
+PATH="$BASH5_PATH:$PATH" make test
+```
+
+## Critical rules (short)
+
+- Run linters and tests before declaring work complete.
+- Include the required lint/test status blocks in PR descriptions (see templates below).
+- Follow Conventional Commits for commits and do NOT mark breaking changes without explicit approval.
+
+---
+
+## Linting workflow (detailed)
+
+1. Format: `gofmt -w ./...`
+2. Fix imports: `goimports -w ./...`
+3. Run all linters: `PATH="$BASH5_PATH:$PATH" make lint`
+4. Fix all reported issues; re-run until clean.
+
+Required confirmation (paste into PR description or task completion):
+
+```
+Linting Status:
+✅ Ran: PATH="$BASH5_PATH:$PATH" make lint
+✅ Result: All linters passing (or list of remaining issues)
+✅ All errors fixed
+```
+
+Notes:
+- If a linter flags a style/formatting problem, fix the source not the linter config.
+- If you think a lint rule should be changed, open a PR to central config and request revie
+w.
+
+**If you do not run linters and confirm the results, you have NOT completed the task.**
+
+#### When to Run Linters
+
+1. Immediately after writing a new file
+2. Immediately after modifying an existing file
+3. Before claiming any task is complete
+4. When you see a linter error, fix it immediately - don't defer it
+
+#### Handling Linter Violations
+
+When the linter reports any issue:
+
+1. **Read the error message carefully** - Understand what's being reported and why
+2. **Fix the root cause** - Don't just suppress warnings; address the underlying issue
+3. **Re-run the linter** - Verify the fix resolved the issue completely
+4. **Never skip linting** - Even if the code compiles, linters catch important issues
+
+**If you don't understand a linter error:**
+
+- Research the specific linter rule to understand its purpose
+- Ask the user for clarification if needed
+- NEVER ignore or suppress the error without understanding it
+
+#### DO NOT:
+
+- ❌ Skip linters because "the code compiles"
+- ❌ Skip linters because "it's similar to code I wrote before"
+- ❌ Skip linters because "they're slow"
+- ❌ Wait for the user to find linter errors
+- ❌ Fix linter errors one-by-one as the user reports them
+
+**Zero tolerance: Run linters. Always. This is wasting the user's time otherwise.**
+
 ## Critical rules
 
 ### Mandatory Linting Workflow
@@ -318,6 +407,89 @@ For example:
 ```
 Assisted-By: LLM 1.2.3 via Claude Code
 ```
+
+## Performance & scaling for agents
+
+- Prefer batching requests to external services where possible.
+- Use local caching for repeated prompt/template results.
+- Set concurrency limits and worker-pool sizes; measure CPU/RAM and tune.
+- Use exponential backoff with jitter for retries to avoid thundering herds.
+- Profile slow paths and cache expensive computations.
+
+---
+
+## Observability & metrics
+
+- Emit counts for requests, errors, latencies, and cache hit rates.
+- Tag metrics by agent type, prompt template, and external service.
+- Create alerts for error rate spikes and latency regressions.
+
+---
+
+## Security & secrets
+
+- Never commit secrets.
+- Limit API keys with least privilege and rotate regularly.
+- Audit logs for agent actions and access to sensitive resources.
+
+---
+
+## Prompting, rate-limit and retry best practices
+
+- Implement idempotency where retries are possible.
+- Use rate-limiters and queueing to protect downstream services.
+- For external LLMs: use backoff with capped retries and circuit-breakers.
+
+---
+
+## Testing patterns for agents
+
+- Unit tests: mock external LLM responses and test decision logic deterministically.
+- Integration tests: run end-to-end against a staging environment or a recorded fixture.
+- Use golden files for stable prompt outputs where applicable.
+
+---
+
+## Troubleshooting & FAQ (quick fixes)
+
+- Linter fails: run `gofmt` and `goimports`, then `make lint` to see the full report.
+- Test flakes: run the test repeatedly locally, inspect logs, add deterministic fixtures.
+
+---
+
+## Templates & examples
+
+PR completion template (paste into PR description):
+
+```
+Linting Status:
+✅ Ran: PATH="$BASH5_PATH:$PATH" make lint
+✅ Result: All linters passing
+
+Testing Status:
+✅ Ran: PATH="$BASH5_PATH:$PATH" make test
+✅ Result: All tests passing
+
+AI prompt: <If any AI assistance used, paste the prompt here>
+Assisted-By: <Model Name> via <Tool Name>
+```
+
+Commit footer template for AI-assisted commits:
+
+```
+AI prompt: <prompt used>
+Assisted-By: <Model Name> via <Tool Name>
+```
+
+---
+
+## Change & release process (summary)
+
+- Use Conventional Commits mentioned in section _Commit message format_.
+- Do NOT add `BREAKING CHANGE` or `!` without explicit approval.
+- If a change looks breaking, call it out in the PR description and ask for explicit approval.
+
+---
 
 <!-- <<Stencil::Block(additionalAgentsInfo)>> -->
 {{ file.Block "additionalAgentsInfo" }}
