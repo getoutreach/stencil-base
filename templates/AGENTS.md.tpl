@@ -279,6 +279,8 @@ Assisted-By: <Model Name> via <Tool Name>
 
 ---
 
+## Custom repo info
+
 <!-- <<Stencil::Block(additionalAgentsInfo)>> -->
 {{ file.Block "additionalAgentsInfo" }}
 <!-- ## <</Stencil::Block>> -->
