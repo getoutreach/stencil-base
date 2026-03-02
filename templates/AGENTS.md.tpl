@@ -7,27 +7,14 @@ These are template instructions and should not be included in the final output.
 
 Ignore lines containing "Stencil::Block"; they are templates.
 
-Purpose: concise rules and actionable workflows for AI-assisted contributors (lint/test/CI/security/perf).
+Purpose: concise rules and actionable workflows for AI-assisted contributors.
 
-**Quick Start (3 commands)**
+**Quick Start**
 
-1. Format modified files and imports:
-
-```bash
-gofmt -w ./... && goimports -w ./...
-```
-
-2. Run linters (local):
-
-```bash
-PATH="$BASH5_PATH:$PATH" make lint
-```
-
-3. Run tests:
-
-```bash
-PATH="$BASH5_PATH:$PATH" make test
-```
+{{- $extraHook := (stencil.GetModuleHook "projectQuickStart") }}
+{{- range $extraHook }}
+{{- .}}
+{{- end }}
 
 ## Critical rules (short)
 
@@ -39,227 +26,28 @@ PATH="$BASH5_PATH:$PATH" make test
 
 ## Linting workflow (detailed)
 
-1. Format: `gofmt -w ./...`
-2. Fix imports: `goimports -w ./...`
-3. Run all linters: `PATH="$BASH5_PATH:$PATH" make lint`
-4. Fix all reported issues; re-run until clean.
-
-Required confirmation (paste into PR description or task completion):
-
-```
-Linting Status:
-✅ Ran: PATH="$BASH5_PATH:$PATH" make lint
-✅ Result: All linters passing (or list of remaining issues)
-✅ All errors fixed
-```
-
-Notes:
-- If a linter flags a style/formatting problem, fix the source not the linter config.
-- If you think a lint rule should be changed, open a PR to central config and request revie
-w.
-
-**If you do not run linters and confirm the results, you have NOT completed the task.**
-
-#### When to Run Linters
-
-1. Immediately after writing a new file
-2. Immediately after modifying an existing file
-3. Before claiming any task is complete
-4. When you see a linter error, fix it immediately - don't defer it
-
-#### Handling Linter Violations
-
-When the linter reports any issue:
-
-1. **Read the error message carefully** - Understand what's being reported and why
-2. **Fix the root cause** - Don't just suppress warnings; address the underlying issue
-3. **Re-run the linter** - Verify the fix resolved the issue completely
-4. **Never skip linting** - Even if the code compiles, linters catch important issues
-
-**If you don't understand a linter error:**
-
-- Research the specific linter rule to understand its purpose
-- Ask the user for clarification if needed
-- NEVER ignore or suppress the error without understanding it
-
-#### DO NOT:
-
-- ❌ Skip linters because "the code compiles"
-- ❌ Skip linters because "it's similar to code I wrote before"
-- ❌ Skip linters because "they're slow"
-- ❌ Wait for the user to find linter errors
-- ❌ Fix linter errors one-by-one as the user reports them
-
-**Zero tolerance: Run linters. Always. This is wasting the user's time otherwise.**
+{{- $extraHook := (stencil.GetModuleHook "projectLintingWorkflow") }}
+{{- range $extraHook }}
+{{- .}}
+{{- end }}
 
 ## Critical rules
 
 ### Mandatory Linting Workflow
 
-**YOU MUST RUN LINTERS BEFORE CLAIMING ANY CODING TASK IS COMPLETE.**
-
-Skipping linters wastes the user's time by forcing them to manually find errors that linters would catch automatically.
-
-#### Completion Checklist
-
-After writing or modifying ANY Go code:
-
-```bash
-# 1. Format the code
-gofmt -w <modified-files>
-goimports -w <modified-files>
-
-# 2. RUN LINTERS (DO NOT SKIP THIS)
-cd $MONOREPO_PATH
-PATH="$BASH5_PATH:$PATH" make lint
-
-# This runs ALL linters: golangci-lint, lintroller, shellcheck, eslint, buf, tflint, etc.
-
-# 3. Fix ALL linter errors immediately
-# 4. Re-run linters until output is clean
-# 5. Only then is the task complete
-```
-
-#### Required Confirmation
-
-At the end of every coding task, you MUST include:
-
-```
-Linting Status:
-✅ Ran: PATH="$BASH5_PATH:$PATH" make lint
-✅ Result: All linters passing (or list of remaining issues)
-✅ All errors fixed
-```
-
-**If you do not run linters and confirm the results, you have NOT completed the task.**
-
-#### When to Run Linters
-
-1. Immediately after writing a new file
-2. Immediately after modifying an existing file
-3. Before claiming any task is complete
-4. When you see a linter error, fix it immediately - don't defer it
-
-#### Handling Linter Violations
-
-When the linter reports any issue:
-
-1. **Read the error message carefully** - Understand what's being reported and why
-2. **Fix the root cause** - Don't just suppress warnings; address the underlying issue
-3. **Re-run the linter** - Verify the fix resolved the issue completely
-4. **Never skip linting** - Even if the code compiles, linters catch important issues
-
-**If you don't understand a linter error:**
-
-- Research the specific linter rule to understand its purpose
-- Ask the user for clarification if needed
-- NEVER ignore or suppress the error without understanding it
-
-#### DO NOT:
-
-- ❌ Skip linters because "the code compiles"
-- ❌ Skip linters because "it's similar to code I wrote before"
-- ❌ Skip linters because "they're slow"
-- ❌ Wait for the user to find linter errors
-- ❌ Fix linter errors one-by-one as the user reports them
-
-**Zero tolerance: Run linters. Always. This is wasting the user's time otherwise.**
+{{- $extraHook := (stencil.GetModuleHook "projectCriticalRules_MandatoryLintingWorkflow") }}
+{{- range $extraHook }}
+{{- .}}
+{{- end }}
 
 ---
 
 ### Mandatory Testing Workflow
 
-**YOU MUST RUN TESTS BEFORE CLAIMING ANY CODING TASK IS COMPLETE.**
-
-Skipping tests wastes the user's time by allowing broken code to be committed. If tests fail, you have NOT completed the task.
-
-#### Testing Checklist
-
-After writing or modifying ANY code:
-
-```bash
-# Run the full test suite
-cd $MONOREPO_PATH
-PATH="$BASH5_PATH:$PATH" make test
-
-# Fix ALL test failures immediately
-# Re-run tests until all tests pass
-# Only then is the task complete
-```
-
-#### Required Confirmation
-
-At the end of every coding task, you MUST include:
-
-```
-Testing Status:
-✅ Ran: PATH="$BASH5_PATH:$PATH" make test
-✅ Result: All tests passing (or list of failures with fixes)
-✅ All test failures fixed
-```
-
-**If you do not run tests and confirm all tests pass, you have NOT completed the task.**
-
-#### When to Run Tests
-1. After writing new code or modifying existing code
-2. Before claiming any task is complete
-3. After fixing linter errors (linting can sometimes break tests)
-4. When you see a test failure, fix it immediately - don't defer it
-
-#### Handling Test Failures
-
-When tests fail:
-
-1. **Read the failure message carefully** - Understand what's failing and why
-2. **Fix the root cause** - Don't just update tests to pass; fix the actual issue
-3. **Re-run the tests** - Verify the fix resolved the failure completely
-4. **Never skip failing tests** - Even if "most tests pass", all tests must pass
-
-**If you don't understand a test failure:**
-- Read the test code to understand what it's validating
-- Check if your changes broke existing functionality
-- Ask the user for clarification if needed
-- NEVER ignore or skip failing tests
-
-#### DO NOT:
-- ❌ Skip tests because "the code looks correct"
-- ❌ Skip tests because "they're slow"
-- ❌ Skip tests because "only one test is failing"
-- ❌ Wait for the user to find test failures
-- ❌ Assume tests will pass without running them
-
-**Zero tolerance: Run tests. Always. Broken tests mean broken code.**
-
----
-
-### Semantic Versioning & Breaking Changes
-
-**NEVER include "BREAKING CHANGE" in commit messages or PR descriptions without explicit user approval.**
-
-The repositories use semantic-release with conventional commits:
-- `fix:` → Patch version (1.0.0 → 1.0.1)
-- `feat:` → Minor version (1.0.0 → 1.1.0)
-- `BREAKING CHANGE:` in commit body/footer → **Major version** (1.0.0 → 2.0.0)
-
-#### Rules
-
-1. **NEVER** add "BREAKING CHANGE" to any commit message or PR description
-2. **NEVER** use the `!` suffix (e.g., `feat!:` or `fix!:`) which also triggers major versions
-3. **ALWAYS** use only `feat:` or `fix:` prefixes unless explicitly told otherwise
-4. **WARN the user** if you detect that changes might be breaking, but let them decide
-
-#### Before Any Commit/PR That Could Be Breaking
-
-- Identify if the change breaks backward compatibility
-- **Warn explicitly**: "This change may be breaking because [reason]. Do you want to mark it as a BREAKING CHANGE (which will trigger a major version bump)?"
-- Wait for explicit approval before adding any breaking change markers
-
-**Example warnings:**
-- "Changing this function signature will break existing callers. Mark as BREAKING CHANGE?"
-- "Removing this public API will affect consumers. Trigger major version bump?"
-- "This behavior change may impact existing users. Mark as breaking?"
-
-**Zero tolerance:** Including "BREAKING CHANGE" or `!` without explicit approval wastes the user's time and potentially disrupts versioning strategy.
+{{- $extraHook := (stencil.GetModuleHook "projectCriticalRules_MandatoryTestingWorkflow") }}
+{{- range $extraHook }}
+{{- .}}
+{{- end }}
 
 ---
 
