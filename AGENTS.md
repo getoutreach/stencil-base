@@ -3,10 +3,96 @@
 Ignore all lines containing "Stencil::Block".
 These are template instructions and should not be included in the final output.
 
+# AI Agent guidance
+
+Ignore lines containing "Stencil::Block"; they are templates.
+
+Purpose: concise rules and actionable workflows for AI-assisted contributors.
+
+**Quick Start**
+1. Format modified files and imports:
+
+```bash
+gofmt -w ./... && goimports -w ./...
+```
+
+2. Run linters (local):
+
+```bash
+PATH="$BASH5_PATH:$PATH" make lint
+```
+
+3. Run tests:
+
+```bash
+PATH="$BASH5_PATH:$PATH" make test
+```
+
+## Critical rules (short)
+
+- Run linters and tests before declaring work complete.
+- Include the required lint/test status blocks in PR descriptions (see templates below).
+- Follow Conventional Commits for commits and do NOT mark breaking changes without explicit approval.
+
+---
+
+## Linting workflow (detailed)
+1. Format: `gofmt -w ./...`
+2. Fix imports: `goimports -w ./...`
+3. Run all linters: `PATH="$BASH5_PATH:$PATH" make lint`
+4. Fix all reported issues; re-run until clean.
+
+Required confirmation (paste into PR description or task completion):
+
+```
+Linting Status:
+✅ Ran: PATH="$BASH5_PATH:$PATH" make lint
+✅ Result: All linters passing (or list of remaining issues)
+✅ All errors fixed
+```
+
+Notes:
+- If a linter flags a style/formatting problem, fix the source not the linter config.
+- If you think a lint rule should be changed, open a PR to central config and request revie
+w.
+
+**If you do not run linters and confirm the results, you have NOT completed the task.**
+
+#### When to Run Linters
+
+1. Immediately after writing a new file
+2. Immediately after modifying an existing file
+3. Before claiming any task is complete
+4. When you see a linter error, fix it immediately - don't defer it
+
+#### Handling Linter Violations
+
+When the linter reports any issue:
+
+1. **Read the error message carefully** - Understand what's being reported and why
+2. **Fix the root cause** - Don't just suppress warnings; address the underlying issue
+3. **Re-run the linter** - Verify the fix resolved the issue completely
+4. **Never skip linting** - Even if the code compiles, linters catch important issues
+
+**If you don't understand a linter error:**
+
+- Research the specific linter rule to understand its purpose
+- Ask the user for clarification if needed
+- NEVER ignore or suppress the error without understanding it
+
+#### DO NOT:
+
+- ❌ Skip linters because "the code compiles"
+- ❌ Skip linters because "it's similar to code I wrote before"
+- ❌ Skip linters because "they're slow"
+- ❌ Wait for the user to find linter errors
+- ❌ Fix linter errors one-by-one as the user reports them
+
+**Zero tolerance: Run linters. Always. This is wasting the user's time otherwise.**
+
 ## Critical rules
 
 ### Mandatory Linting Workflow
-
 **YOU MUST RUN LINTERS BEFORE CLAIMING ANY CODING TASK IS COMPLETE.**
 
 Skipping linters wastes the user's time by forcing them to manually find errors that linters would catch automatically.
@@ -79,7 +165,6 @@ When the linter reports any issue:
 ---
 
 ### Mandatory Testing Workflow
-
 **YOU MUST RUN TESTS BEFORE CLAIMING ANY CODING TASK IS COMPLETE.**
 
 Skipping tests wastes the user's time by allowing broken code to be committed. If tests fail, you have NOT completed the task.
@@ -140,37 +225,6 @@ When tests fail:
 - ❌ Assume tests will pass without running them
 
 **Zero tolerance: Run tests. Always. Broken tests mean broken code.**
-
----
-
-### Semantic Versioning & Breaking Changes
-
-**NEVER include "BREAKING CHANGE" in commit messages or PR descriptions without explicit user approval.**
-
-The repositories use semantic-release with conventional commits:
-- `fix:` → Patch version (1.0.0 → 1.0.1)
-- `feat:` → Minor version (1.0.0 → 1.1.0)
-- `BREAKING CHANGE:` in commit body/footer → **Major version** (1.0.0 → 2.0.0)
-
-#### Rules
-
-1. **NEVER** add "BREAKING CHANGE" to any commit message or PR description
-2. **NEVER** use the `!` suffix (e.g., `feat!:` or `fix!:`) which also triggers major versions
-3. **ALWAYS** use only `feat:` or `fix:` prefixes unless explicitly told otherwise
-4. **WARN the user** if you detect that changes might be breaking, but let them decide
-
-#### Before Any Commit/PR That Could Be Breaking
-
-- Identify if the change breaks backward compatibility
-- **Warn explicitly**: "This change may be breaking because [reason]. Do you want to mark it as a BREAKING CHANGE (which will trigger a major version bump)?"
-- Wait for explicit approval before adding any breaking change markers
-
-**Example warnings:**
-- "Changing this function signature will break existing callers. Mark as BREAKING CHANGE?"
-- "Removing this public API will affect consumers. Trigger major version bump?"
-- "This behavior change may impact existing users. Mark as breaking?"
-
-**Zero tolerance:** Including "BREAKING CHANGE" or `!` without explicit approval wastes the user's time and potentially disrupts versioning strategy.
 
 ---
 
@@ -245,13 +299,31 @@ Even if a concept or pattern is well-known across the industry, this codebase mi
 <!-- <</Stencil::Block>> -->
 
 ## Project organization
+* `api/`: API definitions, such as protobuf files and OpenAPI specifications
+* `bin/`: generated project executables.
+* `cmd/`: main CLI Go code
+* `deployments/`: Container publishing configuration
+* `internal/`: internal (non-public) Go packages
+* `scripts/`: internal development shell scripts _(**deprecated**, prefer to use `mise` tasks when appropriate)_
+* `testdata/`: test fixtures and other test data
+* `.vscode/`: VSCode configuration files
 
 If some of the directories do not exist, ignore their definitions.
 If no directories are defined, find more information in `docs/` directory.
 
 ## Build and test commands
+* Build command: `make build`
+* Go code generation command: `make gogenerate`
+* Linter command: `make lint`
+* Formatter command: `make fmt`
+* Unit test command (depends on linter command): `make test`
 
 ## Code style
+Code linting is validated by the linter command above.
+
+Go linters are run via `golangci-lint`. Its configuration is defined in `scripts/golangci.yml`.
+
+Code formatting is enforced by running the formatter command above.
 
 ## Version control
 
@@ -303,6 +375,89 @@ For example:
 ```
 Assisted-By: LLM 1.2.3 via Claude Code
 ```
+
+## Performance & scaling for agents
+
+- Prefer batching requests to external services where possible.
+- Use local caching for repeated prompt/template results.
+- Set concurrency limits and worker-pool sizes; measure CPU/RAM and tune.
+- Use exponential backoff with jitter for retries to avoid thundering herds.
+- Profile slow paths and cache expensive computations.
+
+---
+
+## Observability & metrics
+
+- Emit counts for requests, errors, latencies, and cache hit rates.
+- Tag metrics by agent type, prompt template, and external service.
+- Create alerts for error rate spikes and latency regressions.
+
+---
+
+## Security & secrets
+
+- Never commit secrets.
+- Limit API keys with least privilege and rotate regularly.
+- Audit logs for agent actions and access to sensitive resources.
+
+---
+
+## Prompting, rate-limit and retry best practices
+
+- Implement idempotency where retries are possible.
+- Use rate-limiters and queueing to protect downstream services.
+- For external LLMs: use backoff with capped retries and circuit-breakers.
+
+---
+
+## Testing patterns for agents
+
+- Unit tests: mock external LLM responses and test decision logic deterministically.
+- Integration tests: run end-to-end against a staging environment or a recorded fixture.
+- Use golden files for stable prompt outputs where applicable.
+
+---
+
+## Troubleshooting & FAQ (quick fixes)
+
+- Linter fails: run `gofmt` and `goimports`, then `make lint` to see the full report.
+- Test flakes: run the test repeatedly locally, inspect logs, add deterministic fixtures.
+
+---
+
+## Templates & examples
+
+PR completion template (paste into PR description):
+
+```
+Linting Status:
+✅ Ran: PATH="$BASH5_PATH:$PATH" make lint
+✅ Result: All linters passing
+
+Testing Status:
+✅ Ran: PATH="$BASH5_PATH:$PATH" make test
+✅ Result: All tests passing
+
+AI prompt: <If any AI assistance used, paste the prompt here>
+Assisted-By: <Model Name> via <Tool Name>
+```
+
+Commit footer template for AI-assisted commits:
+
+```
+AI prompt: <prompt used>
+Assisted-By: <Model Name> via <Tool Name>
+```
+
+---
+
+## Change & release process (summary)
+
+- Use Conventional Commits mentioned in section _Commit message format_.
+- Do NOT add `BREAKING CHANGE` or `!` without explicit approval.
+- If a change looks breaking, call it out in the PR description and ask for explicit approval.
+
+---
 
 <!-- <<Stencil::Block(additionalAgentsInfo)>> -->
 
