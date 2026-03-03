@@ -13,8 +13,8 @@ modules:
       url: https://github.com/getoutreach/stencil-discovery
       version: v1.8.11
     - name: github.com/getoutreach/stencil-golang
-      url: https://github.com/getoutreach/stencil-golang
-      version: v1.30.0
+      url: file://../stencil-golang
+      version: local
     - name: github.com/getoutreach/stencil-outreach
       url: https://github.com/getoutreach/stencil-outreach
       version: v0.27.1-rc.1
@@ -73,6 +73,9 @@ files:
     - name: .vscode/settings.json
       template: .vscode/settings.json.tpl
       module: github.com/getoutreach/stencil-golang
+    - name: AGENTS.md
+      template: AGENTS.md.tpl
+      module: github.com/getoutreach/stencil-base
     - name: Makefile
       template: Makefile.tpl
       module: github.com/getoutreach/stencil-golang
