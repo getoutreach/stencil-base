@@ -20,7 +20,7 @@ postRunCommand:
   - name: Install or upgrade release-related Node.js packages
     command: yarn; yarn upgrade
   - name: Upgrade mise tooling & lockfile
-    command: ./scripts/shell-wrapper.sh mise.sh upgrade --before 7d; ./scripts/shell-wrapper.sh mise.sh lock
+    command: ./scripts/shell-wrapper.sh mise.sh upgrade --local --before 7d; ./scripts/shell-wrapper.sh mise.sh lock
 arguments:
   releaseOptions.enabled:
     description: Whether the repository makes releases.
@@ -96,6 +96,11 @@ arguments:
     schema:
       type: boolean
     description: If this is set to true the `make release` step and assets declaration in .releaserc.yaml will render regardless of other arguments.
+  versions.mise.hard:
+    description: Minimum mise version required for all of the mise features used. Default defined in <stencil-base:templates/mise.toml.tpl>.
+    default: ""
+    schema:
+      type: string
   versions.nodejs:
     description: Nodejs version to use for build tooling (e.g., semantic-release)
     default: "22.22.0"

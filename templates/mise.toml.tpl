@@ -1,3 +1,14 @@
+{{- /* mise 2026.3.2 introduces `mise upgrade --local` */ -}}
+{{- $defaultHardMiseVersion := "2026.3.2" -}}
+{{- $hardMiseVersion := "" -}}
+{{- $hardMiseVersionArg := stencil.Arg "versions.mise.hard" -}}
+{{- if and (ne $hardMiseVersionArg "") (semverCompare (printf ">%s" $defaultHardMiseVersion) $hardMiseVersionArg) -}}
+{{- $hardMiseVersion = $hardMiseVersionArg -}}
+{{- else -}}
+{{- $hardMiseVersion = $defaultHardMiseVersion -}}
+{{- end -}}
+min_version = {{ $hardMiseVersion | quote }}
+
 [task_config]
 includes = [
 {{- range (stencil.GetModuleHook "miseTaskIncludes") }}
