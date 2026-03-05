@@ -16,8 +16,8 @@ modules:
       url: file://../stencil-golang
       version: local
     - name: github.com/getoutreach/stencil-outreach
-      url: https://github.com/getoutreach/stencil-outreach
-      version: v0.27.1-rc.1
+      url: file://../stencil-outreach
+      version: local
     - name: github.com/getoutreach/stencil-pipeline
       url: https://github.com/getoutreach/stencil-pipeline
       version: v1.2.8
