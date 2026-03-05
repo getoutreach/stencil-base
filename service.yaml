@@ -35,3 +35,4 @@ modules:
 replacements:
   github.com/getoutreach/stencil-base: ./
   github.com/getoutreach/stencil-golang: ../stencil-golang
+  github.com/getoutreach/stencil-outreach: ../stencil-outreach
