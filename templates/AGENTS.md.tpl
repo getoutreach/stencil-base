@@ -10,6 +10,7 @@ Ignore lines containing "Stencil::Block"; they are templates. Purpose: concise r
 
 ## Directory structure
 
+
 {{- $extraHook := (stencil.GetModuleHook "directoryStructure") }}
 {{- range $extraHook }}
 {{- .}}
