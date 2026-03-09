@@ -9,12 +9,6 @@ Ignore lines containing "Stencil::Block"; they are templates. Purpose: concise r
 <!-- <</Stencil::Block>> -->
 
 ## Directory structure
-* `api/rpc/`: Contains RPC client code templates for API communication.
-* `deployments/app/configs/`: Contains Jsonnet configuration templates for application deployment settings.
-* `deployments/app/mixins/`: Contains Jsonnet mixin templates for common application deployment patterns.
-* `deployments/tf/`: Contains Terraform templates.
-* `monitoring/`: Contains Terraform templates for comprehensive monitoring setup.
-* `.snapshots/`: Contains snapshot files for testing template rendering outputs.
 
 * **./service.yaml**: File used as configuration for `stencil` program containing additional arguments and stencil modules to use
 * **./stencil.lock**: File used as record for:
