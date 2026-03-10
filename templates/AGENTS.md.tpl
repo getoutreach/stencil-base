@@ -22,6 +22,8 @@ Ignore lines containing "Stencil::Block"; they are templates. Purpose: concise r
   2. What module owns which file
   3. If a file is not listed here, the owner is current repository
 
+If you need more context, you can find more information in `docs/` directory. If the directory does not exist, ignore this line.
+
 ## Components
 
 {{- $extraHook := (stencil.GetModuleHook "agentsComponents") }}

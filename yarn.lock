@@ -2207,9 +2207,9 @@ p-try@^1.0.0:
   integrity sha512-U1etNYuMJoIz3ZXSrrySFjsXQTWOx2/jdi86L+2pRvph/qMKL6sbcCYdH23fqsbm8TH2Gn0OybpT4eSFlCVHww==
 
 pacote@^21.0.0, pacote@^21.0.2, pacote@^21.4.0:
-  version "21.4.0"
-  resolved "https://registry.yarnpkg.com/pacote/-/pacote-21.4.0.tgz#7c66cef758bdda5fae4eb9e0b9ec395018296ad7"
-  integrity sha512-DR7mn7HUOomAX1BORnpYy678qVIidbvOojkBscqy27dRKN+s/hLeQT1MeYYrx1Cxh62jyKjiWiDV7RTTqB+ZEQ==
+  version "21.5.0"
+  resolved "https://registry.yarnpkg.com/pacote/-/pacote-21.5.0.tgz#475fe00db73585dec296590bec484109522e9e6f"
+  integrity sha512-VtZ0SB8mb5Tzw3dXDfVAIjhyVKUHZkS/ZH9/5mpKenwC9sFOXNI0JI7kEF7IMkwOnsWMFrvAZHzx1T5fmrp9FQ==
   dependencies:
     "@gar/promise-retry" "^1.0.0"
     "@npmcli/git" "^7.0.0"
