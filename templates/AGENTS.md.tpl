@@ -1,6 +1,6 @@
 # AI Agent instructions
 
-Ignore lines containing "Stencil::Block"; they are templates. Purpose: concise rules and actionable workflows for AI-assisted contributors.
+Ignore lines containing "Stencil::Block"; they are areas in your generated code that you’d like to persist across runs and are repository specific.
 
 ## Project purpose
 
@@ -13,12 +13,12 @@ Ignore lines containing "Stencil::Block"; they are templates. Purpose: concise r
 
 {{- $extraHook := (stencil.GetModuleHook "directoryStructure") }}
 {{- range $extraHook }}
-{{- .}}
+{{- . }}
 {{- end }}
 
 * **./service.yaml**: File used as configuration for `stencil` program containing additional arguments and stencil modules to use
 * **./stencil.lock**: File used as record for:
-  1. What modules where used and their version
+  1. What modules were used and their version
   2. What module owns which file
   3. If a file is not listed here, the owner is current repository
 
@@ -30,6 +30,11 @@ If you need more context, you can find more information in `docs/` directory. If
 {{- range $extraHook }}
 {{- .}}
 {{- end }}
+
+* Run `make build` to build project.
+* Run `make fmt` to format project.
+* Run `make lint` to run linters on project's code.
+* Run `make test` to run tests.
 
 <!-- <<Stencil::Block(agentsComponentsCustom)>> -->
 {{ file.Block "agentsComponentsCustom" }}
