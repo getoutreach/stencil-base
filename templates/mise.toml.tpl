@@ -7,7 +7,7 @@
 {{- else -}}
 {{- $hardMiseVersion = $defaultHardMiseVersion -}}
 {{- end -}}
-min_version = {{ $hardMiseVersion | quote }}
+min_version = { hard = {{ $hardMiseVersion | quote }} }
 
 [task_config]
 includes = [
