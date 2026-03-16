@@ -1,6 +1,6 @@
 # AI Agent instructions
 
-Ignore lines containing "Stencil::Block"; they are areas in your generated code that you’d like to persist across runs and are repository specific.
+Ignore lines containing "Stencil::Block"; they are areas in your generated code that you’d like to persist across runs and are repository specific. These lines are for template generator and do not contain agent instructions.
 
 ## Project purpose
 
@@ -24,20 +24,22 @@ Ignore lines containing "Stencil::Block"; they are areas in your generated code 
 
 If you need more context, you can find more information in `docs/` directory. If the directory does not exist, ignore this line.
 
-## Components
+## References
 
-{{- $extraHook := (stencil.GetModuleHook "agentsComponents") }}
+{{- $extraHook := (stencil.GetModuleHook "agentsReferences") }}
 {{- range $extraHook }}
 {{- .}}
 {{- end }}
 
+{{- if (stencil.Arg "service") }}
 * Run `make build` to build project.
+* Run `make test` to run tests.
+{{- end }}
 * Run `make fmt` to format project.
 * Run `make lint` to run linters on project's code.
-* Run `make test` to run tests.
 
-<!-- <<Stencil::Block(agentsComponentsCustom)>> -->
-{{ file.Block "agentsComponentsCustom" }}
+<!-- <<Stencil::Block(agentsReferencesCustom)>> -->
+{{ file.Block "agentsReferencesCustom" }}
 <!-- <</Stencil::Block>> -->
 
 ## Other
