@@ -97,7 +97,7 @@ arguments:
       type: boolean
     description: If this is set to true the `make release` step and assets declaration in .releaserc.yaml will render regardless of other arguments.
   versions.mise.hard:
-    description: Minimum mise version required for all of the mise features used. Default defined in <stencil-base:templates/mise.toml.tpl>.
+    description: Minimum (semver-compatible) mise version required for all of the mise features used. Default defined in <stencil-base:templates/mise.toml.tpl>. If supplied, the version used in the mise config is the newer of the two.
     default: ""
     schema:
       type: string
