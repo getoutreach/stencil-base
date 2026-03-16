@@ -5,7 +5,7 @@ Ignore lines containing "Stencil::Block"; they are areas in your generated code 
 ## Project purpose
 
 <!-- <<Stencil::Block(projectPurpose)>> -->
-This project serves as a base for all projects using `stencil` templating.
+Base templates for a stencil backed service
 <!-- <</Stencil::Block>> -->
 
 ## Directory structure
