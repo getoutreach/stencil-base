@@ -1,6 +1,6 @@
 # AI Agent instructions
 
-Ignore lines containing "Stencil::Block"; they are templates. Purpose: concise rules and actionable workflows for AI-assisted contributors.
+Ignore lines containing "Stencil::Block"; they are areas in your generated code that you’d like to persist across runs and are repository specific. These lines are for template generator and do not contain agent instructions.
 
 ## Project purpose
 
@@ -15,23 +15,22 @@ This project serves as a base for all projects using `stencil` templating.
 
 * **./service.yaml**: File used as configuration for `stencil` program containing additional arguments and stencil modules to use
 * **./stencil.lock**: File used as record for:
-  1. What modules where used and their version
+  1. What modules were used and their version
   2. What module owns which file
   3. If a file is not listed here, the owner is current repository
 
 If you need more context, you can find more information in `docs/` directory. If the directory does not exist, ignore this line.
 
-## Components
-What are components? (outreach)
-What are components? (golang)
+## References
+* Run `go mod tidy` to ensure your `go.mod` and `go.sum` files are up to date.
+* Run `make fmt` to format project.
+* Run `make lint` to run linters on project's code.
 
-<!-- <<Stencil::Block(agentsComponentsCustom)>> -->
+<!-- <<Stencil::Block(agentsReferencesCustom)>> -->
 
 <!-- <</Stencil::Block>> -->
 
 ## Other
-Other agent information (outreach)
-Other agent information (golang)
 
 <!-- <<Stencil::Block(agentsOtherCustom)>> -->
 
