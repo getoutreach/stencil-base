@@ -1,4 +1,4 @@
-{
+(*codegen.File)({
   "license": "UNLICENSED",
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^13.0.1",
@@ -12,3 +12,4 @@
     "semver": "^7.6.0"
   }
 }
+)

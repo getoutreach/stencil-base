@@ -7,6 +7,7 @@
 {{ file.Block "toolverOverride" }}
 {{- end }}
 ## <</Stencil::Block>>
+nodejs {{ stencil.Arg "versions.nodejs" }}
 {{- range stencil.GetModuleHook "toolVersions" }}
 {{ printf "%s %s" .name (toString .version) }}
 {{- end }}
