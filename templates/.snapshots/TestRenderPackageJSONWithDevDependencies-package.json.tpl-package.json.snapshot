@@ -4,6 +4,8 @@
 
   },
   "devDependencies": {
+    "jest": "^29.0.0",
+    "typescript": "^5.0.0",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.1.0",
     "@semantic-release/git": "^10.0.1",

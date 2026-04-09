@@ -1,7 +1,8 @@
 (*codegen.File)({
   "license": "UNLICENSED",
   "scripts": {
-
+    "build": "tsc -b",
+    "test": "jest"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^13.0.1",

@@ -52,6 +52,45 @@ func TestRenderPackageJSON(t *testing.T) {
 	st.Run(stenciltest.RegenerateSnapshots())
 }
 
+func TestRenderPackageJSONWithScripts(t *testing.T) {
+	st := stenciltest.New(t, "package.json.tpl", "_helpers.tpl")
+	st.Args(map[string]any{
+		"npm": map[string]any{
+			"scripts": map[string]any{
+				"build": "tsc -b",
+				"test":  "jest",
+			},
+		},
+	})
+	st.Run(stenciltest.RegenerateSnapshots())
+}
+
+func TestRenderPackageJSONWithDevDependencies(t *testing.T) {
+	st := stenciltest.New(t, "package.json.tpl", "_helpers.tpl")
+	st.Args(map[string]any{
+		"npm": map[string]any{
+			"devDependencies": map[string]any{
+				"typescript": "^5.0.0",
+				"jest":       "^29.0.0",
+			},
+		},
+	})
+	st.Run(stenciltest.RegenerateSnapshots())
+}
+
+func TestRenderPackageJSONWithDependencies(t *testing.T) {
+	st := stenciltest.New(t, "package.json.tpl", "_helpers.tpl")
+	st.Args(map[string]any{
+		"npm": map[string]any{
+			"dependencies": map[string]any{
+				"express": "^4.18.0",
+				"lodash":  "^4.17.21",
+			},
+		},
+	})
+	st.Run(stenciltest.RegenerateSnapshots())
+}
+
 func TestRenderPackageJSONWithoutReleases(t *testing.T) {
 	st := stenciltest.New(t, "package.json.tpl", "_helpers.tpl")
 	st.Args(map[string]any{

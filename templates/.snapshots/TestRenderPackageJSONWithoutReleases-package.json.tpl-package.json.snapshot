@@ -1,6 +1,12 @@
 (*codegen.File)({
   "license": "UNLICENSED",
+  "scripts": {
+
+  },
   "devDependencies": {
+  },
+  "dependencies": {
+
   }
 }
 )

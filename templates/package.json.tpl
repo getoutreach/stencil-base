@@ -1,6 +1,16 @@
 {
   "license": "UNLICENSED",
+{{- $scriptLines := list }}
+{{- range $key, $val := stencil.Arg "npm.scripts" }}
+{{- $scriptLines = append $scriptLines (printf "    \"%s\": \"%s\"" $key $val) }}
+{{- end }}
+  "scripts": {
+{{ join ",\n" $scriptLines }}
+  },
   "devDependencies": {
+{{- range $name, $ver := stencil.Arg "npm.devDependencies" }}
+    "{{ $name }}": "{{ $ver }}",
+{{- end }}
 {{- range stencil.GetModuleHook "nodejs_dependencies" }}
     "{{ .name }}": "{{ .version }}",
 {{- end }}
@@ -15,5 +25,12 @@
     "semantic-release": "^25.0.2",
     "semver": "^7.6.0"
 {{- end }}
+  },
+{{- $depLines := list }}
+{{- range $name, $ver := stencil.Arg "npm.dependencies" }}
+{{- $depLines = append $depLines (printf "    \"%s\": \"%s\"" $name $ver) }}
+{{- end }}
+  "dependencies": {
+{{ join ",\n" $depLines }}
   }
 }

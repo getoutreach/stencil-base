@@ -111,6 +111,15 @@ arguments:
       type: string
     description: Version of Prettier to use for formatting various file types. Note that minor versions may change behavior (patch versions may also change behavior, but usually only either unintentionally or to fix regressions). Valid values include full versions, major versions (3), or minor versions (3.7).
     default: "2"
+  npm.scripts:
+    schema: {}
+    description: Custom npm scripts to add to package.json. Keys are script names, values are the commands.
+  npm.devDependencies:
+    schema: {}
+    description: Custom npm devDependencies to add to package.json. Keys are package names, values are version ranges.
+  npm.dependencies:
+    schema: {}
+    description: Custom npm dependencies to add to package.json. Keys are package names, values are version ranges.
 
   # TODO(jaredallard): Move this into a separate Go module
   commands:
