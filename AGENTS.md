@@ -64,13 +64,6 @@ If you need more context, you can find more information in `docs/` directory. If
 
 <!-- <</Stencil::Block>> -->
 
-## Free output
-
-
-<!-- <<Stencil::Block(agentsFreeOutputCustom)>> -->
-
-<!-- <</Stencil::Block>> -->
-
 ## Boundaries
 
 ### Always

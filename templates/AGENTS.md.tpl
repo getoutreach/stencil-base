@@ -88,18 +88,6 @@ If you need more context, you can find more information in `docs/` directory. If
 {{ file.Block "agentsReferencesCustom" }}
 <!-- <</Stencil::Block>> -->
 
-## Free output
-
-{{- $extraHook := (stencil.GetModuleHook "agentsFreeOutput") }}
-{{- range $extraHook }}
-{{- .}}
-{{- end }}
-
-
-<!-- <<Stencil::Block(agentsFreeOutputCustom)>> -->
-{{ file.Block "agentsFreeOutputCustom" }}
-<!-- <</Stencil::Block>> -->
-
 ## Boundaries
 
 ### Always
