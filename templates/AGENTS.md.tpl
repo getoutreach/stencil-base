@@ -63,6 +63,7 @@ If you need more context, you can find more information in `docs/` directory. If
 | Description | Reference |
 |----|----|
 | Stencil commands | [docs/stencil-commands.md](./docs/stencil-commands.md) |
+| Mise commands | [docs/mise-commands.md](./docs/mise-commands.md) |
 {{- $extraHook := (stencil.GetModuleHook "referencesTable") }}
 {{- range $extraHook }}
 {{- . }}
