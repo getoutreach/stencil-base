@@ -82,6 +82,12 @@ files:
     - name: cortex.yaml
       template: cortex.yaml.tpl
       module: github.com/getoutreach/stencil-outreach
+    - name: docs/mise-commands.md
+      template: docs/mise-commands.md.tpl
+      module: github.com/getoutreach/stencil-base
+    - name: docs/stencil-commands.md
+      template: docs/stencil-commands.md.tpl
+      module: github.com/getoutreach/stencil-base
     - name: go.mod
       template: go.mod.tpl
       module: github.com/getoutreach/stencil-golang
