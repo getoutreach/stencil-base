@@ -67,3 +67,40 @@ func TestRenderMiseTOML(t *testing.T) {
 	st.Args(map[string]any{})
 	st.Run(stenciltest.RegenerateSnapshots())
 }
+
+func TestRenderMiseTOMLWithNewerHardMinMiseVersion(t *testing.T) {
+	st := stenciltest.New(t, "mise.toml.tpl", "_helpers.tpl")
+	st.Args(map[string]any{
+		"versions": map[string]any{
+			"mise": map[string]any{
+				"hard": "2380.6.8",
+			},
+		},
+	})
+	st.Run(stenciltest.RegenerateSnapshots())
+}
+
+func TestRenderMiseTOMLWithOlderHardMinMiseVersion(t *testing.T) {
+	st := stenciltest.New(t, "mise.toml.tpl", "_helpers.tpl")
+	st.Args(map[string]any{
+		"versions": map[string]any{
+			"mise": map[string]any{
+				"hard": "2020.3.15",
+			},
+		},
+	})
+	st.Run(stenciltest.RegenerateSnapshots())
+}
+
+func TestRenderMiseTOMLWithInvalidHardMinMiseVersion(t *testing.T) {
+	st := stenciltest.New(t, "mise.toml.tpl", "_helpers.tpl")
+	st.Args(map[string]any{
+		"versions": map[string]any{
+			"mise": map[string]any{
+				"hard": "latest",
+			},
+		},
+	})
+	st.ErrorContains("invalid semantic version")
+	st.Run(stenciltest.RegenerateSnapshots())
+}
