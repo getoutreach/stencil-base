@@ -1,29 +1,29 @@
-version: v1.43.1
+version: v1.43.2
 modules:
     - name: github.com/getoutreach/devbase
       url: https://github.com/getoutreach/devbase
-      version: v2.36.0-rc.1
+      version: v2.38.0
     - name: github.com/getoutreach/stencil-base
       url: file://./
       version: local
     - name: github.com/getoutreach/stencil-circleci
       url: https://github.com/getoutreach/stencil-circleci
-      version: v1.17.2
+      version: v1.18.0
     - name: github.com/getoutreach/stencil-discovery
       url: https://github.com/getoutreach/stencil-discovery
-      version: v1.8.11
+      version: v1.9.0
     - name: github.com/getoutreach/stencil-golang
-      url: https://github.com/getoutreach/stencil-golang
-      version: v1.30.0
+      url: file://../stencil-golang
+      version: local
     - name: github.com/getoutreach/stencil-outreach
-      url: https://github.com/getoutreach/stencil-outreach
-      version: v0.27.1-rc.1
+      url: file://../stencil-outreach
+      version: local
     - name: github.com/getoutreach/stencil-pipeline
       url: https://github.com/getoutreach/stencil-pipeline
       version: v1.2.8
     - name: github.com/getoutreach/stencil-template-base
-      url: https://github.com/getoutreach/stencil-template-base
-      version: v0.5.0
+      url: file://../stencil-template-base
+      version: local
 files:
     - name: .circleci/config.yml
       template: .circleci/config.yml.tpl
@@ -73,15 +73,21 @@ files:
     - name: .vscode/settings.json
       template: .vscode/settings.json.tpl
       module: github.com/getoutreach/stencil-golang
+    - name: AGENTS.md
+      template: AGENTS.md.tpl
+      module: github.com/getoutreach/stencil-base
     - name: Makefile
       template: Makefile.tpl
       module: github.com/getoutreach/stencil-golang
     - name: cortex.yaml
       template: cortex.yaml.tpl
       module: github.com/getoutreach/stencil-outreach
-    - name: devenv.yaml
-      template: devenv.yaml.tpl
-      module: github.com/getoutreach/stencil-golang
+    - name: docs/mise-commands.md
+      template: docs/mise-commands.md.tpl
+      module: github.com/getoutreach/stencil-base
+    - name: docs/stencil-commands.md
+      template: docs/stencil-commands.md.tpl
+      module: github.com/getoutreach/stencil-base
     - name: go.mod
       template: go.mod.tpl
       module: github.com/getoutreach/stencil-golang
