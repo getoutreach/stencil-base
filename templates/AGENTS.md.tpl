@@ -47,7 +47,7 @@ make lint # Run linters on project's code.
   3. If a file is not listed here, the owner is current repository
 * docs/: Directory used to store documentation files and reference materials for the project.
 
-{{- $extraHook := (stencil.GetModuleHook "directoryStructure") }}
+{{- $extraHook := (stencil.GetModuleHook "agentsDirectoryStructure") }}
 {{- range $extraHook }}
 {{- . }}
 {{- end }}
@@ -64,7 +64,7 @@ If you need more context, you can find more information in `docs/` directory. If
 |----|----|
 | Stencil commands | [docs/stencil-commands.md](./docs/stencil-commands.md) |
 | Mise commands | [docs/mise-commands.md](./docs/mise-commands.md) |
-{{- $extraHook := (stencil.GetModuleHook "referencesTable") }}
+{{- $extraHook := (stencil.GetModuleHook "agentsReferencesTable") }}
 {{- range $extraHook }}
 {{- . }}
 {{- end }}
