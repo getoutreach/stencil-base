@@ -4,8 +4,8 @@ Ignore lines containing "Stencil::Block"; they are areas in your generated code 
 
 ## Description
 
-<!-- <<Stencil::Block(projectDescription)>> -->
-{{ file.Block "projectDescription" }}
+<!-- <<Stencil::Block(agentsProjectOverview)>> -->
+{{ file.Block "agentsProjectOverview" }}
 <!-- <</Stencil::Block>> -->
 
 ## Project overview
