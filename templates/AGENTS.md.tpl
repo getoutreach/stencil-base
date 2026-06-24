@@ -27,7 +27,7 @@ make test # Run tests.
 make fmt # Run formatters on project's code.
 make lint # Run linters on project's code.
 
-{{- $extraHook := (stencil.GetModuleHook "stenciledCommands") }}
+{{- $extraHook := (stencil.GetModuleHook "agentsGenericCommands") }}
 {{- range $extraHook }}
 {{- . }}
 
