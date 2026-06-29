@@ -22,7 +22,9 @@ stencil # Run stencil program with arguments specified in service.yaml file
 
 # mise
 mise tasks ls # List all tasks available through mise.
+mise run <task> # Run a task available through mise.
 
+# make
 {{- if (stencil.Arg "service") }}
 make build # Build project.
 make test # Run tests.
@@ -51,6 +53,9 @@ make lint # Run linters on project's code.
   2. What module owns which file
   3. If a file is not listed here, the owner is current repository
 * docs/: Directory used to store documentation files and reference materials for the project.
+* mise.toml: Configuration file for `mise` tasks.
+* mise.lock: Lock file for `mise`.
+* .tool-versions: File used to specify versions of tools used in the project. Used by `asdf` tool version manager.
 
 {{- $extraHook := (stencil.GetModuleHook "agentsDirectoryStructure") }}
 {{- range $extraHook }}
@@ -102,7 +107,7 @@ If you need more context, you can find more information in `docs/` directory. If
 - Run `make lint` after making code changes and fix any issues
 - Keep functions small and single-purpose
 - Check `stencil.lock` to determine file ownership before modifying generated files
-- Prefer running `mise` tasks over make targets when available
+- Prefer running `mise` tasks over make targets or other build tools when available
 {{- $extraHook := (stencil.GetModuleHook "agentsBoundariesAlways") }}
 {{- range $extraHook }}
 {{- .}}
