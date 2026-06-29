@@ -107,7 +107,7 @@ If you need more context, you can find more information in `docs/` directory. If
 - Run `make lint` after making code changes and fix any issues
 - Keep functions small and single-purpose
 - Check `stencil.lock` to determine file ownership before modifying generated files
-- Prefer running `mise` tasks over make targets or other build tools when available
+- Prefer running `mise` tasks over make targets
 {{- $extraHook := (stencil.GetModuleHook "agentsBoundariesAlways") }}
 {{- range $extraHook }}
 {{- .}}

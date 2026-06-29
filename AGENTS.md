@@ -22,6 +22,9 @@ stencil # Run stencil program with arguments specified in service.yaml file
 
 # mise
 mise tasks ls # List all tasks available through mise.
+mise run <task> # Run a task available through mise.
+
+# make
 make fmt # Run formatters on project's code.
 make lint # Run linters on project's code.
 
@@ -44,6 +47,9 @@ go mod tidy # Ensure your go.mod and go.sum files are up to date.
   2. What module owns which file
   3. If a file is not listed here, the owner is current repository
 * docs/: Directory used to store documentation files and reference materials for the project.
+* mise.toml: Configuration file for `mise` tasks.
+* mise.lock: Lock file for `mise`.
+* .tool-versions: File used to specify versions of tools used in the project. Used by `asdf` tool version manager.
 * `templates/`: Templates for generating project files, such as `AGENTS.md.tpl` for the AGENTS.md file. Used in stencil-modules to define the structure and content of generated files.
 * `scripts/`: internal development shell scripts _(**deprecated**, prefer to use `mise` tasks when appropriate)_
 * `.vscode/`: VSCode configuration files
@@ -83,7 +89,7 @@ If you need more context, you can find more information in `docs/` directory. If
 - Run `make lint` after making code changes and fix any issues
 - Keep functions small and single-purpose
 - Check `stencil.lock` to determine file ownership before modifying generated files
-- Prefer running `mise` tasks over make targets when available
+- Prefer running `mise` tasks over make targets
 - Run `go mod tidy` after adding or removing Go dependencies
 - Run `make gogenerate` after modifying protobuf definitions or interfaces with generated code
 - Follow idiomatic Go error handling (return errors, don't panic)
