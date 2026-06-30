@@ -36,7 +36,6 @@ make lint # Run linters on project's code.
 {{- . }}
 
 {{- end }}
-
 # <<Stencil::Block(customCommands)>>
 {{ file.Block "customCommands" }}
 # <</Stencil::Block>>
@@ -50,12 +49,10 @@ make lint # Run linters on project's code.
   2. What module owns which file
   3. If a file is not listed here, the owner is current repository
 * docs/: Directory used to store documentation files and reference materials for the project.
-
 {{- $extraHook := (stencil.GetModuleHook "agentsDirectoryStructure") }}
 {{- range $extraHook }}
 {{- . }}
 {{- end }}
-
 <!-- <<Stencil::Block(directoryStructureCustom)>> -->
 {{ file.Block "directoryStructureCustom" }}
 <!-- <</Stencil::Block>> -->
