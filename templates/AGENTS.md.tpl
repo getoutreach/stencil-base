@@ -5,7 +5,7 @@ Ignore lines containing "Stencil::Block"; they are areas in your generated code 
 ## Description
 
 <!-- <<Stencil::Block(agentsProjectOverview)>> -->
-{{ file.Block "agentsProjectOverview" }}
+{{ default (stencil.Arg "description") (file.Block "agentsProjectOverview") }}
 <!-- <</Stencil::Block>> -->
 
 ## Project overview
