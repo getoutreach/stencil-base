@@ -76,16 +76,6 @@ If you need more context, you can find more information in `docs/` directory. If
 {{ file.Block "referencesTableCustom" }}
 <!-- <</Stencil::Block>> -->
 
-{{- $extraHook := (stencil.GetModuleHook "agentsReferences") }}
-{{- range $extraHook }}
-{{- .}}
-{{- end }}
-
-
-<!-- <<Stencil::Block(agentsReferencesCustom)>> -->
-{{ file.Block "agentsReferencesCustom" }}
-<!-- <</Stencil::Block>> -->
-
 ## Boundaries
 
 ### Always
