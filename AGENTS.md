@@ -68,10 +68,6 @@ If you need more context, you can find more information in `docs/` directory. If
 
 <!-- <</Stencil::Block>> -->
 
-<!--- -->
-<!--- * Run `make fmt` to format project. -->
-<!--- * Run `make lint` to run linters on project's code. -->
-
 
 <!-- <<Stencil::Block(agentsReferencesCustom)>> -->
 
