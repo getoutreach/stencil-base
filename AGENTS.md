@@ -37,8 +37,6 @@ go mod tidy # Ensure your go.mod and go.sum files are up to date.
 # <</Stencil::Block>>
 ```
 
-
-
 ## Directory structure
 
 * service.yaml: File used as configuration for `stencil` program containing additional arguments and stencil modules to use

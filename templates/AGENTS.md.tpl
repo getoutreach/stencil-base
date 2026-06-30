@@ -42,8 +42,6 @@ make lint # Run linters on project's code.
 # <</Stencil::Block>>
 ```
 
-
-
 ## Directory structure
 
 * service.yaml: File used as configuration for `stencil` program containing additional arguments and stencil modules to use
