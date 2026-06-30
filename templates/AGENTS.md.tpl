@@ -108,8 +108,6 @@ If you need more context, you can find more information in `docs/` directory. If
 {{- range $extraHook }}
 {{- .}}
 {{- end }}
-
-
 <!-- <<Stencil::Block(agentsBoundariesAlwaysCustom)>> -->
 {{ file.Block "agentsBoundariesAlwaysCustom" }}
 <!-- <</Stencil::Block>> -->
@@ -126,8 +124,6 @@ If you need more context, you can find more information in `docs/` directory. If
 {{- range $extraHook }}
 {{- .}}
 {{- end }}
-
-
 <!-- <<Stencil::Block(agentsBoundariesAskCustom)>> -->
 {{ file.Block "agentsBoundariesAskCustom" }}
 <!-- <</Stencil::Block>> -->
@@ -143,8 +139,6 @@ If you need more context, you can find more information in `docs/` directory. If
 {{- range $extraHook }}
 {{- .}}
 {{- end }}
-
-
 <!-- <<Stencil::Block(agentsBoundariesNeverCustom)>> -->
 {{ file.Block "agentsBoundariesNeverCustom" }}
 <!-- <</Stencil::Block>> -->
@@ -155,7 +149,6 @@ If you need more context, you can find more information in `docs/` directory. If
 {{- range $extraHook }}
 {{- .}}
 {{- end }}
-
 <!-- <<Stencil::Block(agentsOtherCustom)>> -->
 {{ file.Block "agentsOtherCustom" }}
 <!-- <</Stencil::Block>> -->
