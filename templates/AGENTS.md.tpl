@@ -26,7 +26,6 @@ mise run <task> # Run a task available through mise.
 
 # make
 {{- if (stencil.Arg "service") }}
-make build # Build project.
 make test # Run tests.
 {{- end }}
 make fmt # Run formatters on project's code.
