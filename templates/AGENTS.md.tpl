@@ -25,9 +25,6 @@ mise tasks ls # List all tasks available through mise.
 mise run <task> # Run a task available through mise.
 
 # make
-{{- if (stencil.Arg "service") }}
-make test # Run tests.
-{{- end }}
 make fmt # Run formatters on project's code.
 make lint # Run linters on project's code.
 
@@ -77,10 +74,6 @@ If you need more context, you can find more information in `docs/` directory. If
 
 ### Always
 
-- Run `make fmt` after making code changes
-- Run `make lint` after making code changes and fix any issues
-- Keep functions small and single-purpose
-- Check `stencil.lock` to determine file ownership before modifying generated files
 - Prefer running `mise` tasks over make targets
 {{- $extraHook := (stencil.GetModuleHook "agentsBoundariesAlways") }}
 {{- range $extraHook }}
@@ -92,12 +85,10 @@ If you need more context, you can find more information in `docs/` directory. If
 
 ### Ask
 
-- Write unit tests for new functions and bug fixes
-- Before deleting or significantly refactoring a package or file
 - Before changing public API signatures (exported functions, types, or interfaces)
 - Before adding new external dependencies
 - Before bumping major versions of dependencies
-- Before changing database schema or migration files // maybe different module?
+- Before changing database schema or migration files
 {{- $extraHook := (stencil.GetModuleHook "agentsBoundariesAsk") }}
 {{- range $extraHook }}
 {{- .}}
@@ -111,8 +102,6 @@ If you need more context, you can find more information in `docs/` directory. If
 - Commit secrets, credentials, API keys, or tokens
 - Force-push to main or protected branches
 - Disable or skip linters/tests to make a build pass
-- Ignore or swallow errors silently (e.g., _ = someFunc() without justification)
-- Add TODO or FIXME comments without a linked issue or explanation
 {{- $extraHook := (stencil.GetModuleHook "agentsBoundariesNever") }}
 {{- range $extraHook }}
 {{- .}}

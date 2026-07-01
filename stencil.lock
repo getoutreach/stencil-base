@@ -20,7 +20,7 @@ modules:
       version: local
     - name: github.com/getoutreach/stencil-pipeline
       url: https://github.com/getoutreach/stencil-pipeline
-      version: v1.2.8
+      version: v1.2.9-rc.1
     - name: github.com/getoutreach/stencil-template-base
       url: file://../stencil-template-base
       version: local
