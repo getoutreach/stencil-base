@@ -17,7 +17,7 @@ modules:
       version: v1.32.0-rc.6
     - name: github.com/getoutreach/stencil-outreach
       url: https://github.com/getoutreach/stencil-outreach
-      version: v0.31.0-rc.10
+      version: v0.31.0-rc.11
     - name: github.com/getoutreach/stencil-pipeline
       url: https://github.com/getoutreach/stencil-pipeline
       version: v1.2.9-rc.1
