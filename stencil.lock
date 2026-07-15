@@ -85,9 +85,6 @@ files:
     - name: cortex.yaml
       template: cortex.yaml.tpl
       module: github.com/getoutreach/stencil-outreach
-    - name: docs/agents/mise-commands.md
-      template: docs/agents/mise-commands.md.tpl
-      module: github.com/getoutreach/stencil-base
     - name: docs/agents/stencil-commands.md
       template: docs/agents/stencil-commands.md.tpl
       module: github.com/getoutreach/stencil-base

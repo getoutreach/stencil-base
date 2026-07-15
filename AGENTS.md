@@ -66,10 +66,12 @@ If you need more context, you can find more information in `docs/` directory.
 
 ### Ask
 
-- Before changing public API signatures (exported functions, types, or interfaces)
-- Before adding new external dependencies
-- Before bumping major versions of dependencies
-- Before changing database schema or migration files
+Before each scenario in the following list, ask user if they allow the change to occur. For every question, include: root reason for change, list of tradeoffs for the change
+
+- Changing public API signatures (exported functions, types, or interfaces)
+- Adding new external dependencies
+- Bumping major versions of dependencies
+- Changing database schema or migration files
 <!-- <<Stencil::Block(agentsBoundariesAskCustom)>> -->
 
 <!-- <</Stencil::Block>> -->
