@@ -1,6 +1,10 @@
 # Stencil Commands
 
-Stencil commands are exposed as `mise` tasks, prefixed with `stencil`.
+Stencil commands are exposed as `mise` tasks. To list all available stencil tasks:
+
+```bash
+mise tasks | grep stencil
+```
 
 ## Common tasks
 

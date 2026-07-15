@@ -21,8 +21,7 @@ Base templates for a Stencil-managed repository.
 stencil # Run stencil program with arguments specified in service.yaml file
 
 # mise
-mise tasks ls # List all tasks available through mise.
-mise run <task> # Run a task available through mise.
+mise --help # Show help for mise commands.
 
 # make
 make fmt # Run formatters on project's code.
@@ -40,23 +39,18 @@ make lint # Run linters on project's code.
   2. What module owns which file
   3. If a file is not listed here, the owner is current repository
 * docs/: Directory used to store documentation files and reference materials for the project.
-* `templates/`: Templates for generating project files, such as `AGENTS.md.tpl` for the AGENTS.md file. Used in stencil-modules to define the structure and content of generated files.
-* `scripts/`: internal development shell scripts _(**deprecated**, prefer to use `mise` tasks when appropriate)_
-* `.vscode/`: VSCode configuration files
 <!-- <<Stencil::Block(directoryStructureCustom)>> -->
 
 <!-- <</Stencil::Block>> -->
 
-If you need more context, you can find more information in `docs/` directory. If the directory does not exist, ignore this line.
+If you need more context, you can find more information in `docs/` directory.
 
 ## References table
 
 | Description | Reference |
 |----|----|
-| Stencil commands | [docs/stencil-commands.md](./docs/agents/stencil-commands.md) |
-| Mise commands | [docs/mise-commands.md](./docs/agents/mise-commands.md) |
-| Internal Go idioms | [webpage](https://outreach-io.atlassian.net/wiki/spaces/EN/pages/1124335785/Go+idioms) |
-| Idiomatic Go practices | [webpage](https://dmitri.shuralyov.com/idiomatic-go) |
+| Stencil commands | [docs/agents/stencil-commands.md](./docs/agents/stencil-commands.md) |
+| Mise commands | [docs/agents/mise-commands.md](./docs/agents/mise-commands.md) |
 <!-- <<Stencil::Block(referencesTableCustom)>> -->
 
 <!-- <</Stencil::Block>> -->
@@ -64,11 +58,6 @@ If you need more context, you can find more information in `docs/` directory. If
 ## Boundaries
 
 ### Always
-
-- Prefer running `mise` tasks over make targets
-- Run `make fmt` after adding or removing Go dependencies
-- Run `make gogenerate` after modifying protobuf definitions or interfaces with generated code
-- Add context to errors using `fmt.Errorf("...: %w", err)`
 <!-- <<Stencil::Block(agentsBoundariesAlwaysCustom)>> -->
 
 <!-- <</Stencil::Block>> -->
@@ -86,9 +75,7 @@ If you need more context, you can find more information in `docs/` directory. If
 ### Never
 
 - Commit secrets, credentials, API keys, or tokens
-- Force-push to main or protected branches
 - Disable or skip linters/tests to make a build pass
-- Use `panic()` in production code paths
 <!-- <<Stencil::Block(agentsBoundariesNeverCustom)>> -->
 
 <!-- <</Stencil::Block>> -->
