@@ -78,7 +78,6 @@ If you need more context, you can find more information in `docs/` directory.
 ### Never
 
 - Commit secrets, credentials, API keys, or tokens
-- Disable or skip linters/tests to make a build pass
 <!-- <<Stencil::Block(agentsBoundariesNeverCustom)>> -->
 
 <!-- <</Stencil::Block>> -->
