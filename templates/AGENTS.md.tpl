@@ -60,7 +60,6 @@ If you need more context, you can find more information in `docs/` directory.
 | Description | Reference |
 |----|----|
 | Stencil commands | [docs/agents/stencil-commands.md](./docs/agents/stencil-commands.md) |
-| Mise commands | [docs/agents/mise-commands.md](./docs/agents/mise-commands.md) |
 {{- $extraHook := (stencil.GetModuleHook "agentsReferencesTable") }}
 {{- range $extraHook }}
 {{- . }}
