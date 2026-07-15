@@ -21,8 +21,7 @@ Ignore lines containing "Stencil::Block"; they are areas in your generated code 
 stencil # Run stencil program with arguments specified in service.yaml file
 
 # mise
-mise tasks ls # List all tasks available through mise.
-mise run <task> # Run a task available through mise.
+mise --help # Show help for mise commands.
 
 # make
 make fmt # Run formatters on project's code.
@@ -54,7 +53,7 @@ make lint # Run linters on project's code.
 {{ file.Block "directoryStructureCustom" }}
 <!-- <</Stencil::Block>> -->
 
-If you need more context, you can find more information in `docs/` directory. If the directory does not exist, ignore this line.
+If you need more context, you can find more information in `docs/` directory.
 
 ## References table
 
@@ -74,7 +73,6 @@ If you need more context, you can find more information in `docs/` directory. If
 
 ### Always
 
-- Prefer running `mise` tasks over make targets
 {{- $extraHook := (stencil.GetModuleHook "agentsBoundariesAlways") }}
 {{- range $extraHook }}
 {{- .}}
