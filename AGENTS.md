@@ -27,10 +27,6 @@ mise run <task> # Run a task available through mise.
 # make
 make fmt # Run formatters on project's code.
 make lint # Run linters on project's code.
-
-# golang
-make gogenerate # Run go generate to create any generated code, such as protobufs or Kubernetes CRDs.
-go mod tidy # Ensure your go.mod and go.sum files are up to date.
 # <<Stencil::Block(customCommands)>>
 
 # <</Stencil::Block>>
