@@ -75,7 +75,7 @@ If you need more context, you can find more information in `docs/` directory.
 
 {{- $extraHook := (stencil.GetModuleHook "agentsBoundariesAlways") }}
 {{- range $extraHook }}
-{{- .}}
+{{- . }}
 {{- end }}
 <!-- <<Stencil::Block(agentsBoundariesAlwaysCustom)>> -->
 {{ file.Block "agentsBoundariesAlwaysCustom" }}
@@ -89,7 +89,7 @@ If you need more context, you can find more information in `docs/` directory.
 - Before changing database schema or migration files
 {{- $extraHook := (stencil.GetModuleHook "agentsBoundariesAsk") }}
 {{- range $extraHook }}
-{{- .}}
+{{- . }}
 {{- end }}
 <!-- <<Stencil::Block(agentsBoundariesAskCustom)>> -->
 {{ file.Block "agentsBoundariesAskCustom" }}
@@ -101,7 +101,7 @@ If you need more context, you can find more information in `docs/` directory.
 - Disable or skip linters/tests to make a build pass
 {{- $extraHook := (stencil.GetModuleHook "agentsBoundariesNever") }}
 {{- range $extraHook }}
-{{- .}}
+{{- . }}
 {{- end }}
 <!-- <<Stencil::Block(agentsBoundariesNeverCustom)>> -->
 {{ file.Block "agentsBoundariesNeverCustom" }}
@@ -111,7 +111,7 @@ If you need more context, you can find more information in `docs/` directory.
 
 {{- $extraHook := (stencil.GetModuleHook "agentsOther") }}
 {{- range $extraHook }}
-{{- .}}
+{{- . }}
 {{- end }}
 <!-- <<Stencil::Block(agentsOtherCustom)>> -->
 {{ file.Block "agentsOtherCustom" }}
