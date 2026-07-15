@@ -70,7 +70,7 @@ If you need more context, you can find more information in `docs/` directory. If
 ### Always
 
 - Prefer running `mise` tasks over make targets
-- Run `go mod tidy` after adding or removing Go dependencies
+- Run `make fmt` after adding or removing Go dependencies
 - Run `make gogenerate` after modifying protobuf definitions or interfaces with generated code
 - Add context to errors using `fmt.Errorf("...: %w", err)`
 <!-- <<Stencil::Block(agentsBoundariesAlwaysCustom)>> -->
