@@ -11,7 +11,7 @@ Base templates for a Stencil-managed repository.
 ## Project overview
 
 <!-- <<Stencil::Block(projectOverview)>> -->
-`stencil-base` is a [Stencil module](https://engineering.outreach.io/stencil/reference/modules/), not a runnable service: it provides the base templates rendered into every Stencil-managed repository at Outreach.
+`stencil-base` is a [Stencil module](https://engineering.outreach.io/stencil/reference/modules/): it provides the base templates rendered into every Stencil-managed repository at Outreach.
 The source of truth is `templates/*.tpl` (Go text templates, helpers in `templates/_helpers.tpl`); root-level files are rendered outputs — edit the template, not the output.
 `manifest.yaml` defines the module's arguments and post-run commands; tests are `stenciltest` snapshot tests (`go test ./templates/...`, snapshots in `templates/.snapshots/`).
 This repository consumes itself via a `./` replacement in `service.yaml`.
