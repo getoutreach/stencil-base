@@ -82,7 +82,7 @@ If you need more context, you can find more information in `docs/` directory.
 
 ### Ask
 
-Before each scenario in the following list, ask user if they allow the change to occur. For every question, include: root reason for change, list of tradeoffs for the change
+Before each scenario in the following list, ask the user if they allow the change to occur. For every question, include: root reason for change, list the tradeoffs for the change.
 
 - Changing public API signatures (exported functions, types, or interfaces)
 - Adding new external dependencies
