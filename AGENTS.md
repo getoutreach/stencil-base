@@ -35,10 +35,7 @@ make lint # Run linters on project's code.
 ## Directory structure
 
 * service.yaml: File used as configuration for `stencil` program containing additional arguments and stencil modules to use
-* stencil.lock: File used as record for:
-  1. What modules were used and their version
-  2. What module owns which file
-  3. If a file is not listed here, the owner is current repository
+* stencil.lock: A lockfile for Stencil which also declares which files in the repo are managed, and which module manages it. Third party generated files are not cataloged.
 * docs/: Directory used to store documentation files and reference materials for the project.
 <!-- <<Stencil::Block(directoryStructureCustom)>> -->
 
