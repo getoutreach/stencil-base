@@ -1,6 +1,6 @@
 # {{ .Config.Name }}
 
-Ignore lines containing "Stencil::Block"; they are areas in your generated code that you’d like to persist across runs and are repository specific. These lines are for template generator and do not contain agent instructions.
+Ignore lines containing `Stencil::Block`; they are areas in your generated code that you'd like to persist across runs and are repository specific. These lines are for the template generator and do not contain agent instructions.
 
 ## Description
 
@@ -40,10 +40,7 @@ make lint # Run linters on project's code.
 ## Directory structure
 
 * service.yaml: File used as configuration for `stencil` program containing additional arguments and stencil modules to use
-* stencil.lock: File used as record for:
-  1. What modules were used and their version
-  2. What module owns which file
-  3. If a file is not listed here, the owner is current repository
+* stencil.lock: A lockfile for Stencil which also declares which files in the repo are managed, and which module manages it. Third party generated files are not cataloged.
 * docs/: Directory used to store documentation files and reference materials for the project.
 {{- $extraHook := (stencil.GetModuleHook "agentsDirectoryStructure") }}
 {{- range $extraHook }}
