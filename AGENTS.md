@@ -41,7 +41,7 @@ make lint # Run linters on project's code.
 
 <!-- <</Stencil::Block>> -->
 
-If you need more context, you can find more information in `docs/` directory.
+If you need more context, you can find more information in the `docs/` directory.
 
 ## References table
 
