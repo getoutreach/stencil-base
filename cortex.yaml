@@ -53,6 +53,7 @@ info:
     product: Outreach
     lifecycle: public_ga
     ## <<Stencil::Block(extraAliases)>>
+
     ## <</Stencil::Block>>
     reporting_team: fnd-dt
     lintroller: platinum

@@ -2166,9 +2166,9 @@ p-locate@^2.0.0:
     p-limit "^1.1.0"
 
 p-map@^7.0.1, p-map@^7.0.2, p-map@^7.0.4:
-  version "7.0.5"
-  resolved "https://registry.yarnpkg.com/p-map/-/p-map-7.0.5.tgz#e48bd09bfddf2b5f5de393aad109bd5a9041507a"
-  integrity sha512-e8vJF4XdVkzqqSHguEMz41mQO1wKwxKm5ENrUJQUu9kLDCtn83cxbyHZcszr4QC5zEA7WffRRC4gsTecC7J9oA==
+  version "7.0.6"
+  resolved "https://registry.yarnpkg.com/p-map/-/p-map-7.0.6.tgz#5b6ee7f1a775faa48599c8d4420f6a39833cd387"
+  integrity sha512-I4Prw6ivkd6p8PiYR1tXASOAOBzIJwu0TB7fqaX0c/8c3QAehNYmX57EijyGGGBt3c/BIowGwV03RVBtXvHEVg==
 
 p-reduce@^2.0.0:
   version "2.1.0"
@@ -2504,9 +2504,9 @@ safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
 semantic-release@^25.0.2:
-  version "25.0.7"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-25.0.7.tgz#299370ea9f1c1de21e053855232dcfd258f17fd9"
-  integrity sha512-fFiUD7LNFI0TOGkc49WDHUX4GYKrOMDKct5ReSB1EJCZiPsPdbIPIJGys1xb2ILpK1v9JMsRkjJQgTRpbr7DgQ==
+  version "25.0.8"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-25.0.8.tgz#a665bbcd3aa56ed602854d26094406dcfb1e9aea"
+  integrity sha512-w/iZ0bur36rKffXZYmIUmy068eoBY3Ij1DCCddx2JwWEM5Tg+eU9ld/E9qSInVvPASyyR2Ln/XGfQ9OZrMlhtw==
   dependencies:
     "@semantic-release/commit-analyzer" "^13.0.1"
     "@semantic-release/error" "^4.0.0"
@@ -2791,9 +2791,9 @@ tagged-tag@^1.0.0:
   integrity sha512-yEFYrVhod+hdNyx7g5Bnkkb0G6si8HJurOoOEgC8B/O0uXLHlaey/65KRv6cuWBNhBgHKAROVpc7QyYqE5gFng==
 
 tar@^7.4.3, tar@^7.5.1, tar@^7.5.19, tar@^7.5.4:
-  version "7.5.20"
-  resolved "https://registry.yarnpkg.com/tar/-/tar-7.5.20.tgz#37a65aa911cbd69864002e14bf8a926a5551e240"
-  integrity sha512-9FcyK4PA6+WbzlTM9WhQm6vB5W7cP7dUiPsv1g7YDwEQnQ1CGpK3MGlKk/ITVWMk05kHZuBhmVhiv8LZoy/PFQ==
+  version "7.5.21"
+  resolved "https://registry.yarnpkg.com/tar/-/tar-7.5.21.tgz#b3405af2eb493523ce4379f531e9ebda0601bc59"
+  integrity sha512-XdhtCvlMywwxpCW8YEq3lOXBJpUPTR2OHHcwLPO3HwsJqOHa2Ok/oJ7ruGzp+JrKoRPVCzJwAdEjqLW/vNRPHA==
   dependencies:
     "@isaacs/fs-minipass" "^4.0.0"
     chownr "^3.0.0"
