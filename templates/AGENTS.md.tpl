@@ -41,6 +41,7 @@ make lint # Run linters on project's code.
 
 * service.yaml: File used as configuration for `stencil` program containing additional arguments and stencil modules to use
 * stencil.lock: A lockfile for Stencil which also declares which files in the repo are managed, and which module manages it. Third party generated files are not cataloged.
+* CONTRIBUTING.md: File containing guidelines for contributing to the project.
 * docs/: Directory used to store documentation files and reference materials for the project.
 {{- $extraHook := (stencil.GetModuleHook "agentsDirectoryStructure") }}
 {{- range $extraHook }}
