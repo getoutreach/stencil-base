@@ -14,7 +14,7 @@ modules:
       version: v1.9.1-rc.1
     - name: github.com/getoutreach/stencil-golang
       url: https://github.com/getoutreach/stencil-golang
-      version: v1.33.1-rc.1
+      version: v1.34.0-rc.1
     - name: github.com/getoutreach/stencil-outreach
       url: https://github.com/getoutreach/stencil-outreach
       version: v0.31.1-rc.1
