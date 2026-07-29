@@ -8,13 +8,13 @@ import (
 
 // Replace this with your own tests.
 func TestRenderAFile(t *testing.T) {
-	st := stenciltest.New(t, ".releaserc.yaml.tpl", "_helpers.tpl")
+	st := stenciltest.New(t, ".releaserc.yaml.tpl")
 	st.Args(map[string]any{})
 	st.Run(stenciltest.RegenerateSnapshots())
 }
 
 func TestRenderReadmeFile(t *testing.T) {
-	st := stenciltest.New(t, "README.md.tpl", "_helpers.tpl")
+	st := stenciltest.New(t, "README.md.tpl")
 	st.Args(map[string]any{
 		"description": "My service",
 	})
@@ -22,13 +22,13 @@ func TestRenderReadmeFile(t *testing.T) {
 }
 
 func TestRenderPullRequestTemplateFile(t *testing.T) {
-	st := stenciltest.New(t, ".github/pull_request_template.md.tpl", "_helpers.tpl")
+	st := stenciltest.New(t, ".github/pull_request_template.md.tpl")
 	st.Args(map[string]any{})
 	st.Run(stenciltest.RegenerateSnapshots())
 }
 
 func TestRenderCodeownersFile(t *testing.T) {
-	st := stenciltest.New(t, ".github/CODEOWNERS.tpl", "_helpers.tpl")
+	st := stenciltest.New(t, ".github/CODEOWNERS.tpl")
 	st.Args(map[string]any{
 		"reportingTeam": "foo-bar",
 	})
@@ -36,7 +36,7 @@ func TestRenderCodeownersFile(t *testing.T) {
 }
 
 func TestRenderCodeownersWithExtraOwnersFile(t *testing.T) {
-	st := stenciltest.New(t, ".github/CODEOWNERS.tpl", "_helpers.tpl")
+	st := stenciltest.New(t, ".github/CODEOWNERS.tpl")
 	st.Args(map[string]any{
 		"reportingTeam": "foo-bar",
 		"additionalRepoOwners": []any{
@@ -48,12 +48,12 @@ func TestRenderCodeownersWithExtraOwnersFile(t *testing.T) {
 }
 
 func TestRenderPackageJSON(t *testing.T) {
-	st := stenciltest.New(t, "package.json.tpl", "_helpers.tpl")
+	st := stenciltest.New(t, "package.json.tpl")
 	st.Run(stenciltest.RegenerateSnapshots())
 }
 
 func TestRenderPackageJSONWithoutReleases(t *testing.T) {
-	st := stenciltest.New(t, "package.json.tpl", "_helpers.tpl")
+	st := stenciltest.New(t, "package.json.tpl")
 	st.Args(map[string]any{
 		"releaseOptions": map[string]any{
 			"enabled": false,
@@ -63,13 +63,13 @@ func TestRenderPackageJSONWithoutReleases(t *testing.T) {
 }
 
 func TestRenderMiseTOML(t *testing.T) {
-	st := stenciltest.New(t, "mise.toml.tpl", "_helpers.tpl")
+	st := stenciltest.New(t, "mise.toml.tpl")
 	st.Args(map[string]any{})
 	st.Run(stenciltest.RegenerateSnapshots())
 }
 
 func TestRenderMiseTOMLWithNewerHardMinMiseVersion(t *testing.T) {
-	st := stenciltest.New(t, "mise.toml.tpl", "_helpers.tpl")
+	st := stenciltest.New(t, "mise.toml.tpl")
 	st.Args(map[string]any{
 		"versions": map[string]any{
 			"mise": map[string]any{
@@ -81,7 +81,7 @@ func TestRenderMiseTOMLWithNewerHardMinMiseVersion(t *testing.T) {
 }
 
 func TestRenderMiseTOMLWithOlderHardMinMiseVersion(t *testing.T) {
-	st := stenciltest.New(t, "mise.toml.tpl", "_helpers.tpl")
+	st := stenciltest.New(t, "mise.toml.tpl")
 	st.Args(map[string]any{
 		"versions": map[string]any{
 			"mise": map[string]any{
@@ -93,7 +93,7 @@ func TestRenderMiseTOMLWithOlderHardMinMiseVersion(t *testing.T) {
 }
 
 func TestRenderMiseTOMLWithInvalidHardMinMiseVersion(t *testing.T) {
-	st := stenciltest.New(t, "mise.toml.tpl", "_helpers.tpl")
+	st := stenciltest.New(t, "mise.toml.tpl")
 	st.Args(map[string]any{
 		"versions": map[string]any{
 			"mise": map[string]any{
