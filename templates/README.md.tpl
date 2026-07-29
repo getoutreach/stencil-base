@@ -73,3 +73,4 @@ devenv apps delete {{ .Config.Name }}
 
 {{- end }}
 {{- end }}
+{{- end }}
