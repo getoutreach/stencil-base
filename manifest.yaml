@@ -52,15 +52,6 @@ arguments:
     schema:
       type: boolean
     description: Whether or not this application is a runnable service. This flag provides the service activity interface and everything necessary for releasing and deploying a service.
-  serviceActivities:
-    schema:
-      type: array
-      items:
-        type: string
-    description: |-
-      Any valid built-in service activities can be supplied here and they will be provided.
-      The `service` flag must be set to true. See 'stencil-golang' for valid values, this will eventually be removed
-      from `stencil-base` as it's not meant to be used here.
   reportingTeam:
     required: true
     schema:
