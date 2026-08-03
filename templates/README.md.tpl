@@ -11,7 +11,7 @@
 [![CircleCI](https://circleci.com/gh/{{ .Runtime.Box.Org }}/{{ .Config.Name }}.svg?style=shield&circle-token={{ stencil.Arg "circleAPIKey" }})](https://circleci.com/gh/{{ .Runtime.Box.Org }}/{{ .Config.Name }})
 {{- end }}
 {{- end }}
-[![Generated via Bootstrap](https://img.shields.io/badge/Outreach-Bootstrap-%235951ff)](https://github.com/getoutreach/bootstrap)
+[![Generated via Stencil](https://img.shields.io/badge/Outreach-Stencil-%235951ff)](https://github.com/getoutreach/stencil)
 [![Coverage Status](https://coveralls.io/repos/github/{{ .Runtime.Box.Org }}/{{ .Config.Name }}/badge.svg?branch={{ .Git.DefaultBranch }})](https://coveralls.io/github//{{ .Runtime.Box.Org }}/{{ .Config.Name }}?branch={{ .Git.DefaultBranch }})
 
 {{ stencil.Arg "description" }}
