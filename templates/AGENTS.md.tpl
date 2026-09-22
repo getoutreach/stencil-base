@@ -32,9 +32,9 @@ make lint # Run linters on project's code.
 {{- . }}
 
 {{- end }}
-<!-- <<Stencil::Block(customCommands)>> -->
+## <<Stencil::Block(customCommands)>>
 {{ file.Block "customCommands" }}
-<!--  <</Stencil::Block>> -->
+## <</Stencil::Block>>
 ```
 
 ## Directory structure
