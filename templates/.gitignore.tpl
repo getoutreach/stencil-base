@@ -51,6 +51,9 @@ Pulumi.*.yaml
 # bootstrap libs
 .bootstrap
 
+# git worktrees
+.worktrees
+
 # CircleCI cache version
 /cache-version.txt
 
