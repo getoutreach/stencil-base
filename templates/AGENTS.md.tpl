@@ -55,9 +55,9 @@ If you need more context, you can find more information in `docs/` directory.
 
 ## References table
 
-| Description | Reference |
-|----|----|
-| Stencil commands | [docs/agents/stencil-commands.md](./docs/agents/stencil-commands.md) |
+| Description | Purpose | Reference |
+|----|----|----|
+| Stencil commands | Reference for available stencil commands | [docs/agents/stencil-commands.md](./docs/agents/stencil-commands.md) |
 {{- $extraHook := (stencil.GetModuleHook "agentsReferencesTable") }}
 {{- range $extraHook }}
 {{- . }}
