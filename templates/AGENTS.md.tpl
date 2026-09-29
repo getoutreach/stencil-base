@@ -57,7 +57,7 @@ If you need more context, you can find more information in `docs/` directory.
 
 | Description | Purpose | Reference |
 |----|----|----|
-| Stencil commands | Reference for available stencil commands | [docs/agents/stencil-commands.md](./docs/agents/stencil-commands.md) |
+| Stencil commands | `stencil` code generation usage guide and commands list | [docs/agents/stencil-commands.md](./docs/agents/stencil-commands.md) |
 {{- $extraHook := (stencil.GetModuleHook "agentsReferencesTable") }}
 {{- range $extraHook }}
 {{- . }}
