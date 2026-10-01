@@ -76,9 +76,6 @@ files:
     - name: AGENTS.md
       template: AGENTS.md.tpl
       module: github.com/getoutreach/stencil-base
-    - name: CLAUDE.md
-      template: CLAUDE.md.tpl
-      module: github.com/getoutreach/stencil-base
     - name: Makefile
       template: Makefile.tpl
       module: github.com/getoutreach/stencil-golang
