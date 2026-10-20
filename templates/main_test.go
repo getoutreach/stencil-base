@@ -13,6 +13,16 @@ func TestRenderAFile(t *testing.T) {
 	st.Run(stenciltest.RegenerateSnapshots())
 }
 
+func TestRenderReleaseRCWithMajorVersionsAllowed(t *testing.T) {
+	st := stenciltest.New(t, ".releaserc.yaml.tpl")
+	st.Args(map[string]any{
+		"releaseOptions": map[string]any{
+			"allowMajorVersions": true,
+		},
+	})
+	st.Run(stenciltest.RegenerateSnapshots())
+}
+
 func TestRenderReadmeFile(t *testing.T) {
 	st := stenciltest.New(t, "README.md.tpl")
 	st.Args(map[string]any{
