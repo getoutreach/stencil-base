@@ -14,6 +14,10 @@ branches:
 plugins:
   - - "@semantic-release/commit-analyzer"
     - releaseRules:
+{{- if not (stencil.Arg "releaseOptions.allowMajorVersions") }}
+      - breaking: true
+        release: minor
+{{- end }}
       - type: revert
         release: patch
       - type: perf
