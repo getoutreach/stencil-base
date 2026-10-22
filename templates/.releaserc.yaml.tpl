@@ -34,12 +34,11 @@ plugins:
         ./scripts/shell-wrapper.sh major-release-checker.js ${lastRelease.version} ${nextRelease.version}
   {{- end }}
 
-{{- if or (not (empty (stencil.Arg "commands"))) (stencil.Arg "releaseOptions.force") }}
-  # Build the binaries
-  - - "@semantic-release/exec"
-    # We use generateNotesCmd instead of a different step because it has access
-    # to last/nextRelease due to when the step runs.
-    - generateNotesCmd: "make release APP_VERSION=${nextRelease.version}"
+{{- $buildBinariesHook := (stencil.GetModuleHook "buildBinaryReleaseConfig") }}
+{{- if $buildBinariesHook }}
+{{- range $buildBinariesHook }}
+{{ . }}
+{{- end }}
 {{- end }}
 
   # This creates fancy release notes in our Github release
@@ -52,12 +51,12 @@ plugins:
 {{- end }}
 {{- end }}
 
-{{- if or (not (empty (stencil.Arg "commands"))) (stencil.Arg "releaseOptions.force") }}
-  # Create the GitHub Release
-  - - "@semantic-release/github"
-    - assets:
-        - "dist/*.tar.gz"
-        - "dist/checksums.txt"
+
+{{- $GHConfigHook := (stencil.GetModuleHook "GHReleaseConfig") }}
+{{- if $GHConfigHook }}
+{{- range $GHConfigHook }}
+{{ . }}
+{{- end }}
 {{- else }}
   - "@semantic-release/github"
 {{- end }}
