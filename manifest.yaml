@@ -31,6 +31,10 @@ arguments:
     description: Enable prereleases
     schema:
       type: boolean
+  releaseOptions.allowPrereleases:
+    schema:
+      type: boolean
+    description: If set to true, the release configuration is updated to support prereleases
   releaseOptions.prereleasesBranch:
     description: The branch to watch for prereleases
     schema:
@@ -79,14 +83,6 @@ arguments:
     schema:
       type: string
     description: A CircleCI API token generated for your project. If supplied it will render a CircleCI status badge in your README.md.
-  releaseOptions.allowPrereleases:
-    schema:
-      type: boolean
-    description: If set to true, the release configuration is updated to support prereleases
-  releaseOptions.force:
-    schema:
-      type: boolean
-    description: If this is set to true the `make release` step and assets declaration in .releaserc.yaml will render regardless of other arguments.
   versions.mise.hard:
     description: Minimum (semver-compatible) mise version required for all of the mise features used. Default defined in <stencil-base:templates/mise.toml.tpl>. If supplied, the version used in the mise config is the newer of the two.
     default: ""
@@ -102,14 +98,4 @@ arguments:
       type: string
     description: Version of Prettier to use for formatting various file types. Note that minor versions may change behavior (patch versions may also change behavior, but usually only either unintentionally or to fix regressions). Valid values include full versions, major versions (3), or minor versions (3.7).
     default: "2"
-
-  # TODO(jaredallard): Move this into a separate Go module
-  commands:
-    schema:
-      type: array
-      items:
-        anyOf:
-          - type: string
-          - type: object
-    description: A list of CLIs for this service
 ## <</Stencil::Block>>
