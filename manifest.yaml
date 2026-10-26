@@ -93,9 +93,4 @@ arguments:
     default: "22.22.0"
     schema:
       type: string
-  versions.prettier:
-    schema:
-      type: string
-    description: Version of Prettier to use for formatting various file types. Note that minor versions may change behavior (patch versions may also change behavior, but usually only either unintentionally or to fix regressions). Valid values include full versions, major versions (3), or minor versions (3.7).
-    default: "2"
 ## <</Stencil::Block>>

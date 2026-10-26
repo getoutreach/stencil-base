@@ -16,8 +16,6 @@ enter = ["$MISE_PROJECT_ROOT/scripts/devbase.sh"]
 ## <</Stencil::Block>>
 
 [tools]
-"npm:prettier" = "2"
-
 ## <<Stencil::Block(customMiseTools)>>
 
 ## <</Stencil::Block>>

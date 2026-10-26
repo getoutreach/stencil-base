@@ -22,7 +22,6 @@ enter = [
 ## <</Stencil::Block>>
 
 [tools]
-"npm:prettier" = "2"
 
 ## <<Stencil::Block(customMiseTools)>>
 

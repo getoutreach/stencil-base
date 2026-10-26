@@ -37,8 +37,6 @@ enter = [
 ## <</Stencil::Block>>
 
 [tools]
-"npm:prettier" = {{ stencil.Arg "versions.prettier" | quote }}
-
 {{- range stencil.GetModuleHook "miseTools" }}
 {{ . | toToml }}
 {{- end }}
