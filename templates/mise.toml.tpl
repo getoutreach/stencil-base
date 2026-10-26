@@ -37,7 +37,11 @@ enter = [
 ## <</Stencil::Block>>
 
 [tools]
+{{- if eq (stencil.Arg "formatter") "oxfmt" }}
+"aqua:oxc-project/oxc/oxfmt" = {{ stencil.Arg "versions.oxfmt" | quote }}
+{{- else }}
 "npm:prettier" = {{ stencil.Arg "versions.prettier" | quote }}
+{{- end }}
 
 {{- range stencil.GetModuleHook "miseTools" }}
 {{ . | toToml }}

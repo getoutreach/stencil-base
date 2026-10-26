@@ -5,6 +5,7 @@ arguments:
     skipE2e: true
   confluenceSpaceKey: DT
   description: Base templates for a stencil backed service
+  formatter: oxfmt
   lifecycle: public_ga
   lintroller: platinum
   notifications:

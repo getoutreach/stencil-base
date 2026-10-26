@@ -67,6 +67,10 @@ arguments:
       items:
         type: string
     description: A list of GitHub teams who co-own the repository.
+  circleAPIKey:
+    schema:
+      type: string
+    description: A CircleCI API token generated for your project. If supplied it will render a CircleCI status badge in your README.md.
   dependencies.optional:
     schema:
       type: array
@@ -79,10 +83,14 @@ arguments:
       items:
         type: string
     description: Dependencies your repository requires to run successfully no matter what.
-  circleAPIKey:
+  formatter:
+    description: Which general purpose formatter to use.
     schema:
       type: string
-    description: A CircleCI API token generated for your project. If supplied it will render a CircleCI status badge in your README.md.
+      enum:
+        - prettier
+        - oxfmt
+    default: prettier
   versions.mise.hard:
     description: Minimum (semver-compatible) mise version required for all of the mise features used. Default defined in <stencil-base:templates/mise.toml.tpl>. If supplied, the version used in the mise config is the newer of the two.
     default: ""
@@ -93,6 +101,11 @@ arguments:
     default: "22.22.0"
     schema:
       type: string
+  versions.oxfmt:
+    schema:
+      type: string
+    description: Version of oxfmt to use for formatting various file types. Valid values include full versions, major versions (1), or minor versions (1.84).
+    default: "1.84.0"
   versions.prettier:
     schema:
       type: string

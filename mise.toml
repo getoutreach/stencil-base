@@ -16,7 +16,7 @@ enter = ["$MISE_PROJECT_ROOT/scripts/devbase.sh"]
 ## <</Stencil::Block>>
 
 [tools]
-"npm:prettier" = "2"
+"aqua:oxc-project/oxc/oxfmt" = "1.84.0"
 
 ## <<Stencil::Block(customMiseTools)>>
 
