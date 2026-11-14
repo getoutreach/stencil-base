@@ -43,6 +43,14 @@ arguments:
     schema:
       type: boolean
     description: If set to true, the release configuration is updated to allow major version bumps via CI
+  releaseOptions.engine:
+    description: The tool that makes releases. `semantic-release` uses semantic-release and GoReleaser. `devbase` uses the `devbase release` command.
+    schema:
+      type: string
+      enum:
+        - semantic-release
+        - devbase
+    default: semantic-release
   description:
     required: true
     schema:
